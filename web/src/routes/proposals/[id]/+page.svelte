@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { STATE_LABELS, STATE_COLORS, LegislativeState } from '$lib/types/workflow';
+	import { VOTE_LABELS, VOTE_COLORS } from '$lib/types/vote';
 
 	let { data }: { data: PageData } = $props();
 
@@ -165,6 +166,88 @@
 		</div>
 	{/each}
 </section>
+
+<!-- 表決紀錄 -->
+{#if data.voteHistory.length > 0}
+	<section class="section">
+		<h2 class="section-title">表決紀錄</h2>
+
+		{#each data.voteHistory as vote}
+			<div class="vote-card">
+				<div class="vote-card-header">
+					<div class="vote-info">
+						<span class="vote-topic">{vote.transitionLabel}</span>
+						<span class="vote-status" class:passed={vote.result?.passed} class:failed={!vote.result?.passed}>
+							{vote.result?.passed ? '通過' : '未通過'}
+						</span>
+					</div>
+					<span class="vote-date">{vote.closedAt?.split('T')[0]}</span>
+				</div>
+
+				<p class="vote-desc">{vote.description}</p>
+
+				{#if vote.result}
+					<div class="vote-result">
+						<div class="vote-bar">
+							{#if vote.result.yea > 0}
+								<div
+									class="bar-segment bar-yea"
+									style="width: {(vote.result.yea / vote.result.total) * 100}%"
+								>
+									{vote.result.yea}
+								</div>
+							{/if}
+							{#if vote.result.nay > 0}
+								<div
+									class="bar-segment bar-nay"
+									style="width: {(vote.result.nay / vote.result.total) * 100}%"
+								>
+									{vote.result.nay}
+								</div>
+							{/if}
+							{#if vote.result.abstain > 0}
+								<div
+									class="bar-segment bar-abstain"
+									style="width: {(vote.result.abstain / vote.result.total) * 100}%"
+								>
+									{vote.result.abstain}
+								</div>
+							{/if}
+						</div>
+						<div class="vote-counts">
+							<span class="count-item">
+								<span class="count-dot" style="background: #3fb950"></span>
+								贊成 {vote.result.yea}
+							</span>
+							<span class="count-item">
+								<span class="count-dot" style="background: #f85149"></span>
+								反對 {vote.result.nay}
+							</span>
+							<span class="count-item">
+								<span class="count-dot" style="background: #8b949e"></span>
+								棄權 {vote.result.abstain}
+							</span>
+							<span class="count-threshold">門檻：{vote.result.threshold}</span>
+						</div>
+					</div>
+				{/if}
+
+				{#if vote.ballots.length > 0}
+					<div class="vote-ballots">
+						{#each vote.ballots as ballot}
+							<span class="ballot-chip" style="border-color: {VOTE_COLORS[ballot.choice]}">
+								{ballot.voterName}
+								<span class="ballot-choice" style="color: {VOTE_COLORS[ballot.choice]}">
+									{VOTE_LABELS[ballot.choice]}
+								</span>
+							</span>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		{/each}
+	</section>
+{/if}
 
 <style>
 	.back-link {
@@ -445,5 +528,123 @@
 	}
 	.reason-text p:last-child {
 		margin-bottom: 0;
+	}
+
+	/* 表決紀錄 */
+	.vote-card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 18px;
+		margin-bottom: 12px;
+	}
+	.vote-card-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 8px;
+	}
+	.vote-info {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.vote-topic {
+		font-size: 15px;
+		font-weight: 600;
+		color: var(--text);
+	}
+	.vote-status {
+		font-size: 11px;
+		font-weight: 600;
+		padding: 2px 8px;
+		border-radius: 4px;
+	}
+	.vote-status.passed {
+		background: rgba(63, 185, 80, 0.15);
+		color: #3fb950;
+	}
+	.vote-status.failed {
+		background: rgba(248, 81, 73, 0.15);
+		color: #f85149;
+	}
+	.vote-date {
+		font-size: 12px;
+		color: var(--text-subtle);
+		font-family: var(--font-mono);
+	}
+	.vote-desc {
+		font-size: 13px;
+		color: var(--text-muted);
+		margin-bottom: 14px;
+		line-height: 1.5;
+	}
+
+	.vote-result {
+		margin-bottom: 12px;
+	}
+	.vote-bar {
+		display: flex;
+		height: 24px;
+		border-radius: 4px;
+		overflow: hidden;
+		margin-bottom: 8px;
+	}
+	.bar-segment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		font-weight: 600;
+		color: #fff;
+		min-width: 28px;
+	}
+	.bar-yea { background: #3fb950; }
+	.bar-nay { background: #f85149; }
+	.bar-abstain { background: #8b949e; }
+
+	.vote-counts {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		font-size: 12px;
+		color: var(--text-muted);
+	}
+	.count-item {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+	.count-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+	.count-threshold {
+		margin-left: auto;
+		color: var(--text-subtle);
+		font-size: 11px;
+	}
+
+	.vote-ballots {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		padding-top: 12px;
+		border-top: 1px solid var(--border);
+	}
+	.ballot-chip {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 3px 10px;
+		border-radius: 12px;
+		border: 1px solid;
+		font-size: 12px;
+		color: var(--text);
+	}
+	.ballot-choice {
+		font-weight: 600;
+		font-size: 11px;
 	}
 </style>

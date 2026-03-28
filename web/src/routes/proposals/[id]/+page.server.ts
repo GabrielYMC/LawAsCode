@@ -1,4 +1,5 @@
 import { MOCK_PROPOSALS } from '$lib/server/proposals/mock-data.js';
+import { MOCK_VOTE_SESSIONS } from '$lib/server/proposals/mock-votes.js';
 import { buildComparisonTable } from '$lib/server/proposals/diff.js';
 import { TRANSITIONS } from '$lib/types/workflow.js';
 import { error } from '@sveltejs/kit';
@@ -28,10 +29,14 @@ export const load: PageServerLoad = async ({ params }) => {
 	];
 	const currentIndex = stateOrder.indexOf(proposal.state);
 
+	// 此提案的歷史表決紀錄
+	const voteHistory = MOCK_VOTE_SESSIONS.filter((v) => v.proposalId === proposal.id);
+
 	return {
 		proposal,
 		comparisonTable,
 		availableTransitions,
+		voteHistory,
 		stateProgress: {
 			steps: stateOrder,
 			currentIndex

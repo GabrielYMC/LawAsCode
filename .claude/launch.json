@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "reviewer",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "flask", "--app", "tools/reviewer/server", "run", "--port", "5588"],
+      "port": 5588
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port", "5173"],
+      "cwd": "web",
+      "port": 5173
+    }
+  ]
+}

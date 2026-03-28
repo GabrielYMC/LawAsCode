@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>法規校對工具 — LawAsCode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/theme/github-dark.min.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --error: #f85149;
+      --warning: #d29922;
+      --success: #3fb950;
+      --highlight-error: rgba(248, 81, 73, 0.15);
+      --highlight-warning: rgba(210, 153, 34, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, "Microsoft JhengHei", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    header .stats {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    header .stats .count {
+      font-weight: 600;
+    }
+
+    header .stats .error { color: var(--error); }
+    header .stats .warning { color: var(--warning); }
+    header .stats .success { color: var(--success); }
+
+    /* Main layout */
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .sidebar-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .file-list {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .file-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      transition: background 0.15s;
+    }
+
+    .file-item:hover { background: rgba(88, 166, 255, 0.1); }
+    .file-item.active { background: rgba(88, 166, 255, 0.15); border-left: 3px solid var(--accent); }
+
+    .file-item .icon { font-size: 16px; flex-shrink: 0; }
+    .file-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .file-item .badge {
+      font-size: 11px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .badge.error { background: rgba(248, 81, 73, 0.2); color: var(--error); }
+    .badge.warning { background: rgba(210, 153, 34, 0.2); color: var(--warning); }
+    .badge.ok { background: rgba(63, 185, 80, 0.2); color: var(--success); }
+
+    /* Editor area */
+    .editor-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .editor-toolbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .editor-toolbar .filename {
+      font-size: 14px;
+      font-weight: 600;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    .editor-toolbar button {
+      padding: 5px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .editor-toolbar button:hover { border-color: var(--accent); color: var(--accent); }
+
+    .editor-toolbar button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .editor-toolbar button.primary:hover { opacity: 0.85; }
+
+    .editor-toolbar button.success {
+      background: var(--success);
+      border-color: var(--success);
+      color: #fff;
+    }
+
+    .editor-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .cm-wrapper {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .CodeMirror {
+      height: 100% !important;
+      font-size: 14px;
+      font-family: "Cascadia Code", "JetBrains Mono", monospace;
+      line-height: 1.6;
+    }
+
+    /* Issue highlight in editor */
+    .cm-issue-error { background: var(--highlight-error) !important; }
+    .cm-issue-warning { background: var(--highlight-warning) !important; }
+
+    /* Issues panel */
+    .issues-panel {
+      width: 340px;
+      min-width: 280px;
+      max-width: 400px;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .issues-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .issues-list {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .issue-item {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .issue-item:hover { background: rgba(88, 166, 255, 0.08); }
+    .issue-item.active { background: rgba(88, 166, 255, 0.12); }
+    .issue-item.resolved { opacity: 0.4; }
+
+    .issue-item .issue-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .issue-item .issue-severity {
+      font-size: 14px;
+    }
+
+    .issue-item .issue-line {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.06);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .issue-item .issue-type {
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .issue-item .issue-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .issue-item .issue-suggestion {
+      font-size: 12px;
+      color: var(--success);
+      background: rgba(63, 185, 80, 0.08);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      line-height: 1.5;
+      word-break: break-all;
+    }
+
+    .issue-item .issue-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .issue-item .issue-actions button {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .issue-item .issue-actions button:hover {
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    /* Empty state */
+    .empty-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--text-muted);
+      font-size: 14px;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .empty-state .icon { font-size: 48px; }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      z-index: 1000;
+      transition: opacity 0.3s, transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .toast.hidden { opacity: 0; transform: translateY(10px); pointer-events: none; }
+
+    /* Keyboard shortcuts hint */
+    .shortcuts {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+
+    .shortcuts kbd {
+      background: rgba(255,255,255,0.1);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    /* Unsaved indicator */
+    .unsaved::after {
+      content: " (未儲存)";
+      color: var(--warning);
+      font-size: 12px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📜 法規校對工具</h1>
+  <div class="stats">
+    <span>檔案 <span class="count" id="stat-total">0</span></span>
+    <span>待校對 <span class="count warning" id="stat-pending">0</span></span>
+    <span>已完成 <span class="count success" id="stat-done">0</span></span>
+    <span>問題 <span class="count error" id="stat-issues">0</span></span>
+  </div>
+</header>
+
+<div class="main">
+  <!-- Sidebar: File List -->
+  <div class="sidebar">
+    <div class="sidebar-header">法規列表</div>
+    <div class="file-list" id="file-list"></div>
+    <div class="shortcuts">
+      <kbd>Ctrl+S</kbd> 儲存 &nbsp;
+      <kbd>Ctrl+↓</kbd> 下一問題 &nbsp;
+      <kbd>Ctrl+↑</kbd> 上一問題
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor-area">
+    <div class="editor-toolbar" id="toolbar" style="display:none">
+      <span class="filename" id="current-filename"></span>
+      <button onclick="rescan()" title="重新掃描此檔案">🔄 重新掃描</button>
+      <button onclick="saveFile()" class="primary" title="Ctrl+S">💾 儲存</button>
+      <button onclick="markReviewed()" class="success" id="btn-reviewed">✅ 校對完成</button>
+    </div>
+    <div class="editor-content">
+      <div class="cm-wrapper" id="editor-container">
+        <div class="empty-state" id="empty-state">
+          <span class="icon">📋</span>
+          <span>從左側選擇法規開始校對</span>
+        </div>
+      </div>
+
+      <!-- Issues Panel -->
+      <div class="issues-panel" id="issues-panel" style="display:none">
+        <div class="issues-header">
+          <span>問題列表</span>
+          <span id="issue-count"></span>
+        </div>
+        <div class="issues-list" id="issues-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast hidden" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/mode/yaml/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.19/mode/meta.min.js"></script>
+<script>
+  // === State ===
+  let scanData = {};
+  let currentFile = null;
+  let editor = null;
+  let unsaved = false;
+  let issueMarkers = [];
+  let currentIssueIdx = -1;
+
+  // === Init ===
+  async function init() {
+    await loadScan();
+    renderFileList();
+
+    // Keyboard shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "s") {
+        e.preventDefault();
+        saveFile();
+      }
+      if (e.ctrlKey && e.key === "ArrowDown") {
+        e.preventDefault();
+        navigateIssue(1);
+      }
+      if (e.ctrlKey && e.key === "ArrowUp") {
+        e.preventDefault();
+        navigateIssue(-1);
+      }
+    });
+  }
+
+  async function loadScan() {
+    const resp = await fetch("/api/scan");
+    scanData = await resp.json();
+    updateStats();
+  }
+
+  function updateStats() {
+    const files = Object.values(scanData);
+    document.getElementById("stat-total").textContent = files.length;
+    document.getElementById("stat-pending").textContent = files.filter(f => !f.reviewed).length;
+    document.getElementById("stat-done").textContent = files.filter(f => f.reviewed).length;
+    document.getElementById("stat-issues").textContent = files.reduce((s, f) => s + f.issue_count, 0);
+  }
+
+  function renderFileList() {
+    const list = document.getElementById("file-list");
+    list.innerHTML = "";
+
+    // Sort: unreviewed with errors first, then warnings, then reviewed
+    const sorted = Object.entries(scanData).sort((a, b) => {
+      if (a[1].reviewed !== b[1].reviewed) return a[1].reviewed ? 1 : -1;
+      return b[1].error_count - a[1].error_count || b[1].issue_count - a[1].issue_count;
+    });
+
+    for (const [filename, data] of sorted) {
+      const item = document.createElement("div");
+      item.className = "file-item" + (currentFile === filename ? " active" : "");
+      item.onclick = () => openFile(filename);
+
+      const icon = data.reviewed ? "✅" : (data.error_count > 0 ? "❌" : data.warning_count > 0 ? "⚠️" : "📄");
+      const displayName = filename.replace(".md", "");
+
+      let badges = "";
+      if (data.error_count > 0) badges += `<span class="badge error">${data.error_count}E</span>`;
+      if (data.warning_count > 0) badges += `<span class="badge warning">${data.warning_count}W</span>`;
+      if (data.reviewed) badges = `<span class="badge ok">已校對</span>`;
+
+      item.innerHTML = `
+        <span class="icon">${icon}</span>
+        <span class="name" title="${displayName}">${displayName}</span>
+        ${badges}
+      `;
+      list.appendChild(item);
+    }
+  }
+
+  async function openFile(filename) {
+    if (unsaved) {
+      if (!window._skipConfirm && !confirm("目前檔案尚未儲存，確定要切換嗎？")) return;
+      window._skipConfirm = false;
+    }
+
+    currentFile = filename;
+    currentIssueIdx = -1;
+    unsaved = false;
+
+    // Load file content
+    const resp = await fetch(`/api/file/${encodeURIComponent(filename)}`);
+    const data = await resp.json();
+
+    // Show toolbar and issues panel
+    document.getElementById("toolbar").style.display = "flex";
+    document.getElementById("issues-panel").style.display = "flex";
+    document.getElementById("empty-state").style.display = "none";
+
+    // Update filename
+    const fnEl = document.getElementById("current-filename");
+    fnEl.textContent = filename.replace(".md", "");
+    fnEl.classList.remove("unsaved");
+
+    // Update review button
+    updateReviewButton();
+
+    // Init or update editor
+    if (!editor) {
+      const container = document.getElementById("editor-container");
+      editor = CodeMirror(container, {
+        value: data.content,
+        mode: "markdown",
+        theme: "github-dark",
+        lineNumbers: true,
+        lineWrapping: true,
+        tabSize: 2,
+        indentWithTabs: false,
+      });
+
+      editor.on("change", () => {
+        if (!unsaved) {
+          unsaved = true;
+          document.getElementById("current-filename").classList.add("unsaved");
+        }
+      });
+    } else {
+      editor.setValue(data.content);
+      editor.clearHistory();
+    }
+
+    // Highlight issues
+    highlightIssues();
+    renderIssues();
+    renderFileList();
+
+    // Reset unsaved after setValue
+    setTimeout(() => { unsaved = false; }, 50);
+  }
+
+  function highlightIssues() {
+    // Clear previous markers
+    issueMarkers.forEach(m => m.clear());
+    issueMarkers = [];
+
+    if (!currentFile || !scanData[currentFile]) return;
+
+    const issues = scanData[currentFile].issues.filter(i => !i.resolved);
+    for (const issue of issues) {
+      const line = issue.line - 1; // CodeMirror is 0-indexed
+      if (line < 0 || line >= editor.lineCount()) continue;
+
+      const cls = issue.severity === "error" ? "cm-issue-error" : "cm-issue-warning";
+      const marker = editor.markText(
+        { line, ch: 0 },
+        { line, ch: editor.getLine(line).length },
+        { className: cls }
+      );
+      issueMarkers.push(marker);
+    }
+  }
+
+  function renderIssues() {
+    const list = document.getElementById("issues-list");
+    list.innerHTML = "";
+
+    if (!currentFile || !scanData[currentFile]) return;
+
+    const issues = scanData[currentFile].issues;
+    document.getElementById("issue-count").textContent = `${issues.filter(i => !i.resolved).length} / ${issues.length}`;
+
+    if (issues.length === 0) {
+      list.innerHTML = `<div class="empty-state" style="padding: 40px"><span class="icon">🎉</span><span>沒有發現問題</span></div>`;
+      return;
+    }
+
+    issues.forEach((issue, idx) => {
+      const item = document.createElement("div");
+      item.className = "issue-item" + (issue.resolved ? " resolved" : "") + (idx === currentIssueIdx ? " active" : "");
+
+      const sevIcon = issue.severity === "error" ? "❌" : "⚠️";
+      const typeLabels = {
+        broken_line: "斷行",
+        dup_article: "重複條號",
+        orphan_text: "孤立文字",
+        mis_list: "誤判列舉",
+        missing_art: "跳號",
+        suspicious_break: "可疑斷行",
+      };
+
+      item.innerHTML = `
+        <div class="issue-header">
+          <span class="issue-severity">${sevIcon}</span>
+          <span class="issue-line">L${issue.line}</span>
+          <span class="issue-type">${typeLabels[issue.issue_type] || issue.issue_type}</span>
+          ${issue.resolved ? '<span style="color:var(--success);font-size:11px">已處理</span>' : ''}
+        </div>
+        <div class="issue-desc">${issue.description}</div>
+        ${issue.suggestion ? `<div class="issue-suggestion">💡 ${issue.suggestion}</div>` : ""}
+        <div class="issue-actions">
+          ${!issue.resolved ? `<button onclick="event.stopPropagation(); resolveIssue(${idx})">標記已處理</button>` : ''}
+          <button onclick="event.stopPropagation(); jumpToLine(${issue.line})">跳到此行</button>
+        </div>
+      `;
+
+      item.onclick = () => {
+        currentIssueIdx = idx;
+        jumpToLine(issue.line);
+        renderIssues();
+      };
+
+      list.appendChild(item);
+    });
+  }
+
+  function jumpToLine(line) {
+    if (!editor) return;
+    const cmLine = line - 1;
+    editor.setCursor(cmLine, 0);
+    editor.scrollIntoView({ line: cmLine, ch: 0 }, 200);
+    editor.focus();
+  }
+
+  function navigateIssue(direction) {
+    if (!currentFile || !scanData[currentFile]) return;
+    const issues = scanData[currentFile].issues.filter(i => !i.resolved);
+    if (issues.length === 0) return;
+
+    // Find next unresolved issue
+    const allIssues = scanData[currentFile].issues;
+    let searchIdx = currentIssueIdx;
+
+    for (let i = 0; i < allIssues.length; i++) {
+      searchIdx = (searchIdx + direction + allIssues.length) % allIssues.length;
+      if (!allIssues[searchIdx].resolved) {
+        currentIssueIdx = searchIdx;
+        jumpToLine(allIssues[searchIdx].line);
+        renderIssues();
+
+        // Scroll issue list
+        const issueElements = document.querySelectorAll(".issue-item");
+        if (issueElements[searchIdx]) {
+          issueElements[searchIdx].scrollIntoView({ block: "nearest" });
+        }
+        return;
+      }
+    }
+  }
+
+  async function resolveIssue(idx) {
+    const issue = scanData[currentFile].issues[idx];
+    await fetch("/api/resolve", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        filename: currentFile,
+        line: issue.line,
+        issue_type: issue.issue_type,
+      }),
+    });
+    issue.resolved = true;
+    highlightIssues();
+    renderIssues();
+    showToast("問題已標記為已處理");
+  }
+
+  async function saveFile() {
+    if (!editor || !currentFile) return;
+
+    const resp = await fetch(`/api/file/${encodeURIComponent(currentFile)}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: editor.getValue() }),
+    });
+
+    const result = await resp.json();
+    if (result.success) {
+      unsaved = false;
+      document.getElementById("current-filename").classList.remove("unsaved");
+
+      // Update scan data with new issues
+      scanData[currentFile].issues = result.issues;
+      scanData[currentFile].issue_count = result.issue_count;
+      scanData[currentFile].error_count = result.issues.filter(i => i.severity === "error").length;
+      scanData[currentFile].warning_count = result.issues.filter(i => i.severity === "warning").length;
+
+      highlightIssues();
+      renderIssues();
+      renderFileList();
+      updateStats();
+      showToast("✅ 已儲存，重新掃描完成");
+    }
+  }
+
+  async function rescan() {
+    await saveFile();
+  }
+
+  async function markReviewed() {
+    if (!currentFile) return;
+
+    const fileData = scanData[currentFile];
+    const unresolvedErrors = fileData.issues.filter(i => i.severity === "error" && !i.resolved);
+
+    if (unresolvedErrors.length > 0) {
+      if (!confirm(`還有 ${unresolvedErrors.length} 個錯誤未處理，確定標記為校對完成嗎？`)) return;
+    }
+
+    if (fileData.reviewed) {
+      // 取消標記
+      await fetch(`/api/review/${encodeURIComponent(currentFile)}`, { method: "DELETE" });
+      scanData[currentFile].reviewed = false;
+      showToast("已取消校對完成標記");
+    } else {
+      // 標記完成
+      if (unsaved) await saveFile();
+      await fetch(`/api/review/${encodeURIComponent(currentFile)}`, { method: "POST" });
+      scanData[currentFile].reviewed = true;
+      showToast("✅ 已標記為校對完成");
+
+      // Auto-navigate to next unreviewed file
+      const nextFile = Object.entries(scanData).find(([name, data]) => !data.reviewed && name !== currentFile);
+      if (nextFile) {
+        setTimeout(() => openFile(nextFile[0]), 500);
+      }
+    }
+
+    updateReviewButton();
+    renderFileList();
+    updateStats();
+  }
+
+  function updateReviewButton() {
+    const btn = document.getElementById("btn-reviewed");
+    if (scanData[currentFile]?.reviewed) {
+      btn.textContent = "↩️ 取消校對完成";
+      btn.className = "";
+      btn.style.borderColor = "var(--warning)";
+      btn.style.color = "var(--warning)";
+    } else {
+      btn.textContent = "✅ 校對完成";
+      btn.className = "success";
+      btn.style.borderColor = "";
+      btn.style.color = "";
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.remove("hidden");
+    setTimeout(() => toast.classList.add("hidden"), 2500);
+  }
+
+  // === Start ===
+  init();
+</script>
+</body>
+</html>

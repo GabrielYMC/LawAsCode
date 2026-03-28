@@ -27,6 +27,48 @@
 | **權力權限化** | 「公布施行」不再是口頭授權，而是系統帳號權限 |
 | **介面 AI 化** | 一般學生透過自然語言即可查詢法規、理解權益 |
 
+### 設計原則：不可繞過與完整可追溯
+
+本系統的核心精神：**所有法規變更都追查得到權力的授予，並且無論什麼變更都會留下紀錄。**
+
+這不是功能需求，而是系統的不可違反約束（invariant）。所有架構與實作決策都必須服從以下原則：
+
+| 原則 | 說明 | 實作方式 |
+|------|------|----------|
+| **唯一變更路徑** | 法規的任何變更只能透過 PR merge 進入 `main` 分支，不接受任何使用者直接對法規資料 CRUD | Gitea branch protection：禁止直接 push to main、禁止 force push、禁止刪除分支 |
+| **權力必須授予** | 每一次狀態轉移（排案、交付審查、表決、公布）都必須由具備對應角色的帳號執行 | BFF server routes 驗證角色權限，Gitea API token 綁定角色，前端不直接接觸 Gitea |
+| **變更必留紀錄** | 誰在什麼時候做了什麼操作、基於什麼依據（投票結果/議長裁定），全部不可刪除地記錄 | Git commit history + PR timeline + PocketBase audit log，三層紀錄互相印證 |
+| **歷程不可竄改** | 已經發生的紀錄不允許被修改或刪除，即使是系統管理員 | 禁止 force push（保護 Git 歷史）、PocketBase 審計表設為 append-only |
+| **系統即程序** | 議事程序不再依賴人的自律，而是由系統的狀態機強制執行 | `workflow.ts` 定義合法轉移，server 端拒絕不合法的狀態變更請求 |
+
+**具體的 Gitea 分支保護設定（部署時執行）：**
+
+```
+# Gitea Branch Protection API
+POST /api/v1/repos/{owner}/{repo}/branch_protections
+{
+  "branch_name": "main",
+  "enable_push": false,              # 禁止直接 push
+  "enable_push_whitelist": false,     # 無白名單例外
+  "require_signed_commits": false,    # 視需求啟用
+  "enable_merge_whitelist": true,     # 只有指定角色可 merge
+  "merge_whitelist_usernames": ["president", "secretariat-auto"],
+  "enable_approvals_whitelist": true,
+  "approvals_whitelist_usernames": ["speaker"],
+  "required_approvals": 1,           # 至少需要議長 approve
+  "block_on_rejected_reviews": true,  # 有反對意見時阻擋
+  "block_on_outdated_branch": true,   # 分支過期時阻擋
+  "dismiss_stale_approvals": true     # 程式碼變更後舊 approval 失效
+}
+```
+
+**Web UI 層的守則：**
+
+- SvelteKit server routes（BFF）是唯一與 Gitea API 互動的入口
+- 前端使用者永遠不直接接觸 Gitea
+- 每個 API call 在 server 端驗證「當前使用者角色 × 提案當前狀態 → 是否為合法操作」
+- 不合法的操作在 server 端直接拒絕（403），而非僅在前端隱藏按鈕
+
 ## 參、系統架構
 
 ```

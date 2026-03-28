@@ -1,24 +1,104 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+	import { STATE_LABELS, STATE_COLORS } from '$lib/types/workflow';
+
+	let { data }: { data: PageData } = $props();
+</script>
+
 <svelte:head>
 	<title>提案審議 — LawAsCode</title>
 </svelte:head>
 
 <h1>提案審議</h1>
-<p class="subtitle">目前沒有進行中的提案</p>
+<p class="subtitle">{data.proposals.length} 件提案</p>
 
-<div class="empty">
-	<span class="empty-icon">📋</span>
-	<p>此功能開發中</p>
-	<p class="empty-hint">提案系統將在 Gitea 部署後啟用</p>
+<div class="proposal-list">
+	{#each data.proposals as proposal}
+		<a href="/proposals/{proposal.id}" class="proposal-card">
+			<div class="proposal-header">
+				<span
+					class="state-badge"
+					style="background: {STATE_COLORS[proposal.state]}20; color: {STATE_COLORS[proposal.state]}; border-color: {STATE_COLORS[proposal.state]}40"
+				>
+					{STATE_LABELS[proposal.state]}
+				</span>
+				<span class="proposal-date">{proposal.updatedAt.split('T')[0]}</span>
+			</div>
+			<h2 class="proposal-title">{proposal.title}</h2>
+			<p class="proposal-desc">{proposal.description}</p>
+			<div class="proposal-meta">
+				<span class="meta-item">📌 {proposal.targetLaw}</span>
+				<span class="meta-item">👤 {proposal.proposer}</span>
+				<span class="meta-item">📝 {proposal.amendments.length} 條修正</span>
+			</div>
+		</a>
+	{/each}
 </div>
 
 <style>
 	h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-	.subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 40px; }
-	.empty {
-		text-align: center;
-		padding: 80px 0;
-		color: var(--text-muted);
+	.subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+
+	.proposal-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		max-width: 800px;
 	}
-	.empty-icon { font-size: 64px; display: block; margin-bottom: 16px; }
-	.empty-hint { font-size: 13px; color: var(--text-subtle); margin-top: 8px; }
+
+	.proposal-card {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		transition: all 0.15s;
+		text-decoration: none;
+	}
+	.proposal-card:hover {
+		border-color: var(--accent);
+		background: var(--surface-hover);
+		text-decoration: none;
+	}
+
+	.proposal-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.state-badge {
+		font-size: 12px;
+		font-weight: 600;
+		padding: 2px 10px;
+		border-radius: 12px;
+		border: 1px solid;
+	}
+
+	.proposal-date {
+		font-size: 12px;
+		color: var(--text-subtle);
+		font-family: var(--font-mono);
+	}
+
+	.proposal-title {
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.proposal-desc {
+		font-size: 14px;
+		color: var(--text-muted);
+		line-height: 1.5;
+	}
+
+	.proposal-meta {
+		display: flex;
+		gap: 16px;
+		font-size: 12px;
+		color: var(--text-subtle);
+	}
 </style>

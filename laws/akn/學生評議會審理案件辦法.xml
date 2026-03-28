@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/學生評議會審理案件辦法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/學生評議會審理案件辦法"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/學生評議會審理案件辦法/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/學生評議會審理案件辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/學生評議會審理案件辦法/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/學生評議會審理案件辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2017-04-28" type="generation" source="#tku-sa" refersTo="#106.04.28第36屆學生議會大會通過全文50條"/>
+        <eventRef eId="e2" date="2017-05-14" type="amendment" source="#tku-sa" refersTo="#106.05.14第22屆學生會會長公布"/>
+        <eventRef eId="e3" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43屆學生議會大會修正通過"/>
+        <eventRef eId="e4" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本字第11306230041號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>本辦法依據「淡江大學學生會評議會組織規則」</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>訂定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>評議委員之迴避</heading>
+          <paragraph eId="art_2__para_1">
+            <intro>
+              <p>評議委員有下列各款事由之一者，應自行迴避，不得執行職務：</p>
+            </intro>
+            <list eId="art_2__para_1__list_1">
+              <point eId="art_2__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>評議委員或其配偶，曾為配偶為該爭訟事件當事人者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>評議委員為該爭訟事件當事人八親等內之血親或五親等內之姻親，或曾有此親屬關係者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>評議委員或其配偶，曾為配偶就該爭訟事件與當事人為共同權利人，共同義務人或償還義務人。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>評議委員現為或曾為該爭訟事件當事人之法定代理人或家長、家屬者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>評議委員於該爭訟事件，現為或曾為當事人之訴訟代理人或輔佐人者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>評議委員於該爭訟事件，曾為證人或鑑定人者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>評議委員曾參與該爭訟事件之前審裁判者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_2__para_2">
+            <intro>
+              <p>遇有下列各款情形，當事人得聲請評議委員迴避：</p>
+            </intro>
+            <list eId="art_2__para_2__list_1">
+              <point eId="art_2__para_2__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>評議委員有前條所定之情形而不自行迴避者。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_2__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>評議委員有足認其執行職務有偏頗之虞者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_2__para_3">
+            <content>
+              <p>聲請評議委員迴避，應附具體理由，向評議會為之。被聲請迴避之評議委員，對於該聲請得提出意見書。 評議委員迴避之聲請，以評議委員三人以上合議裁定之，被聲請迴避之評議委員，不得參與。 因評議委員人數不足而無法為前項裁定時，由主席裁定之；主席為被聲請迴避者，以資深者代理，資歷相同時以年長者代理。 於解釋案件中，迴避由解釋庭裁定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>審查權</heading>
+          <paragraph eId="art_3__para_1">
+            <content>
+              <p>評議委員、法庭對審理之案件，有調閱、搜索或扣押本會各機關組織相關資料權利，各級單位不得拒絕。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>當事人及其代理人</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>當事人於行政訴訟案件，謂原告、被告及參加人；於仲裁案件，謂聲請人與相對人；於解釋案件，謂聲請人；彈劾案件，為被付彈劾人。 當事人得以書狀或當庭口頭委任本校學生為代理人，代理進行程序。書狀通知應以電子郵件通知為之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>當事人能力與程序能力</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>凡本校之學生有當事人能力及程序能力。 凡本校之學生團體設有代表人者，有當事人能力及程序能力。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>書狀應記載之事項</heading>
+          <paragraph eId="art_6__para_1">
+            <intro>
+              <p>解釋案件書狀，除別有規定外應記載下列各款事項：</p>
+            </intro>
+            <list eId="art_6__para_1__list_1">
+              <point eId="art_6__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>聲請人之姓名。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>聲請解釋之目的。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>疑義或爭議之事實及涉及之法規條文。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>聲請解釋之理由及聲請人對本案所持立場與見解。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>關係文件之名稱及件數。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_2">
+            <intro>
+              <p>仲裁案件當事人書狀，除別有規定外應記載下列各款項：</p>
+            </intro>
+            <list eId="art_6__para_2__list_1">
+              <point eId="art_6__para_2__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>聲請人之團體名稱，及其代表姓名、系所、電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>相對人之團體名稱，及其代表姓名、系所、電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>聲請人與相對人合意仲裁之說明或文書。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>請求之標的物或聲明。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>事實與理由之陳述。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>供證明之證據。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>附屬文件及件數。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>法庭。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_9">
+                <num>9.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_2__list_1__item_10">
+                <num>10.</num>
+                <content>
+                  <p>當事人之簽名或蓋章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_3">
+            <intro>
+              <p>行政訴訟案件當事人書狀，除別有規定外應記載下列各款項：</p>
+            </intro>
+            <list eId="art_6__para_3__list_1">
+              <point eId="art_6__para_3__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>當事人之姓名、系所、電子郵件信箱，當事人為團體者，其名稱及代</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_4">
+            <intro>
+              <p>表人之姓名、系所、電子郵件信箱。</p>
+            </intro>
+            <list eId="art_6__para_4__list_1">
+              <point eId="art_6__para_4__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>有代表人、訴訟代理人、被告或相對人者，其姓名、系所及電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>請求之標的物或聲明。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>事實與理由之陳述。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>供證明之證據。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>附屬文件及件數。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>法庭。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_4__list_1__item_9">
+                <num>9.</num>
+                <content>
+                  <p>當事人之簽名或蓋章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_5">
+            <intro>
+              <p>彈劾案書狀，除別有規定外應記載下列各款事項：</p>
+            </intro>
+            <list eId="art_6__para_5__list_1">
+              <point eId="art_6__para_5__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>提案代表人之姓名、系所、電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>被付彈劾人姓名、系所及電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>彈劾事實與理由之陳述。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>供證明之證據。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>附屬文件及件數。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>法庭。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_5__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>當事人之簽名或蓋章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>國家法律之準用</heading>
+          <paragraph eId="art_7__para_1">
+            <content>
+              <p>國家法律之準用本辦法未盡之處，於行政訴訟案件準用行政訴訟法；於仲裁案件準用仲裁法；於解釋案件準用司法院大法官審理案件法。 關於法庭之開閉及秩序、法院之用語、裁判之評議、判斷，準用法院組織法。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>解釋程序</heading>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>解釋章程要件</heading>
+          <paragraph eId="art_8__para_1">
+            <intro>
+              <p>下列之情形，得聲請解釋章程：</p>
+            </intro>
+            <list eId="art_8__para_1__list_1">
+              <point eId="art_8__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>本會各機關或組織行使職權，於適用章程時產生疑義，或因行使職權與其他機關之職權，發生適用章程之爭議，或適用法規發生有牴觸章程之疑義者。</p>
+                </content>
+              </point>
+              <point eId="art_8__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>本會會員於其章程上所述保障之權利遭受不法侵害，對於不法侵害所適用的法規發生有抵觸章程之疑義者。</p>
+                </content>
+              </point>
+              <point eId="art_8__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>學生議員現有總額六分之一以上聲請，就其行使職權，適用章程發生疑義，或適用法規發生有牴觸章程之疑義。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_8__para_2">
+            <content>
+              <p>前項第二款之聲請，於行政訴訟繫屬中，如確信有牴觸規程之疑義者，應由三分之二評議委員組聯合庭裁判之。 聲請解釋章程不合前二項規定者，應不受理。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>職權調查原則</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>解釋程序之進行，得依聲請或職權通知聲請人、關係人及有關機關說明，或為調查。必要時，得行言詞辯論。 解釋庭決議行言詞辯論後，秘書處應於三日內將聲請書交予有關機關，有關機關應於收受起七日內交付答辯狀，逾時視為放棄答辯。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>解釋程序</heading>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>解釋庭應有三分之二評議委員出席，出席者過半數之同意，方得通過。評議委員得撰寫協同意見書或不同意見書。 解釋應以適當方式公告之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>解釋程序</heading>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>解釋文應先由解釋庭會議決定原則，並由多數意見之評議委員互選出一人起草解釋文及解釋理由書草案，經會議確認後形成解釋。 評議委員撰寫協同意見書或不同意見書，應於解釋文草案及解釋理由書草案經解釋庭審查通過後五日內提出。 解釋文應附具解釋理由書、意見書，並明列參與解釋之評議委員之姓名、系級，同解釋文公告之。 未出席評議之評議委員不得撰寫補充意見書或不同意見書。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>仲裁程序</heading>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>仲裁要件</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>本會會員間涉及公共事項之爭議，得合意聲請仲裁。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>公開原則</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>仲裁庭以審判長指揮程序。 仲裁程序應公開為之；不公開時，應宣示其理由。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>當事人陳述及證據調查</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>仲裁庭應予當事人充分陳述機會，並就當事人所提主張為必要之調查。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>證人義務</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>員經仲裁庭通知為證人或鑑定人時，有到庭應詢之義務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>異議</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>當事人知悉或可得而知仲裁程序違反本法而仍進行仲裁程序者，不得異議。異議，由行政庭決定之，當事人不得聲明不服。 異議，無停止仲裁程序之效力。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>衡平原則</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>仲裁庭應適用衡平原則及一般法律原則為判斷。 衡平原則應受學生自治原則與民主法治原則拘束。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>判斷書</heading>
+          <paragraph eId="art_18__para_1">
+            <intro>
+              <p>仲裁庭認為仲裁已達於可判斷之程度者，應宣告詢問終結，依當事人聲明之事項，於三日內作成判斷書。 判斷書應記載下列各款事項︰</p>
+            </intro>
+            <list eId="art_18__para_1__list_1">
+              <point eId="art_18__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>當事人之名稱，及其代表人之姓名、系所、電子郵件信箱。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>有法定代理人、仲裁代理人者，其姓名、系所、電子信箱。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>主文。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>事實。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>理由。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>法庭。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>仲裁效力</heading>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>仲裁判斷除依本法提出撤銷仲裁判斷之訴外，不得聲明不服。仲裁判斷拘束當事人雙方。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>撤銷仲裁判斷之訴</heading>
+          <paragraph eId="art_20__para_1">
+            <intro>
+              <p>有下列各款情形之一者，當事人得對於他方提起撤銷行政仲裁判斷之訴︰</p>
+            </intro>
+            <list eId="art_20__para_1__list_1">
+              <point eId="art_20__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>仲裁庭於詢問終結前未使當事人陳述，或當事人於仲裁程序未經合法</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_20__para_2">
+            <intro>
+              <p>代理者。</p>
+            </intro>
+            <list eId="art_20__para_2__list_1">
+              <point eId="art_20__para_2__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>仲裁庭之組成或仲裁程序，違反法律規定者。</p>
+                </content>
+              </point>
+              <point eId="art_20__para_2__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>依法律或裁定應迴避之評議委員參與仲裁者。</p>
+                </content>
+              </point>
+              <point eId="art_20__para_2__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>為判斷基礎之證據係偽造、變造或有其他虛偽情事者。</p>
+                </content>
+              </point>
+              <point eId="art_20__para_2__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>為判斷基礎之行政處分已變更者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>撤銷仲裁判斷程序</heading>
+          <paragraph eId="art_21__para_1">
+            <content>
+              <p>撤銷仲裁判斷之訴，應於判斷書交付或送達之日起，十日之不變期間內為之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>再仲裁</heading>
+          <paragraph eId="art_22__para_1">
+            <content>
+              <p>仲裁判斷經仲裁庭判決撤銷確定者，當事人得就該爭議事項再提起仲裁。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>行政訴訟程序</heading>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>訴訟要件</heading>
+          <paragraph eId="art_23__para_1">
+            <content>
+              <p>本校學生或團體因本會各機關組織之違反自治行為，認為損害其權利，得向行政庭提起行政訴訟，求為給付、撤銷或確認之判決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>起訴期間</heading>
+          <paragraph eId="art_24__para_1">
+            <content>
+              <p>行政訴訟之提起，應於知有權利損害之翌日起二個月內為之，但自有損害時起，逾一年者，不得為之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>選舉訴訟</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>選舉訴訟應由行政庭審理，並於十日內完成，必要時得延長五日，但以一次為限。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_26">
+          <num>第二十六條</num>
+          <heading>公開原則</heading>
+          <paragraph eId="art_26__para_1">
+            <content>
+              <p>行政庭審理行政訴訟，應公開為之；不公開時，應宣示其理由。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_27">
+          <num>第二十七條</num>
+          <heading>準備程序之證據調查</heading>
+          <paragraph eId="art_27__para_1">
+            <intro>
+              <p>準備程序有下列情形者，得由受命評議委員調查證據：</p>
+            </intro>
+            <list eId="art_27__para_1__list_1">
+              <point eId="art_27__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>有在證據所在地調查之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_27__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>有致證據毀損、滅失或礙難使用之虞，顯其他困者。</p>
+                </content>
+              </point>
+              <point eId="art_27__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>兩造合意由受命評議委員調查者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_28">
+          <num>第二十八條</num>
+          <heading>言詞辯論</heading>
+          <paragraph eId="art_28__para_1">
+            <content>
+              <p>行政庭審理行政訴訟，應行言詞辯論。 言詞辯論，以當事人聲明起訴之事項為始。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_29">
+          <num>第二十九條</num>
+          <heading>證據調查及證人義務</heading>
+          <paragraph eId="art_29__para_1">
+            <content>
+              <p>行政庭審理行政訴訟，應依其職權或當事人之聲請調查證據。本會會員經法庭通知為證人時，有到庭陳述之義務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_30">
+          <num>第三十條</num>
+          <heading>衡平原則</heading>
+          <paragraph eId="art_30__para_1">
+            <intro>
+              <p>有下列各款情形之一者，評議會得不調查證據，而審酌一切情況，認定事實，為公平之裁判︰</p>
+            </intro>
+            <list eId="art_30__para_1__list_1">
+              <point eId="art_30__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>經兩造同意者。</p>
+                </content>
+              </point>
+              <point eId="art_30__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>因訴訟程序進行困難，所需時間、費用與當事人之請求顯不相當者。</p>
+                </content>
+              </point>
+              <point eId="art_30__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>因調查證據困難，所需時間、費用與當事人之請求顯不相當者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_31">
+          <num>第三十一條</num>
+          <heading>不停止執行原則</heading>
+          <paragraph eId="art_31__para_1">
+            <content>
+              <p>原處分或自治行為之執行，除法律另有規定外，不因提起行政訴訟而停止。 行政訴訟或解釋案繫屬中，行政庭認為原處分或自治行為之執行，將發生難於回復之損害，且有急迫情事者，得依職權或聲請裁定停止執行。但於公益有重大影響者，不得為之。 前項情形於起訴前或解釋前，亦得聲請停止執行。行政庭為前二項裁定前，應先徵詢當事人之意見。 停止執行之裁定，得停止原處分或決定效力之全部或一部。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_32">
+          <num>第三十二條</num>
+          <heading>再審要件</heading>
+          <paragraph eId="art_32__para_1">
+            <content>
+              <p>對於行政庭之終局裁判，僅得因其違背學生會相關自治法規或我國現行法令為理由聲請再審。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_33">
+          <num>第三十三條</num>
+          <heading>裁判違背法令</heading>
+          <paragraph eId="art_33__para_1">
+            <intro>
+              <p>裁判不適用法規或適用不當者，為違背法令。 有下列各款情形之一者，為裁判當然違背法令：</p>
+            </intro>
+            <list eId="art_33__para_1__list_1">
+              <point eId="art_33__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>法庭組織不合法。</p>
+                </content>
+              </point>
+              <point eId="art_33__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>依法律或裁定應迴避之評議委員參與審判者。</p>
+                </content>
+              </point>
+              <point eId="art_33__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>當事人於訴訟未經合法代理或代表者。</p>
+                </content>
+              </point>
+              <point eId="art_33__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>違背言詞辯論公開之規定者。</p>
+                </content>
+              </point>
+              <point eId="art_33__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>裁判不備理由或矛盾者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_34">
+          <num>第三十四條</num>
+          <heading>再審程序</heading>
+          <paragraph eId="art_34__para_1">
+            <intro>
+              <p>提起再審應於判決書正本送達之翌日起七日內，以書狀表明下列各款事項向評議會行政庭提出：</p>
+            </intro>
+            <list eId="art_34__para_1__list_1">
+              <point eId="art_34__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>當事人。</p>
+                </content>
+              </point>
+              <point eId="art_34__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>對於行政庭判決不服之範圍，及應如何廢棄或變更聲明。</p>
+                </content>
+              </point>
+              <point eId="art_34__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>原判決違背法令之具體理由。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_35">
+          <num>第三十五條</num>
+          <heading>書面審理原則</heading>
+          <paragraph eId="art_35__para_1">
+            <intro>
+              <p>行政庭之再審裁判得不經言詞辯論為之。 但有下列情形一者，得依職權或依聲請行言詞辯論：</p>
+            </intro>
+            <list eId="art_35__para_1__list_1">
+              <point eId="art_35__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>法律關係複雜或見解紛歧，有以言詞辯明之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_35__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>涉及專門知識或特殊經驗法則，有以言詞說明之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_35__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>涉及公益或影響當事人權利義務重大，有行言詞辯論之必要者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_36">
+          <num>第三十六條</num>
+          <heading>抗告</heading>
+          <paragraph eId="art_36__para_1">
+            <content>
+              <p>對於裁定得為抗告。 行政訴訟程序進中所為之裁定，除別有規定不得抗告。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_37">
+          <num>第三十七條</num>
+          <heading>抗告程序</heading>
+          <paragraph eId="art_37__para_1">
+            <content>
+              <p>提起抗告，應於裁定送達後七日之不變期間內為之。但送達前之抗告亦有效力。 提起抗告，應向行政庭提出抗告狀為之。 行政庭認為抗告有理由者，應撤銷或變更原裁定。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_38">
+          <num>第三十八條</num>
+          <heading>裁判書</heading>
+          <paragraph eId="art_38__para_1">
+            <intro>
+              <p>經言詞辯論之裁判，應宣示。 不經言詞辯論之裁判，或終結訴訟定應公告。裁判應做成決書或定記載下列各款事項：</p>
+            </intro>
+            <list eId="art_38__para_1__list_1">
+              <point eId="art_38__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>當事人之姓名、系所、電子郵件信箱，當事人為團體者，其名稱及其</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_38__para_2">
+            <intro>
+              <p>代表人系所，電子郵件信箱。</p>
+            </intro>
+            <list eId="art_38__para_2__list_1">
+              <point eId="art_38__para_2__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>裁判經言詞辯論者，其終結日期。</p>
+                </content>
+              </point>
+              <point eId="art_38__para_2__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>主文。</p>
+                </content>
+              </point>
+              <point eId="art_38__para_2__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>事實。</p>
+                </content>
+              </point>
+              <point eId="art_38__para_2__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>理由。</p>
+                </content>
+              </point>
+              <point eId="art_38__para_2__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_38__para_2__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>法庭。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_38__para_3">
+            <content>
+              <p>事實項下，應記載法院所認定之。理由項下，應記載法院之律意見。 前兩項內容應包括當事人之聲明及攻擊防禦方法要旨。必要時，得以書狀、筆錄或其他文作為附件。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_39">
+          <num>第三十九條</num>
+          <heading>判決確定</heading>
+          <paragraph eId="art_39__para_1">
+            <content>
+              <p>判決確定裁判，於再審期間屆滿時確定。 但於再審期間內有合法之再審者，阻其確定。 不得再審之裁判，於宣示時確定；不宣示者，於公告主文時確定。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_5">
+        <num>第五章</num>
+        <heading>彈劾案之審議</heading>
+        <article eId="art_40">
+          <num>第四十條</num>
+          <heading>彈劾程序</heading>
+          <paragraph eId="art_40__para_1">
+            <content>
+              <p>彈劾案應經學生議會議決通過，送評議會為法律審查及事實審查後，逕付投票表決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_41">
+          <num>第四十一條</num>
+          <heading>法律審查</heading>
+          <paragraph eId="art_41__para_1">
+            <intro>
+              <p>學生評議會為法律審查之事項如下：</p>
+            </intro>
+            <list eId="art_41__para_1__list_1">
+              <point eId="art_41__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>彈劾案之議決程序合法與否。</p>
+                </content>
+              </point>
+              <point eId="art_41__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>彈劾案之議決符合法定人數與否。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_41__para_2">
+            <content>
+              <p>評議會收受移送案件後，應將提案單送達被付彈劾人，並命其於指定期內提出申辯書。 召開會議時，得通知案件之關係人到場列席應詢或申辯。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_42">
+          <num>第四十二條</num>
+          <heading>法律審查應檢附之資料</heading>
+          <paragraph eId="art_42__para_1">
+            <content>
+              <p>提出彈劾案之法律審查，應檢附彈劾案之相關資料，以及議決程序及人數資料。 資料有缺漏者，應限學生議會於五日內補正。 學生議會於期限屆至時未補正，評議會應駁回彈劾案。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_43">
+          <num>第四十三條</num>
+          <heading>事實審查</heading>
+          <paragraph eId="art_43__para_1">
+            <intro>
+              <p>評議會為事實審查之事項如下：</p>
+            </intro>
+            <list eId="art_43__para_1__list_1">
+              <point eId="art_43__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>被彈劾當事人是否情節重大。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>評議會得依情節，做出以下裁決：</p>
+                </content>
+                <list eId="art_43__para_1__list_1__item_2__list_1">
+                  <point eId="art_43__para_1__list_1__item_2__list_1__item_1">
+                    <num>(1)</num>
+                    <content>
+                      <p>彈劾當事人。</p>
+                    </content>
+                  </point>
+                  <point eId="art_43__para_1__list_1__item_2__list_1__item_2">
+                    <num>(2)</num>
+                    <content>
+                      <p>駁回彈劾案。</p>
+                    </content>
+                  </point>
+                </list>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_44">
+          <num>第四十四條</num>
+          <heading>彈劾審理程序</heading>
+          <paragraph eId="art_44__para_1">
+            <content>
+              <p>評議會對於受移送之彈劾案件，認為情節重大，有先行停止職務之必要者，得停止其職務，並公告之。 彈劾案審理程序準用行政訴訟程序。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_45">
+          <num>第四十五條</num>
+          <heading>議決書公布</heading>
+          <paragraph eId="art_45__para_1">
+            <content>
+              <p>彈劾案審議完畢時，評議會之議決應作成議決書，於二日內將議決書送達被 付彈劾人及其相關機關，並公告之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_46">
+          <num>第四十六條</num>
+          <heading>議決書</heading>
+          <paragraph eId="art_46__para_1">
+            <intro>
+              <p>彈劾案議決書應具備下列各項：</p>
+            </intro>
+            <list eId="art_46__para_1__list_1">
+              <point eId="art_46__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>被付彈劾人姓名、職務。</p>
+                </content>
+              </point>
+              <point eId="art_46__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>彈劾案由。</p>
+                </content>
+              </point>
+              <point eId="art_46__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>彈劾之決定。</p>
+                </content>
+              </point>
+              <point eId="art_46__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>製定審查議決書年月日。</p>
+                </content>
+              </point>
+              <point eId="art_46__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>出席評議委員姓名。</p>
+                </content>
+              </point>
+              <point eId="art_46__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>評議會主席簽章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_47">
+          <num>第四十七條</num>
+          <heading>彈劾確立</heading>
+          <paragraph eId="art_47__para_1">
+            <content>
+              <p>彈劾案經評議會議決同意通過，被付彈劾人應即彈劾解職。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_6">
+        <num>第六章</num>
+        <heading>附則</heading>
+        <article eId="art_48">
+          <num>第四十八條</num>
+          <heading>公開審理程序</heading>
+          <paragraph eId="art_48__para_1">
+            <content>
+              <p>法庭舉行之公開審理程序，應於一周前公告開庭時間暨地點。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_49">
+          <num>第四十九條</num>
+          <heading>鑑定人、法庭之友</heading>
+          <paragraph eId="art_49__para_1">
+            <content>
+              <p>為釐清案件爭點並促進專業意見之對話，法庭得選任鑑定人、法庭之友參與言詞辯論程序。 鑑定人、法庭之友應本其專業，就案件爭點出具報告並出庭陳述意見。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_50">
+          <num>第五十條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_50__para_1">
+            <content>
+              <p>本法自公布日施行。 解釋文</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="charter">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/臺灣學生聯合會章程施行法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/臺灣學生聯合會章程施行法"/>
+          <FRBRdate date="2019-10-22" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/臺灣學生聯合會章程施行法/zho@2019-10-22"/>
+          <FRBRuri value="/akn/tw-tku/act/臺灣學生聯合會章程施行法/zho@2019-10-22"/>
+          <FRBRdate date="2019-10-22" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/臺灣學生聯合會章程施行法/zho@2019-10-22.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/臺灣學生聯合會章程施行法/zho@2019-10-22"/>
+          <FRBRdate date="2019-10-22" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2019-10-03" type="generation" source="#tku-sa" refersTo="#108.10.03第39屆學生議會大會通過全文9條"/>
+        <eventRef eId="e2" date="2019-10-22" type="amendment" source="#tku-sa" refersTo="#108.10.22淡學本字第10810220012號函公布"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>立法宗旨</heading>
+        <paragraph eId="art_1__para_1">
+          <content>
+            <p>為落實臺灣學生聯合會章程（以下簡稱學聯章程）意旨，健全全國學生自治、維護學生共同權益以及培力學生自治人才，特制定本法。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>效力等同之規定</heading>
+        <paragraph eId="art_2__para_1">
+          <content>
+            <p>學聯章程所揭示之宗旨、任務及成立精神，（除保留條款外）具有校內法規之效力。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>適用規定之參考</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>適用學聯章程之規定，應參照其立法意旨及臺灣學生聯合會（以下簡稱學聯）理事會之解釋。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>本會之最高性</heading>
+        <paragraph eId="art_4__para_1">
+          <content>
+            <p>本會配合學聯之一切行動或經費支出，施行均應以本會會員權益為最高考量，且不得違反本會相關法規。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>本會代表</heading>
+        <paragraph eId="art_5__para_1">
+          <content>
+            <p>本會對學聯之最高代表為本會會長，會長得視必要授權本會幹部代表與會或參與任何行動。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>應盡義務及聯絡窗口設立</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>本會各單位行使其職權，應在處理校內事務外可負擔之範圍內，積極促進學聯宗旨及任務之實現。 本會得設會內學聯聯繫單位，負責籌劃、推動及執行學聯章程規定事項。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>經費編擬之義務</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>本會應在財政狀況允許範圍內，並參考本會施政計畫後編列執行學聯章程各項任務及參與學聯培力活動所需之經費。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>會費繳納</heading>
+        <paragraph eId="art_8__para_1">
+          <content>
+            <p>本會應依學聯章程規定繳交會費。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_9">
+        <num>第九條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_9__para_1">
+          <content>
+            <p>本法自公告日起施行；修正時亦同。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

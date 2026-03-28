@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/行政中心組織規則/main"/>
+          <FRBRuri value="/akn/tw-tku/act/行政中心組織規則"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/行政中心組織規則/zho@2024-01-01"/>
+          <FRBRuri value="/akn/tw-tku/act/行政中心組織規則/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/行政中心組織規則/zho@2024-01-01.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/行政中心組織規則/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>立法依據、名稱</heading>
+        <paragraph eId="art_1__para_1">
+          <list eId="art_1__para_1__list_1">
+            <point eId="art_1__para_1__list_1__item_108">
+              <num>108.</num>
+              <content>
+                <p>06.30第38屆學生議會大會通過全文11條</p>
+              </content>
+            </point>
+            <point eId="art_1__para_1__list_1__item_108">
+              <num>108.</num>
+              <content>
+                <p>06.30淡學本字第10806300025號函公布</p>
+              </content>
+            </point>
+            <point eId="art_1__para_1__list_1__item_113">
+              <num>113.</num>
+              <content>
+                <p>06.17第43屆學生議會大會修正通過</p>
+              </content>
+            </point>
+            <point eId="art_1__para_1__list_1__item_113">
+              <num>113.</num>
+              <content>
+                <p>06.23淡學本字第11306230046號函公告</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_1__para_2">
+          <content>
+            <p>本規則依「淡江大學學生會組織章程」</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_13">
+        <num>第十三條</num>
+        <paragraph eId="art_13__para_1">
+          <content>
+            <p>訂定之。本中心全名為淡江大學學生會行政中心，以下簡稱(行政中心)。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>地位</heading>
+        <paragraph eId="art_2__para_1">
+          <content>
+            <p>行政中心為本會最高之行政機關。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>組織方式</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>行政中心由學生會會長直接領導，並設各行政部門襄助會長執行本會會務。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>接受質詢義務</heading>
+        <paragraph eId="art_4__para_1">
+          <content>
+            <p>學生會會長、部會首長有接受議會質詢之義務。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>會長職權</heading>
+        <paragraph eId="art_5__para_1">
+          <intro>
+            <p>學生會會長職權如下：</p>
+          </intro>
+          <list eId="art_5__para_1__list_1">
+            <point eId="art_5__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>依法聘用、解任各部部長之權。</p>
+              </content>
+            </point>
+            <point eId="art_5__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>定期召開行政會議。</p>
+              </content>
+            </point>
+            <point eId="art_5__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>向議會提出議案之權利。</p>
+              </content>
+            </point>
+            <point eId="art_5__para_1__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>對議會之決議，如認為有窒礙難行之時，得由部門部長於收到決議文後十日內經會長同意後，移請向議會覆議。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_5__para_2">
+          <content>
+            <p>覆議案之審議應由議會於覆議案到達後七日內召開大會審議，覆議審議時，如經出席議員三分之二以上維持原決議，行政部門應即接受該項決議。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>常設部門之設置</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>行政中心設秘書處、財政部、學生權益及福利部、公關部、總務部、活動部。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>政策部門之設置</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>依據本會組織章程</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_13">
+        <num>第十三條</num>
+        <paragraph eId="art_13__para_1">
+          <content>
+            <p>學生會會長得經議會同意，另設政策部門。政策部門之人事制度、 預、決算辦法依照現有法規定之。 政策部門之存續至該會長任期屆滿止。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>行政會議之設置</heading>
+        <paragraph eId="art_8__para_1">
+          <content>
+            <p>行政中心應設置行政會議並定期召開，由學生會會長、秘書長及各部門正、副部長出席，其他相關人員得應邀列席。 行政會議議決之事項中華民國憲法、中華民國相關法令或本會法規牴觸者無效。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_9">
+        <num>第九條</num>
+        <heading>常設部門職權及組織</heading>
+        <paragraph eId="art_9__para_1">
+          <intro>
+            <p>行政中心部門部長由學生會會長提名，經學生議會審查後同意任命之，副部長、部員由部長任命。行政中心下設部門之職權及組織如下：</p>
+          </intro>
+          <list eId="art_9__para_1__list_1">
+            <point eId="art_9__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>秘書處：置秘書長一名，由學生會會長直接任命之，秘書處得招募秘書若干名，並承學生會會長之命，協助處理行政中心事務與學生會會長交付之一切事項，並負責本會活動認證業務及檔案整理。</p>
+              </content>
+            </point>
+            <point eId="art_9__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>財政部：置正、副部長各一名，得招募部員若干名。負責本會會費預算、會計、決算、稽核及財務管理事務，擬定本會預、決算書格式並送議會財政委員會審議通過，始得使用。</p>
+              </content>
+            </point>
+            <point eId="art_9__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>學生權益及福利部：置正、副部長各一名，得招募部員若干名。維護</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_9__para_2">
+          <intro>
+            <p>同學應有權益及增進學生福祉，提升校園學習、生活品質。</p>
+          </intro>
+          <list eId="art_9__para_2__list_1">
+            <point eId="art_9__para_2__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>公關部：置正、副部長各一名，得招募部員若干名。負責本會對外關係之拓展及相關公共關係事務之聯絡、本會對外所有資訊之發布、管理與平台之建構事宜，肩負建立本會良好形象之任務。</p>
+              </content>
+            </point>
+            <point eId="art_9__para_2__list_1__item_5">
+              <num>5.</num>
+              <content>
+                <p>總務部：置正、副部長各一名，得招募部員若干名。負責採購、管理、維修、報廢、租借行政中心一切資產，並維護、管理行政中 心所屬空間。</p>
+              </content>
+            </point>
+            <point eId="art_9__para_2__list_1__item_6">
+              <num>6.</num>
+              <content>
+                <p>活動部：置正、副部長各一名，得招募部員若干名。負責統籌學生在校學習、生活及權益相關之活動、形塑優質校園文化。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_10">
+        <num>第十條</num>
+        <heading>獨立部門之設置</heading>
+        <paragraph eId="art_10__para_1">
+          <intro>
+            <p>行政中心設下列常設獨立部門:</p>
+          </intro>
+          <list eId="art_10__para_1__list_1">
+            <point eId="art_10__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>淡江大學學生會選舉委員會</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_10__para_2">
+          <content>
+            <p>獨立部門依法獨立行使職權，自主運作，除法律另有規定外，不受其他上級機關指揮監督之合議制機關。 獨立部門之組織辦法，另以法律定之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_11">
+        <num>第十一條</num>
+        <heading>行政命令備查</heading>
+        <paragraph eId="art_11__para_1">
+          <content>
+            <p>行政中心所擬與本會法規有關之行政命令，應送議議會大會備查。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_12">
+        <num>第十二條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_12__para_1">
+          <content>
+            <p>本辦法經議會通過，自公布日實施；修正時亦同。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

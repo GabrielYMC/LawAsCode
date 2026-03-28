@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/學生議會辦公室管理細則/main"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會辦公室管理細則"/>
+          <FRBRdate date="2021-02-25" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/學生議會辦公室管理細則/zho@2021-02-25"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會辦公室管理細則/zho@2021-02-25"/>
+          <FRBRdate date="2021-02-25" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/學生議會辦公室管理細則/zho@2021-02-25.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會辦公室管理細則/zho@2021-02-25"/>
+          <FRBRdate date="2021-02-25" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2021-02-25" type="generation" source="#tku-sa" refersTo="#110.02.25第四十屆學生議會大會報告施行"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>立法依據</heading>
+        <paragraph eId="art_1__para_1">
+          <content>
+            <p>本細則依淡江大學學生會（下稱本會）學生議會組織規則</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_10">
+        <num>第十條</num>
+        <paragraph eId="art_10__para_1">
+          <content>
+            <p>訂定之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>秘書處職責</heading>
+        <paragraph eId="art_2__para_1">
+          <content>
+            <p>學生議會秘書處應維護學生議會辦公室之環境整潔、設備之保管使用、秩序之維持、及其他一切必要之管理措施。 學生議會秘書處應於常會期間每周定期打掃辦公室，並於每會期末次大會至遲於每學期期末考後一周內清點辦公室內資產。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>公開原則</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>基於學生議會公開透明之理念，除依法應公布之事項外，辦公室窗戶玻璃不得張貼任何圖紙或以其他任意方式致使外界無法看見辦公室內部，張貼依法公布之事項時亦同。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>使用注意事項</heading>
+        <paragraph eId="art_4__para_1">
+          <content>
+            <p>辦公室使用人應自行保管個人之財物，並妥善使用辦公室所有器材設施，並善加維護且須維持原有運作模式。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>使用禁止事項</heading>
+        <paragraph eId="art_5__para_1">
+          <content>
+            <p>辦公室不得吸菸並嚴禁任何危險物品，並不得有危害公共安全或違反校規之情事，倘有違規使用情節嚴重且調查屬實者，學生議會應依本校學生獎懲辦法移請校方處理。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>圖書資料出借</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>學生議會圖書資料採開放制度，凡有學生議會成員在場時，於告知後可自行查閱所需資料。 如需將資料攜出，需向秘書處登記，借出資料以三冊為限，借期一個月，得續借一次；資料為議事資料者，借期為七天。 登記應載明借出人之姓名、連絡電話、借出資料、學生議會核可人。 借出逾期未還者，秘書處應追討之，情節嚴重者不得再辦理借出及續借；嚴重逾期而未還者，視為遺失。 借出人應妥善保管借出之資料，如有塗寫、污損、毀壞、遺失等情況，借出人應負責賠償；若為書籍者，借出人應自行購買賠償與原書書名、作者、編著者、出版處和裝訂版相同或最新版之書籍；若為其他文書資料，應繳付重新印刷所需費用。 借出資料為議事資料者，如遇學生議會需要，無論到期否應立即歸還。借出人退學、休學、畢業時，應還清借出資料。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>其他資產出借</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>前條以外之學生議會資產出借，需向秘書處登記，載明借出人之姓名、出借事由、借期、連絡電話、借出資料、學生議會核可人；借出人為社團者，註記其社團名稱。 借出逾期未還者，秘書處應追討之，情節嚴重者不得再辦理借出；嚴重逾期而未還者，視為遺失。 借出人應妥善保管借出之資產，如有塗寫、污損、毀壞、遺失等情況，借出人應負責賠償。 借出人退學、休學、畢業時，應還清借出資產。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>使用責任</heading>
+        <paragraph eId="art_8__para_1">
+          <content>
+            <p>辦公室使用人因未將辦公室上鎖造成資產之損失，應負損害賠償責任。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_9">
+        <num>第九條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_9__para_1">
+          <content>
+            <p>本細則由秘書長擬定，經議長核定後，報告於學生議會大會後施行。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

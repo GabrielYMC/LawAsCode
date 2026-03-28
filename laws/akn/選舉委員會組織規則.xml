@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/選舉委員會組織規則/main"/>
+          <FRBRuri value="/akn/tw-tku/act/選舉委員會組織規則"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/選舉委員會組織規則/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/選舉委員會組織規則/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/選舉委員會組織規則/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/選舉委員會組織規則/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2019-06-30" type="generation" source="#tku-sa" refersTo="#108.06.30第38屆學生議會大會通過全文11條"/>
+        <eventRef eId="e2" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30淡學本字第10806300025號函公布"/>
+        <eventRef eId="e3" date="2021-06-15" type="amendment" source="#tku-sa" refersTo="#110.06.15第40屆學生議會大會修正通過"/>
+        <eventRef eId="e4" date="2021-06-30" type="amendment" source="#tku-sa" refersTo="#110.06.30淡學本字第11006300019號函公布"/>
+        <eventRef eId="e5" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43屆學生議會大會修正通過"/>
+        <eventRef eId="e6" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本字第11306230047號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>本法依據淡江大學學生會（下稱本會）行政中心組織規則</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>制定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>地位</heading>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>本會選舉委員會（下稱選委會）應為本會行政部門，需公正超然，統一執行本會於各校園之會務，依法獨立行使職權，不受任何單 位、外力干涉。 選舉委員應依法獨立行使職權，於任職期間不得參加與選舉競選或罷免宣傳有關之活動。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>職權</heading>
+          <paragraph eId="art_3__para_1">
+            <intro>
+              <p>選委會掌理下列事項：</p>
+            </intro>
+            <list eId="art_3__para_1__list_1">
+              <point eId="art_3__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>選舉、罷免、會員投票事務之規畫辦理與指揮。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>選務人員、監察員之遴聘與管理。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>候選人資格之審查。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>當選證書之製發事項。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>選舉、罷免、會員投票結果之審查事項。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>關於違反本會選舉、罷免、會員投票相關規定之事實認定及處分。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>其他選舉、罷免、會員投票相關事宜。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>舉辦學生會正、副會長、學生議員宣誓就職典禮。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_3__para_2">
+            <content>
+              <p>前項選務人員、監察員之遴聘、培訓與管理，另以細則訂定。 前項選務人員、監察員之遴聘，應以書面為之，其遴聘應以非本會會務人員之本會會員優先。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>負責對象</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>選委會主任選舉委員應列席學生議會大會並備質詢，報告工作進度，且應於各選舉、罷免、會員投票事務結束後十天內向學生議會大會提出結果報告。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>預算編列</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>選委會之預算由選舉委員依法編列之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>辦公室</heading>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>選委會辦理選務時，得向本校學生會輔導單位申請臨時場所成立辦公室辦理選務。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>組織</heading>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>選舉委員</heading>
+          <paragraph eId="art_7__para_1">
+            <intro>
+              <p>選委會置選舉委員五至十一人，由會長提名，並以其中兩名為正、副主任選舉委員，經學生議會同意後任命之。 行政部門首長得兼任選舉委員，並不得超過選舉委員總人數二分之一。 選舉委員任期，自每年一月一日至十二月三十一日止；非因下列事由，會長不得使其去職：</p>
+            </intro>
+            <list eId="art_7__para_1__list_1">
+              <point eId="art_7__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>自行辭職、迴避或彈劾。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>違法之失職行為。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>代理</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>主任選舉委員對外代表選委會。 主任選舉委員因故無法行使職權或出缺時，其職權由副主任選舉委員代理；正副主任選舉委員均因故無法行使職權或出缺時，由其他選舉委員互選一人代理。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>委員會會議</heading>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>選委會會議，應定期召開，由主任選舉委員召集之，並為主席。 經半數選舉委員提議或主任選舉委員認有必要時，主任選舉委員得召開臨時會議，並為主席。 選委會會議之決議應由全體選舉委員過半數同意行之並公布；各選舉委員對重大爭議案件之決議，得提出協同意見書或不同意見書，併同會議決議一併公布。 選委會會議，得邀請學者、專家或與主要議題有關之本會機關派員列席，提 供諮詢、陳述事實或報告。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>應經委員會議決議事項</heading>
+          <paragraph eId="art_11__para_1">
+            <intro>
+              <p>下列事項，應經選委會會議決議：</p>
+            </intro>
+            <list eId="art_11__para_1__list_1">
+              <point eId="art_11__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>選委會對選舉、罷免、會員投票相關事項法規之制（訂）定、修正及廢止之擬議。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>各項選舉、罷免及會員投票公告事項之審議。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>違反選舉、罷免及會員投票法規之裁罰事項。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>選舉委員提案之事項。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>選務人員、監察員之免職。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>其他應由選委會議決之事項。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>附則</heading>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>學院之執行委員會設置</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>選委會為辦理選舉、罷免或會員投票業務，得於各學院或其他學術單位設執行委員會，其執行業務範圍及管理，由選委會決議之。 前項執行委員會，應置執行委員三至五人，並以一人為主任執行委員，由選舉委員兼任之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>法規命令</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>選委會內部處務之施行，另以細則定之。 本法授權訂定之各項法規命令，由選委會定之，並送學生議會備查。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>本法自公布日施行。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

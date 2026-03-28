@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/學生議會職權行使辦法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會職權行使辦法"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/學生議會職權行使辦法/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會職權行使辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/學生議會職權行使辦法/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會職權行使辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2020-12-22" type="generation" source="#tku-sa" refersTo="#109.12.22第40屆學生議會大會全文83條通過"/>
+        <eventRef eId="e2" date="2021-02-07" type="amendment" source="#tku-sa" refersTo="#110.02.07淡學本字第11002070007號函公布"/>
+        <eventRef eId="e3" date="2022-06-30" type="amendment" source="#tku-sa" refersTo="#111.06.30淡學議字第11106300037號公布"/>
+        <eventRef eId="e4" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43界學生議會大會修正通過"/>
+        <eventRef eId="e5" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本自第11306230043號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>本辦法依淡江大學學生會學生議會組織規則</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>訂定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>預備會議之召集</heading>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>除特別原因外，學生議會應於就職首日舉行預備會議。 前項會議應由學生議員自行集會，經全體學生議員過半數之出席為之，並互推臨時代理主席，進行新任正副議長選舉、確認各委員會名單、新任正副議長交接儀式等事宜。 經學生議員當選人全數同意，得於就職首日前十五日內，提前召開預備會議。學生議會秘書處，應協助前項會議進行之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>親自出席會議</heading>
+          <paragraph eId="art_3__para_1">
+            <content>
+              <p>出席會議，議員應親自為之，若因故不能出席時，應依規定辦理請假手續。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>議員不受糾彈</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>學生議會議員之懲戒，應依本會學生議會議員行為規範行之，不受糾正、糾舉及彈劾。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>會議之決議</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>學生議會會議之決議，除法規另有規定外，以出席議員參與表決過半數之同意行之；可否同數時，取決於主席。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>議案之審議</heading>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>第一讀會之程序</heading>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>第一讀會，由主席將議案宣付朗讀行之。 議案經宣讀後，得由提案人說明其要旨與大會討論後，依決議交付有關委員會審查，或不予審議，或逕付二讀。 委員會提出之議案，視為已完成一讀程序得逕付二讀。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>法律案應付法委</heading>
+          <paragraph eId="art_7__para_1">
+            <content>
+              <p>法律案，非經法規委員會審議，不得交付二讀。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>委員會審查大會交付之議案</heading>
+          <paragraph eId="art_8__para_1">
+            <content>
+              <p>各委員會審查大會交付之議案，應提出審查意見書，並附不同意見及原件。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>第二讀會之程序</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>第二讀會，應於第一讀會之下次會議行之。但由出席議員提議，出席議員人數三分之一以上連署或附議，經表決通過，得於一讀後繼續進行二讀。 第二讀會，於討論各委員會審查之議案，或經大會議決不經審查逕付二讀之議案時行之。 第二讀會應將議案朗讀、委員會審查之意見後，就審查意見或原案要旨先作廣泛討論，再依次或逐條提付討論。 依次或逐條討論，以委員會審查意見替代原案。但有出席議員三分之一以上連署或附議，應以原案討論。 廣泛討論後，如有出席議員三分之一以上連署或附議，經表決通過，得重付審查或撤銷之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>第二讀會重付審查</heading>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>第二讀會，得就議案逐條表決、分部表決。 議案在二讀會逐條討論，有一部份已經通過，其餘仍在進行中時，得由出席議員三分之一以上連署或附議，經表決通過，得全案重付審查。但重付審查以一次為限。 前項重付審查，委員會對已通過之條文，不再討論。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>議案之撤回及併案審查</heading>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>議案於完成二讀前，原提案者得經大會同意後撤回原案。議案交付審查後， 性質相同者，得為併案審查。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>第三讀會之程序</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>第三讀會，應於第二讀會之下次會議行之。但由出席議員提議，出席議員人數三分之一以上連署或附議，經表決通過，得於二讀後繼續進行三讀。 第三讀會，除發現議案內容有互相牴觸，或與本會組織章程及其他法律牴觸者外，只得為文字之修正。第三讀會，應將議案全案交付表決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>議案之議決</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>法律案、預算案及決算案，應經大會三讀會議決之。前項以外之議案應經大會二讀會議決之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>屆滿不予繼續審議之議案</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>每屆議員任期屆滿時，除預算案、決算案、請願案或另有規定外，尚未議決之議案，下屆不予繼續審議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>追認</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>依法規應經議會追認者，不經討論，即交最近一次議會大會審查，審查後逕付表決，未獲同意者，該應經追認之行為自始無效。 前項追認發生於議會公告解散後，應由新任議員於就職後依前項規定處理。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>聽取報告與質詢程序</heading>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>提出施政報告及重大事項發生時之報告與質詢之規定</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>行政部門應於議會首次定期大會提出該學年施政方針，於其後之大會提出該月之工作報告、上個月之工作成果報告及預算執行進度。 行政部門遇有重大事項發生時，執行長或有關部會首長應向議會提出報告；議會認為必要時，亦得經秘書處發函，述明報告事項，邀請行政部門或其他有關人員向議會報告。 議員就前二項報告事項得對本會相關人員提出質詢。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>行政部門備詢義務</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>學生會正、副會長、學生會秘書長、行政部門部長及其他應邀相關人員，有 應邀親自出席議會大會及所屬各委員會會議，並備質詢之義務。 前項人員因故不能出席者，應於開會前三日知會議會秘書處；相關部門首長不克出席，應由職務代理人代理，若均不克出席，應由學生會秘書長或會長 代為備詢。 前項未通知議會而又未到會備詢者，大會應不予審議，如遇不可抗力之因素者，不在此限。 前項人員因故不能出席者，應於開會前三日知會議會秘書處；相關部門首長不克出席，應由職務代理人代理，若均不克出席，應由學生會秘書長或會長代為備詢。 前項未通知議會而又未到會備詢者，大會應不予審議，如遇不可抗力之因素者，不在此限。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>質詢及答覆</heading>
+          <paragraph eId="art_18__para_1">
+            <intro>
+              <p>質詢事項不得討論。 本會相關人員應邀列席議會報告或接受質詢時，應遵守下列規定：</p>
+            </intro>
+            <list eId="art_18__para_1__list_1">
+              <point eId="art_18__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>議員質詢事項，除依法應保密者外，不得拒絕答覆，並不得反質詢。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>對議員質詢之答覆，不得超出質詢範圍。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>不得有任意搶答等妨礙議員質詢或破壞議場秩序及無禮辱罵等情事。 違反前項規定者，主席應制止之；經制止無效情節重大者，得令其離開議場。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_18__para_2">
+            <content>
+              <p>議員質詢如與會議事項無關者主席應即制止；經制止無效情節重大者得移付懲戒。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>口頭及書面答覆</heading>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>議員之質詢，被質詢人應即時以口頭答覆，但經質詢人同意或質詢時間已屆不及答覆時，應於七日內以書面答覆。 議員得提出書面質詢，由質詢人送至議會秘書處，轉交被質詢人所屬機關秘書處，被質詢人應於七日內以書面答覆，質詢事項牽涉過廣者，得延長七日一次。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>質詢次數</heading>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>議員之質詢，針對同一事項至多質詢兩次。 主席得審酌時間，確認現場議員質詢完畢時，准許議員進行補充質詢，不受前項次數限制。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>委員會之準用</heading>
+          <paragraph eId="art_21__para_1">
+            <content>
+              <p>委員會會議，經委員提議，主席同意或委員會議決，得邀請有關人員到會列席備詢。 前項備詢準用本辦法第十七到</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>規定。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>校級會議學生代表備詢</heading>
+          <paragraph eId="art_22__para_1">
+            <content>
+              <p>校級會議學生代表應於最近一次校級會議開會前及開會後向議會提出報告。 校級會議之學生代表於議會備詢，準用本辦法第十七到</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>規定。 由議長進行校級會議學生代表事務報告時，應指派一名議員代為主持大會。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>人事任命之同意權行使</heading>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>同意權行使程序</heading>
+          <paragraph eId="art_23__para_1">
+            <content>
+              <p>議會依法行使人事任命之同意權時，不經討論，交付議會大會審查，審查後以無記名投票表決，經超過出席議員二分之一之同意為通過。 人事任命，應以個別被提名人為一議案，表決時應逐一表決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>詢問及其準用</heading>
+          <paragraph eId="art_24__para_1">
+            <content>
+              <p>人事任命之提案，應於最近一次大會審查之。 前項之提案，由提名人簽署後逕自交付議會，不經連署或附議。 議會大會就被提名人之資格及是否適任之相關事項進行審查與詢問，由議會 秘書處通知被提名人與會列席說明與答詢，議會秘書長被提名人由議長通知。前項備詢準用本辦法第十六到</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>規定。 如未列席說明與答詢且未附具審查資料，大會應不予審議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>同意權行使結果之咨復</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>同意權行使之結果，由議會咨復會長，如被提名人未獲同意，會長應另提他人咨請議會同意。 議會秘書長同意案之結果，由議會咨覆議長，如被提名人未獲同意，議長應另提他人咨請議會同意。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_5">
+        <num>第五章</num>
+        <heading>覆議案之處理</heading>
+        <article eId="art_26">
+          <num>第二十六條</num>
+          <heading>覆議案之程序</heading>
+          <paragraph eId="art_26__para_1">
+            <content>
+              <p>對於移請學生議會之覆議案，應敘明理由向學生議會秘書處為之，學生議會秘書處應即通知全體學生議員並公布之。 學生議會應於學生議會秘書處收受覆議案十日內召開大會作成決議；逾期未議決者，原決議失效。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_27">
+          <num>第二十七條</num>
+          <heading>覆議案之審查</heading>
+          <paragraph eId="art_27__para_1">
+            <content>
+              <p>覆議案不經討論，即送議會大會就是否維持原決議予以審查。審查時，學生會會長及相關人員應列席說明及備詢。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_28">
+          <num>第二十八條</num>
+          <heading>覆議案之表決</heading>
+          <paragraph eId="art_28__para_1">
+            <content>
+              <p>覆議案經審查後，如經出席學生議員三分之二以上同意，維持原決議；若表決未達人數，則原決議失效。 學生議會秘書處應將表決結果公布之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_6">
+        <num>第六章</num>
+        <heading>糾正權之行使</heading>
+        <article eId="art_29">
+          <num>第二十九條</num>
+          <heading>糾正案之提出</heading>
+          <paragraph eId="art_29__para_1">
+            <content>
+              <p>議會對本會機關違法或不當之行政措施，得對相關部門提出糾正案，促其注意改善。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_30">
+          <num>第三十條</num>
+          <heading>糾正案之提案門檻</heading>
+          <paragraph eId="art_30__para_1">
+            <content>
+              <p>糾正案應經全體議員三分之一以上連署或附議向議會大會提案。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_31">
+          <num>第三十一條</num>
+          <heading>糾正案之提出程序</heading>
+          <paragraph eId="art_31__para_1">
+            <intro>
+              <p>糾正案之提案應記載下列各款事項：</p>
+            </intro>
+            <list eId="art_31__para_1__list_1">
+              <point eId="art_31__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>提案議員之姓名。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>被糾正部門及其負責人。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>糾正之事實與理由。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>供證明之證據。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>附屬文件及件數。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>當事人之簽名或蓋章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_31__para_2">
+            <content>
+              <p>糾正案未經審議前，原提案議員得補充之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_32">
+          <num>第三十二條</num>
+          <heading>糾正案之通知</heading>
+          <paragraph eId="art_32__para_1">
+            <content>
+              <p>議會秘書處接獲提案後，應即送達被糾正部門。 被糾正部門得於糾正案審議前向議會提出書面說明。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_33">
+          <num>第三十三條</num>
+          <heading>糾正案之討論程序</heading>
+          <paragraph eId="art_33__para_1">
+            <content>
+              <p>大會討論糾正案時，被糾正部門應列席說明及備詢；被糾正部門未依規定列席者，大會亦得逕行討論。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_34">
+          <num>第三十四條</num>
+          <heading>糾正案之表決</heading>
+          <paragraph eId="art_34__para_1">
+            <content>
+              <p>糾正案經大會出席議員過半數表決同意為通過。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_35">
+          <num>第三十五條</num>
+          <heading>糾正案決議之移送</heading>
+          <paragraph eId="art_35__para_1">
+            <content>
+              <p>糾正案通過後，學生議會秘書處應即將糾正案移送學生評議會，學生評議會應於五日內就其程序事項議決確認之。 學生評議會議決通過後，學生議會應即將糾正案送交被糾正部門並公布之；學生評議會認其程序有違法事由不通過者，糾正案視為未通過，學生議會不服得向學生評議會聲請行政訴訟。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_36">
+          <num>第三十六條</num>
+          <heading>糾正改善及答覆</heading>
+          <paragraph eId="art_36__para_1">
+            <content>
+              <p>被糾正部門接到糾正案後，應即為適當之改善與處置，並應於七日內回覆議會。 前項期限得由大會另行議決之。 如在最近一次大會上，仍未為適當之改善與處置或答覆會時，學生議會得提案糾舉或彈劾相關人員。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_37">
+          <num>第三十七條</num>
+          <heading>答覆書之公布</heading>
+          <paragraph eId="art_37__para_1">
+            <content>
+              <p>議會秘書處接獲回覆後，應轉交各議員並公布之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_7">
+        <num>第七章</num>
+        <heading>糾舉權之行使</heading>
+        <article eId="art_38">
+          <num>第三十八條</num>
+          <heading>糾舉案之提出</heading>
+          <paragraph eId="art_38__para_1">
+            <content>
+              <p>議會對於本會機關人員認為有違法或失職之行為，應先予停職處分時，得以書面糾舉，經全體學生議員三分之一以上連署或附議向大會提案。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_39">
+          <num>第三十九條</num>
+          <heading>糾舉案之決議</heading>
+          <paragraph eId="art_39__para_1">
+            <content>
+              <p>糾舉案經大會出席議員過半數表決同意為通過。 糾舉案通過後，學生議會秘書處應即將糾舉案移送學生評議會，學生評議會應於五日內就其程序事項議決確認之。 學生評議會議決通過後，學生議會應即將糾舉書送交至被糾舉人及其上級機 關並公布之；學生評議會認其程序有違法事由不通過者，糾舉案視為未通過，學生議會不服得向學生評議會聲請行政訴訟。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_40">
+          <num>第四十條</num>
+          <heading>糾舉案之效力</heading>
+          <paragraph eId="art_40__para_1">
+            <content>
+              <p>被糾舉人之上級機關接到糾舉書後，應先予停職處分，其認為不應處分者，應即向學生議會聲覆理由。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_41">
+          <num>第四十一條</num>
+          <heading>違反糾舉案之救濟程序</heading>
+          <paragraph eId="art_41__para_1">
+            <content>
+              <p>被糾舉人之上級主管對於糾舉案，不依前條規定處理或處理後學生議員認為不當時，得改提彈劾案。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_8">
+        <num>第八章</num>
+        <heading>彈劾權之行使</heading>
+        <article eId="art_42">
+          <num>第四十二條</num>
+          <heading>彈劾案之提出</heading>
+          <paragraph eId="art_42__para_1">
+            <content>
+              <p>議會對於違法並明顯失職致使顯不適任之本會機關人員，得提出彈劾案，使其去職。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_43">
+          <num>第四十三條</num>
+          <heading>彈劾案之提出程序</heading>
+          <paragraph eId="art_43__para_1">
+            <intro>
+              <p>彈劾案之提案應有全體議員三分之一以上連署或附議，以書面方式向議會秘書處提出。 前項提案應記載下列各款事項：</p>
+            </intro>
+            <list eId="art_43__para_1__list_1">
+              <point eId="art_43__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>提案學生議員之姓名。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>被付彈劾人之姓名、職位。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>彈劾之事實與理由。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>供證明之證據。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>附屬文件及件數。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+              <point eId="art_43__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>當事人之簽名或蓋章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_44">
+          <num>第四十四條</num>
+          <heading>彈劾案提出之移送</heading>
+          <paragraph eId="art_44__para_1">
+            <content>
+              <p>彈劾案提出後，主席應命大會於五日內成立聽證委員會並交付調查。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_45">
+          <num>第四十五條</num>
+          <heading>聽證委員會之組成</heading>
+          <paragraph eId="art_45__para_1">
+            <content>
+              <p>聽證委員會，由學生議員相互推選提案人以外之五人組成之；正副會長彈劾案之聽證委員會由學生代表議員相互推選提案人外之七人組成之。 學生議會秘書處應於聽證委員會籌組後公布其成員名單。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_46">
+          <num>第四十六條</num>
+          <heading>聽證委員會之權責</heading>
+          <paragraph eId="art_46__para_1">
+            <content>
+              <p>聽證委員會以一人為主席，負責並至少召開一次聽證會，第一次聽證會應於聽證委員會籌組後五日內召開。聽證委員會得指揮秘書處協辦聽證會。 被付彈劾人於前述各會議均應列席說明及備詢；被付彈劾人未依前項規定列席者，會議仍得逕行討論。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_47">
+          <num>第四十七條</num>
+          <heading>當事人、列席者</heading>
+          <paragraph eId="art_47__para_1">
+            <intro>
+              <p>本章所謂當事人如下：</p>
+            </intro>
+            <list eId="art_47__para_1__list_1">
+              <point eId="art_47__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>被付彈劾人。</p>
+                </content>
+              </point>
+              <point eId="art_47__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>彈劾案提案及連署人。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_47__para_2">
+            <content>
+              <p>學生會行政部們及學生議員得向聽證委員會申請列席聽證會。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_48">
+          <num>第四十八條</num>
+          <heading>聽證會公開原則</heading>
+          <paragraph eId="art_48__para_1">
+            <intro>
+              <p>聽證會，除聽證委員會另有決議外，應公開以言詞辯論為之。 有下列各款情形之一者，主席得依職權或當事人之申請，決定全部或一部不公開：</p>
+            </intro>
+            <list eId="art_48__para_1__list_1">
+              <point eId="art_48__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>公開顯然有違背公益之虞者。</p>
+                </content>
+              </point>
+              <point eId="art_48__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>公開對當事人利益有造成重大損害之虞者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_49">
+          <num>第四十九條</num>
+          <heading>主席之職權</heading>
+          <paragraph eId="art_49__para_1">
+            <intro>
+              <p>主席應本於中立公正之立場，主持聽證會。主席於聽證時，得行使下列職權：</p>
+            </intro>
+            <list eId="art_49__para_1__list_1">
+              <point eId="art_49__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>就事實問題，詢問當事人及其他列席者，或促其提出證據</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>依職權或當事人之申請，要求相關部門提出必要之文件。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>通知證人到場。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>依職權或當事人申請，通知或允許其他人列席聽證會。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>許可當事人及其他列席者之發問或發言。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>為避免延滯程序之進行，禁止當事人或其他到場之人發言；有妨礙聽證程序而情節重大者，並得命其退場。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>當事人一部或全部無故缺席者，逕行開始、延期或終結聽證。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>命當事人依序就事實辯論之；宣示終結辯論或再開辯論。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_9">
+                <num>9.</num>
+                <content>
+                  <p>認為有必要時，於聽證會結束前，決定繼續聽證之日期及場所。</p>
+                </content>
+              </point>
+              <point eId="art_49__para_1__list_1__item_10">
+                <num>10.</num>
+                <content>
+                  <p>採取其他為順利進行聽證所必要之措施。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_49__para_2">
+            <intro>
+              <p>十</p>
+            </intro>
+            <list eId="art_49__para_2__list_1">
+              <point eId="art_49__para_2__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>主席主持聽證會，必要時得由秘書、相關專業人員或其他熟諳法令之人員在場協助之。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_50">
+          <num>第五十條</num>
+          <heading>聽證之紀錄</heading>
+          <paragraph eId="art_50__para_1">
+            <content>
+              <p>聽證，應作成聽證紀錄。 前項記錄得以錄音、錄影輔助之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_51">
+          <num>第五十一條</num>
+          <heading>審查報告</heading>
+          <paragraph eId="art_51__para_1">
+            <content>
+              <p>聽證會應於召開後下次大會前完成聽證程序，並向議會大會提出審查報告。 秘書處接獲報告後應通知全體議員並公布之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_52">
+          <num>第五十二條</num>
+          <heading>聽證會後彈劾案之大會決議</heading>
+          <paragraph eId="art_52__para_1">
+            <content>
+              <p>議會應召開大會審查聽證委員會之審查報告，並經出席議員三分之二以上同意為通過。 彈劾案經大會議決提出後，學生議會秘書處應即送交學生評議會審議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_53">
+          <num>第五十三條</num>
+          <heading>彈劾書之內容</heading>
+          <paragraph eId="art_53__para_1">
+            <intro>
+              <p>彈劾案通過後，應由秘書處即刻製作彈劾書，記載下列事項：</p>
+            </intro>
+            <list eId="art_53__para_1__list_1">
+              <point eId="art_53__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>被付彈劾人之姓名、職務。</p>
+                </content>
+              </point>
+              <point eId="art_53__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>彈劾案由。</p>
+                </content>
+              </point>
+              <point eId="art_53__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>彈劾案成立之理由與相關事證。</p>
+                </content>
+              </point>
+              <point eId="art_53__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>年、月、日。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_53__para_2">
+            <content>
+              <p>前項彈劾書經議長簽署後，由秘書處公布之並移送本會各機關及被付彈劾人。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_54">
+          <num>第五十四條</num>
+          <heading>彈劾案之中斷</heading>
+          <paragraph eId="art_54__para_1">
+            <content>
+              <p>彈劾案審查期間，被付彈劾人不因卸任、學生議員任期屆滿而受影響。 但被付彈劾人於判決宣示前，自行去職、辭職，或喪失本會會員身份，彈劾案即為撤銷。 前項審查之終止，學生議會應公告之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_9">
+        <num>第九章</num>
+        <heading>入會案之審議</heading>
+        <article eId="art_55">
+          <num>第五十五條</num>
+          <heading>入會定議</heading>
+          <paragraph eId="art_55__para_1">
+            <content>
+              <p>本法所稱入會案者，係本會為加入由各校學生自治組織所組成之聯盟團體，而向其提出之加入申請。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_56">
+          <num>第五十六條</num>
+          <heading>入會案之提出</heading>
+          <paragraph eId="art_56__para_1">
+            <content>
+              <p>本會會長，應將前條之申請，以書面方式逕自送交至議會審議，並述其加入 之理由、加入後對本會所生之權利義務影響及其他必要事宜報告於議會大會。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_57">
+          <num>第五十七條</num>
+          <heading>入會案之表決</heading>
+          <paragraph eId="art_57__para_1">
+            <content>
+              <p>入會案應經大會決議通過，方對本會始生效力；未經大會決議通過者，自始無效。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_10">
+        <num>第十章</num>
+        <heading>文件調閱之處理</heading>
+        <article eId="art_58">
+          <num>第五十八條</num>
+          <heading>學生議會得調閱文件</heading>
+          <paragraph eId="art_58__para_1">
+            <content>
+              <p>學生議會經決議，得要求有關單位就特定議案涉及事項提供參考資料；於必要時，得向有關單位調閱前項議案涉及事項之文件原本。調閱之執行，由議會秘書處為之，大會或委員會並得指派各該成員中議員偕同。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_59">
+          <num>第五十九條</num>
+          <heading>受要求調閱文件機關之處理方式</heading>
+          <paragraph eId="art_59__para_1">
+            <content>
+              <p>受要求調閱文件之單位，除有正當理由得拒絕外，應於五日內提供之。 被調閱文件之單位在調閱期間，應指派專人將調閱之文件送達學生議會，以供查閱。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_60">
+          <num>第六十條</num>
+          <heading>違反調閱規定之處理</heading>
+          <paragraph eId="art_60__para_1">
+            <content>
+              <p>本會各單位或所屬人員違反本法規定，於學生議會調閱文件時拒絕、拖延或隱匿不提供者，得依法提出糾正、糾舉或彈劾。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_61">
+          <num>第六十一條</num>
+          <heading>調閱所需人員之指派</heading>
+          <paragraph eId="art_61__para_1">
+            <content>
+              <p>學生議會所調取之文件，限由秘書處、各該決議調閱之委員會或議長指派之人員親自查閱之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_62">
+          <num>第六十二條</num>
+          <heading>查閱人員之限制及應遵守事項</heading>
+          <paragraph eId="art_62__para_1">
+            <content>
+              <p>文件調閱之調閱涉保密事項者，其相關人員負有保密之義務，不得對文件內容或處理情形予以揭露。 前項之文件，得與有關單位協商指定場所進行，不將文件攜離或複製等行為。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_63">
+          <num>第六十三條</num>
+          <heading>預算執行之調查權</heading>
+          <paragraph eId="art_63__para_1">
+            <content>
+              <p>學生議員，得調查各部門各單位預算執行及其對待給付運用之情形。前項調查，得視事實需要，調閱相關資料文件或索取副本。 前項調閱應以書面為之，正本送預算執行單位，副本送議會大會秘書處及財政委員會主席。 各部門各單位，應於書面送達後五日內予以答覆，非經財政委員會決議同意者，不得以任何理由拒絕之。 非本期間之預算執行單位負責人，準用前項規定。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_11">
+        <num>第十一章</num>
+        <heading>公聽會之舉行</heading>
+        <article eId="art_64">
+          <num>第六十四條</num>
+          <heading>公聽會之舉行</heading>
+          <paragraph eId="art_64__para_1">
+            <content>
+              <p>學生議會各會議為審查議案，得舉行公聽會。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_65">
+          <num>第六十五條</num>
+          <heading>公聽會舉行之要件</heading>
+          <paragraph eId="art_65__para_1">
+            <content>
+              <p>公聽會須經會議主席同意，或會議議決後，方得舉行。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_66">
+          <num>第六十六條</num>
+          <heading>公聽會主席及邀請人員</heading>
+          <paragraph eId="art_66__para_1">
+            <content>
+              <p>公聽會由會議主席主持，並得邀相關人士表達意見。前項列席人員，應依正反意見之相當比例邀請。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_67">
+          <num>第六十七條</num>
+          <heading>公聽會之準備</heading>
+          <paragraph eId="art_67__para_1">
+            <content>
+              <p>公聽會應於開會日前五日，將開會通知及相關資料送達出席人員，並請其提供口頭或書面意見。 同一議案舉行多次公聽會時，得由公聽會主席於會中宣告下次舉行日期，不受前項五日之限制，但仍應發出通知。前二項通知應經適當之公告。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_68">
+          <num>第六十八條</num>
+          <heading>公聽會之主持</heading>
+          <paragraph eId="art_68__para_1">
+            <content>
+              <p>主席應本中立公正之立場，主持公聽會。 主席主持公聽會，必要時得由秘書、相關專業人員或其他熟諳法規之人員在場協助之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_69">
+          <num>第六十九條</num>
+          <heading>公聽會之異議程序</heading>
+          <paragraph eId="art_69__para_1">
+            <content>
+              <p>出列席人員認為主席於公聽會進行中處置不當者，得即時聲明異議。 主席認為異議有理者，應即撤銷原處置，認為無理者，應即駁回異議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_70">
+          <num>第七十條</num>
+          <heading>公聽會之紀錄</heading>
+          <paragraph eId="art_70__para_1">
+            <content>
+              <p>公聽會應作成記錄，送交公聽會出席者及全體議員。前項記錄得以錄音、錄影輔助之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_12">
+        <num>第十二章</num>
+        <heading>命令、委員會決議之審查</heading>
+        <article eId="art_71">
+          <num>第七十一條</num>
+          <heading>應提大會備查及報告</heading>
+          <paragraph eId="art_71__para_1">
+            <content>
+              <p>本會各機關訂定之命令應提大會備查。 各委員會決議應向大會報告。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_72">
+          <num>第七十二條</num>
+          <heading>命令違法之救濟程序</heading>
+          <paragraph eId="art_72__para_1">
+            <content>
+              <p>命令有違反、變更或牴觸法律之疑義，或應以法律規定事項而以命令定之者，即應交付大會審查。 前項審查，經大會議決確有前項事由者，通知原訂頒之機關更正或廢止之。 前項經通知更正或廢止之命令，原訂頒機關應於十日內更正或廢止；逾期未為更正或廢止者，該命令應即失效。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_73">
+          <num>第七十三條</num>
+          <heading>委員會決議違法之救濟程序</heading>
+          <paragraph eId="art_73__para_1">
+            <content>
+              <p>出席議員對於各委員會決議認為有違法或不當之處，得經決議重付該委員會議決；或經出席議員二分之一以上同意逕行變更之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_13">
+        <num>第十三章</num>
+        <heading>請願文書之審查</heading>
+        <article eId="art_74">
+          <num>第七十四條</num>
+          <heading>請願文書之處理方式</heading>
+          <paragraph eId="art_74__para_1">
+            <intro>
+              <p>議會收受會員請願文書，依下列規定行之。</p>
+            </intro>
+            <list eId="art_74__para_1__list_1">
+              <point eId="art_74__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>會員請願文書，應即送議會秘書處收文。</p>
+                </content>
+              </point>
+              <point eId="art_74__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>學生議會會議時，會員面遞請願文書，由會議主席代表接受，並送議會秘書處收文。</p>
+                </content>
+              </point>
+              <point eId="art_74__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>會員向學生議會集體請願，面遞請願文書有所陳述時，由議長或議長指定之人員接見其代表。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_75">
+          <num>第七十五條</num>
+          <heading>請願文書之處理程序</heading>
+          <paragraph eId="art_75__para_1">
+            <intro>
+              <p>請願文書，應含下列事項：</p>
+            </intro>
+            <list eId="art_75__para_1__list_1">
+              <point eId="art_75__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>請願人之姓名、聯絡方式；請願人為團體時，其團體之名稱、聯絡方式及其代表人。</p>
+                </content>
+              </point>
+              <point eId="art_75__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>請願所立基之事實、理由及其訴求。</p>
+                </content>
+              </point>
+              <point eId="art_75__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>請願日期。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_75__para_2">
+            <content>
+              <p>若有不符或文字意思表示無法瞭解者，通知其補正。 請願文書之內容明顯非屬議會職權事項，秘書處應逕行移送權責機關處理；其屬單純之行政事項，得不交審查而逕行函覆，或委託相關委員會函覆；如顯有牴觸本會組織章程、干預評議會審判或依法應提請評議會審理者，由秘書處通知請願人。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_76">
+          <num>第七十六條</num>
+          <heading>請願文書之審查</heading>
+          <paragraph eId="art_76__para_1">
+            <intro>
+              <p>請願文書之審查，應依下列規定：</p>
+            </intro>
+            <list eId="art_76__para_1__list_1">
+              <point eId="art_76__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>請願文書應否成為議案，由秘書處逕送有關委員會審查，審查時得邀請願人列席說明，說明後應即退席。</p>
+                </content>
+              </point>
+              <point eId="art_76__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>請願文書在審查未有結果前，請願人得撤回之。</p>
+                </content>
+              </point>
+              <point eId="art_76__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>審查結果，認應成為議案者，秘書處應列入大會討論事項。</p>
+                </content>
+              </point>
+              <point eId="art_76__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>審查結果，認不應成為議案者，應敘明理由及處理經過後送秘書處及大會存查，並由秘書處通知請願人。但有出席議員三分之一以上之連署或附議，經表決通過者，仍得成為議案。</p>
+                </content>
+              </point>
+              <point eId="art_76__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>審查結果，認為請願事項非學生議會所應受理者，應敘明理由，送由秘書處通知請願人。</p>
+                </content>
+              </point>
+              <point eId="art_76__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>請願文書，除有特殊情形者外，應於二個月內審查之。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_14">
+        <num>第十四章</num>
+        <heading>附則</heading>
+        <article eId="art_77">
+          <num>第七十七條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_77__para_1">
+            <content>
+              <p>本法自公布日施行。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

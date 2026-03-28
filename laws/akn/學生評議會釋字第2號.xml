@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號/main"/>
+          <FRBRuri value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號/zho@2024-01-01"/>
+          <FRBRuri value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號/zho@2024-01-01.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/淡江大學學生會學生評議會釋字第2號/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body/>
+  </act>
+</akomaNtoso>

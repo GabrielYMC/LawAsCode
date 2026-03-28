@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/學生議會議員行為規範辦法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會議員行為規範辦法"/>
+          <FRBRdate date="2022-06-30" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/學生議會議員行為規範辦法/zho@2022-06-30"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會議員行為規範辦法/zho@2022-06-30"/>
+          <FRBRdate date="2022-06-30" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/學生議會議員行為規範辦法/zho@2022-06-30.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會議員行為規範辦法/zho@2022-06-30"/>
+          <FRBRdate date="2022-06-30" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2015-07-01" type="generation" source="#tku-sa" refersTo="#104.07.01第34屆學生議會大會通過全文25條"/>
+        <eventRef eId="e2" date="2017-05-14" type="amendment" source="#tku-sa" refersTo="#106.05.14第22屆學生會會長公布"/>
+        <eventRef eId="e3" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30第38屆學生議會大會修正通過"/>
+        <eventRef eId="e4" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30淡學本字第10806300025號函公布"/>
+        <eventRef eId="e5" date="2020-12-22" type="amendment" source="#tku-sa" refersTo="#109.12.22第40屆學生議會大會修正通過1、3、7、1"/>
+        <eventRef eId="e6" date="2021-02-07" type="amendment" source="#tku-sa" refersTo="#110.02.07淡學本字第11002070007號函公布"/>
+        <eventRef eId="e7" date="2022-06-30" type="amendment" source="#tku-sa" refersTo="#111.06.30淡學議字第11106300037號公布"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法目的與依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>為規範學生議員行為，樹立本會良好形象，依淡江大學學生會學生議會組織規則</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>規定訂定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>適用範圍</heading>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>學生議會正副議長及學生議員均受本法之規範。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>職權行使</heading>
+          <paragraph eId="art_3__para_1">
+            <content>
+              <p>學生議會紀律委員會（下稱紀律委員會）審議本法所規定之懲戒案。紀律委員會審議懲戒案件時，被移付懲戒之學生議員得提出說明。紀律委員會委員對關係其個人本身之懲戒案，應自行迴避。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>規範</heading>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>決議遵守義務</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>學生議員對學生議會大會通過之決議，應切實遵守。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>行為之公正良善</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>學生議員對外從事各項活動，應公正議事，善盡職責，不損及公共利益，不尋求私利。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>議場秩序之維護義務</heading>
+          <paragraph eId="art_6__para_1">
+            <intro>
+              <p>學生議員應共同維護議場及開會秩序，不得有下列行為：</p>
+            </intro>
+            <list eId="art_6__para_1__list_1">
+              <point eId="art_6__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>不遵守主席依規定所作之裁示。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>辱罵或涉及人身攻擊之言詞。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>發言超過時間，不聽主席制止。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>未得主席同意，插言干擾他人發言而不聽制止。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>破壞公物或暴力之肢體動作。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>對依法行使職權議事人員做不當之要求或干擾。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>其他違反議員應共同遵守之規章。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_2">
+            <content>
+              <p>違反前項各款情事之一者，主席得交紀律委員會議處。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>義務與權益</heading>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>主席之中立</heading>
+          <paragraph eId="art_7__para_1">
+            <content>
+              <p>大會及各委員會之會議主席主持會議時應嚴守中立。 會議主席未守中立時，經出席學生議員之提議，會議議決通過後，交付紀律委員會審議。 前項之提案，會議主席應迴避。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>議事行為之保障</heading>
+          <paragraph eId="art_8__para_1">
+            <content>
+              <p>學生議員在會議內依法行使職權所為之議事行為，於會外不負責任。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>利益迴避</heading>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>利益之定義</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>利益係指學生議員行使職權時可能觸及關係單位之金錢、條文或其他相關業務時為之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>利益迴避</heading>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>學生議員行使職權所牽涉或辦理之事務為前條所規定之利益者，應行迴避。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>兼任之禁止</heading>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>學生議員不得兼任除議會或校級會議學生代表以外之本會職務。 學生議員違反本條規定兼任者，應視為於兼任兼職時起同時辭卸學生議員職務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>利益輸送之禁止</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>學生議員行使職權時，不得為私人承諾，或給予特定個人或團體任何差別對待。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>迴避義務</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>學生議員行使職權時遇有迴避情事之議案，應迴避審議及表決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>不應行迴避之處理</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>學生議員應行迴避而不迴避時，經紀律委員會調查，學生議員應行迴避而未迴避者，得依法懲處。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>當事人說明義務</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>紀律委員會處理有關利益迴避情事時，應要求該學生議員列席說明。學生議員亦應主動向紀律委員會提出說明。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_5">
+        <num>第五章</num>
+        <heading>出席</heading>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>立法要旨</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>學生議員為監督學生會之直接單位，為提升學生議員監督、質詢品質與避免流會而訂定本章。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>出席會議之義務</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>學生議員有出席學生議會會議之義務。 學生議員於單一會期內達兩次未請假亦未出席大會或委員會會議者，議長或該委員會召集委員應提請紀律委員會宣布停權。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>校級會議學生代表義務</heading>
+          <paragraph eId="art_18__para_1">
+            <content>
+              <p>學生議員有出席各校級會議之義務，秘書處應記錄其出缺席情形。 學生議員未能出席校級會議者，應附其理由向議長說明，議長應為必要之處理。 出席校級會議之學生議員應將會議資料存放於秘書處，並於下次學生議會大會中報告該會議概要。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>請假程序</heading>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>學生議員若不克出席會議，應以書面方式向秘書處請假並說明事由。 請假之時限，大會為會議前三日，委員會會議為會議前一日；逾時請假者應向秘書處敘明理由，秘書處應即將其理由送交紀律委員會議決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>請假限制</heading>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>單一會期內不得請假超過三次，超過者由紀律委員會宣布停權。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>請假逾時認定</heading>
+          <paragraph eId="art_21__para_1">
+            <content>
+              <p>會議有逾時請假者，紀律委員會應於該會議結束後一周內召開會議審議其情事。 紀律委員會應要求當事人列席說明，必要時得命其出具適當證明。經紀律委員會議決通過者，視為請假成功；未通過者視為未請假。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_6">
+        <num>第六章</num>
+        <heading>紀律</heading>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>處分方式</heading>
+          <paragraph eId="art_22__para_1">
+            <intro>
+              <p>紀律委員會審議學生議員懲戒案，得按情節輕重為下列之處分：</p>
+            </intro>
+            <list eId="art_22__para_1__list_1">
+              <point eId="art_22__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>口頭道歉。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>書面道歉。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>停權。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>停止出席大會或委員會至多二次。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>情節重大者，取消其懲戒案發生之委員會委員資格。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_22__para_2">
+            <content>
+              <p>前項第一款、第二款以外之處分，紀律委員會應檢附審查意見書，並經大會出席議員二分之一以上同意後應即生效。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>停權處分</heading>
+          <paragraph eId="art_23__para_1">
+            <intro>
+              <p>受停權處分者，由秘書處以書面通知該學生議員並公布之。前項停權期間之計算及效力範圍如下：</p>
+            </intro>
+            <list eId="art_23__para_1__list_1">
+              <point eId="art_23__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>停權期間自大會議決當日起算，為期一個月，不扣除休會及停會期間。</p>
+                </content>
+              </point>
+              <point eId="art_23__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>停權期間禁止進入學生議會各會議議場。</p>
+                </content>
+              </point>
+              <point eId="art_23__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>停權期間不得行使學生</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_23__para_2">
+            <content>
+              <p>議員之職權。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>永久停權處分</heading>
+          <paragraph eId="art_24__para_1">
+            <content>
+              <p>學生議員於任期中停權次數累計達兩次者，第三次之停權效力應即於該受懲戒人剩餘任期止。 前項之停權，受懲戒人應即停止行使該屆期之學生議員職權。受本條處分者，秘書處應以書面通知該學生議員，並公布之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_7">
+        <num>第七章</num>
+        <heading>附則</heading>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>本法自公布日施行。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

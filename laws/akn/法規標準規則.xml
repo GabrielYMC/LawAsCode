@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/法規標準規則/main"/>
+          <FRBRuri value="/akn/tw-tku/act/法規標準規則"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/法規標準規則/zho@2024-01-01"/>
+          <FRBRuri value="/akn/tw-tku/act/法規標準規則/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/法規標準規則/zho@2024-01-01.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/法規標準規則/zho@2024-01-01"/>
+          <FRBRdate date="2024-01-01" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>法律之名稱</heading>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>法律得定名為章程、規則、辦法、通則或條例。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>命令之名稱</heading>
+          <paragraph eId="art_3__para_1">
+            <content>
+              <p>各單位發布之命令，得依其性質，稱要點、細則、簡則、準則或標準。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>法規之定名</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>法規名稱前應冠淡江大學學生會。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>法規之制定</heading>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>法律之制定</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>法律應經學生議會通過，由會長公布。 會長應於收到十四日內公布，未公布者，由學生議會秘書處公布後生效。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>應以法律規定之事項</heading>
+          <paragraph eId="art_6__para_1">
+            <intro>
+              <p>下列事項應以法律定之：</p>
+            </intro>
+            <list eId="art_6__para_1__list_1">
+              <point eId="art_6__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>學生會組織章程或法律有明文規定，應以法律定之者。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>關於會員之權利、義務者。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>關於各部門之組織者。</p>
+                </content>
+              </point>
+              <point eId="art_6__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>其他重要事項之應以法律定之者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_6__para_2">
+            <content>
+              <p>應以法律規定之事項，不得以命令定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>授權明確性原則</heading>
+          <paragraph eId="art_7__para_1">
+            <content>
+              <p>法律授權以命令補充規定時，授權之目的、內容及範圍應具體明確，行政部 門據以發布命令時，僅得就執行法律有關之細節及方法為規定，不得逾越授權之限度。 前項之命令，不得牴觸授權法律之規定，並不得對會員權利增加法律所無之限制。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>命令之發布</heading>
+          <paragraph eId="art_8__para_1">
+            <content>
+              <p>各部門依其法定職權或基於法律授權訂定之命令，應視其性質分別下達或發布，並即送學生議會備查。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>條文之書寫方式</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>法律條文應分條書寫，冠以「第某條」字樣，並得分為項、款、目。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>條文之書寫方式</heading>
+          <paragraph eId="art_10__para_1">
+            <intro>
+              <p>項不冠數字，低二字書寫，款冠以</p>
+            </intro>
+            <list eId="art_10__para_1__list_1">
+              <point eId="art_10__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p/>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>三等數字，目冠以</p>
+                </content>
+                <list eId="art_10__para_1__list_1__item_2__list_1">
+                  <point eId="art_10__para_1__list_1__item_2__list_1__item_1">
+                    <num>(1)</num>
+                    <content>
+                      <p>、</p>
+                    </content>
+                  </point>
+                  <point eId="art_10__para_1__list_1__item_2__list_1__item_2">
+                    <num>(2)</num>
+                    <content>
+                      <p>、（三）之數字，並應加具標點符號。</p>
+                    </content>
+                  </point>
+                </list>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>法規章節之劃分</heading>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>法律內容繁複或條文較多者，得劃分為第某編、第某章、第某節、第某款、第某目。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>修正之方式與位階</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>修正法律廢止少數條文時，得保留所廢條文之條次，並於其下加括弧，註明 「刪除」二字。 修正法規增加少數條文時，得將增加之條文，列在適當條文之後，冠以前條「之一」、「之二」等條次。 廢止或增加編、章、節、款、目時，準用前二項之規定。 法律不得牴觸學生會組織章程，命令不得牴觸本會組織章程或法律，下級單位訂定之命令不得牴觸上級單位之命令。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>法規之施行</heading>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>施行日期之規定</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>法規應規定施行日期，或授權以法規規定施行日期。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>生效日期</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>法規明定自公布或發布日施行者，自公布或發布之日後第三天起發生效力。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>生效日期</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>法規特定有施行日期，或以命令特定施行日期者，自該特定日起發生效力。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>施行區域</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>法規有施行區域或授權以命令規定施行區域者，於該特定區域內發生效力。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>法規之適用</heading>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>特別法優於普通法</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>法規對其他法規所規定之同一事項而為特別之規定者，應優先適用之。其他法規修正後，乃應優先適用。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>法規修正後之適用或準用</heading>
+          <paragraph eId="art_18__para_1">
+            <content>
+              <p>法規對某一事項規定適用或準用其他法規之規定者，其他法規修正後，適用或準用修正後之法規。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>從新從優原則</heading>
+          <paragraph eId="art_19__para_1">
+            <content>
+              <p>各單位受理會員聲請許可案件適用法規時，除依其性質應適用行為時之法規外，如在處理程序終結前，據以准許之法規有變更者，適用新法規。但舊法規有利於當事人而新法規未廢除或禁止所聲請之事項者，適用舊法規。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>法規適用之停止或恢復</heading>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>法規因重大事故，一時不能適用者，得暫停適用其一部或全部。法規停止或恢復適用之程序，準用本法關於法規廢止或制定之規定。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_5">
+        <num>第五章</num>
+        <heading>法規之修正與廢止</heading>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>修正之情形及程序</heading>
+          <paragraph eId="art_21__para_1">
+            <intro>
+              <p>法規有下列情形之一者，修正之：</p>
+            </intro>
+            <list eId="art_21__para_1__list_1">
+              <point eId="art_21__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>基於政策或事實之需要，有增減內容之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>因有關法規之修正或廢止而應配合修正者。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>規定之主管單位或執行單位已裁併或變更者。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>同一事項規定於二以上之法規，無分別存在之必要者。法規修正之程序，準用本法有關法規制定之規定。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>廢止情形</heading>
+          <paragraph eId="art_22__para_1">
+            <intro>
+              <p>法規有下列情形之一者，廢止之：</p>
+            </intro>
+            <list eId="art_22__para_1__list_1">
+              <point eId="art_22__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>單位裁併，有關法規無保留之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>法規規定之事項已執行完畢，或因情勢變遷，無繼續施行之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>法規因有關法規之廢止或修正致失其依據，而無單獨施行之必要者。</p>
+                </content>
+              </point>
+              <point eId="art_22__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>同一事項已定有新法規，並公布或發布施行者。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>廢止程序及失效日期</heading>
+          <paragraph eId="art_23__para_1">
+            <content>
+              <p>法律之廢止，應經學生議會通過，學生會會長公布。命令之廢止，由原發布單位為之。 依前二項程序廢止之法規，得僅公布或發布其名稱及施行日期，並自公布或發布之日起，算至第三天起失效。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>當然廢止</heading>
+          <paragraph eId="art_24__para_1">
+            <content>
+              <p>法規定有施行期限者，期滿當然廢止，不適用前條之規定。但應由主管單位公告之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>延長施行之程序</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>法律定有施行期限，主管單位認為需要延長者，應於期限屆滿十四日前送學生議會審議。但其期限在學生議會休會期內屆滿者，應於學生議會休會十四日前送學生議會。 命令定有施行期限，主管單位認為有需要延長者，應於期限屆滿前十四日，由原發布單位發布之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_26">
+          <num>第二十六條</num>
+          <heading>機關裁併後命令之廢止或延長</heading>
+          <paragraph eId="art_26__para_1">
+            <content>
+              <p>命令之原發布單位或主管單位已裁併者，其廢止或延長，由承受其業務之單位或其上級單位為之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_6">
+        <num>第六章</num>
+        <heading>附則</heading>
+        <article eId="art_27">
+          <num>第二十七條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_27__para_1">
+            <content>
+              <p>本規則自公布日施行。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="charter">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/組織章程/main"/>
+          <FRBRuri value="/akn/tw-tku/act/組織章程"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/組織章程/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/組織章程/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/組織章程/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/組織章程/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2015-01-09" type="generation" source="#tku-sa" refersTo="#104.01.09103學年度第1學期第2次學生事務會議通過"/>
+        <eventRef eId="e2" date="2015-03-27" type="amendment" source="#tku-sa" refersTo="#104.03.27處秘法字第1040000008號函公布"/>
+        <eventRef eId="e3" date="2016-10-12" type="amendment" source="#tku-sa" refersTo="#105.10.12105學年度第1學期學生事務會議修正通過"/>
+        <eventRef eId="e4" date="2016-11-14" type="amendment" source="#tku-sa" refersTo="#105.11.14處祕法字第1050000031號函公佈"/>
+        <eventRef eId="e5" date="2018-08-31" type="amendment" source="#tku-sa" refersTo="#107.08.31第38屆學生議會大會修正通過"/>
+        <eventRef eId="e6" date="2018-09-24" type="repeal" source="#tku-sa" refersTo="#107.09.24學生評議會第002號釋字廢止第54條部分條"/>
+        <eventRef eId="e7" date="2018-09-24" type="amendment" source="#tku-sa" refersTo="#107.09.24淡學本字第10709260012號函公布"/>
+        <eventRef eId="e8" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30第38屆學生議會大會修正通過"/>
+        <eventRef eId="e9" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30淡學本字第10806300025號函公布"/>
+        <eventRef eId="e10" date="2020-12-22" type="amendment" source="#tku-sa" refersTo="#109.12.22第40屆學生議會大會修正通過第二十五條至第"/>
+        <eventRef eId="e11" date="2021-02-07" type="amendment" source="#tku-sa" refersTo="#110.02.07淡學本字第11002070007號函公布"/>
+        <eventRef eId="e12" date="2021-06-15" type="amendment" source="#tku-sa" refersTo="#110.06.15第40屆學生議會大會全文修正通過"/>
+        <eventRef eId="e13" date="2021-06-30" type="amendment" source="#tku-sa" refersTo="#110.06.30淡學本字第11006300019號函公布"/>
+        <eventRef eId="e14" date="2022-12-05" type="amendment" source="#tku-sa" refersTo="#111.12.05第42屆學生議會大會修正通過"/>
+        <eventRef eId="e15" date="2023-12-01" type="amendment" source="#tku-sa" refersTo="#112.12.01淡學議字第11212010025號函公布"/>
+        <eventRef eId="e16" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43屆學生議會大會修正通過"/>
+        <eventRef eId="e17" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本字第11306230045號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>淡江大學學生會（下稱本會）為淡江大學（下稱本校）學生之最高自治組織。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>宗旨</heading>
+          <paragraph eId="art_2__para_1">
+            <intro>
+              <p>本會之宗旨如下：</p>
+            </intro>
+            <list eId="art_2__para_1__list_1">
+              <point eId="art_2__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>提升本校學生校園生活品質及學生權益。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>處盡本校學生公共事務參與能力。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>以學生立場參與社會議題，改善臺灣社會。</p>
+                </content>
+              </point>
+              <point eId="art_2__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>擔任淡江大學校方與學生間的溝通管道，彰顯學生的意見。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_2__para_2">
+            <content>
+              <p>本會綜理學生事務，並得協調處理全校學生社團之共同事務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>三權體制</heading>
+          <paragraph eId="art_3__para_1">
+            <content>
+              <p>本會會務依行政、立法、司法三權體制分行之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>校務參與</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>本會應派由選舉產生之學生代表參與本校各項會議。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>會員</heading>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>會員資格</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>凡具有本校學籍之學生，皆為本會會員。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>平等原則</heading>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>會員在學生自治事務範疇內一律平等。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>會員權利義務</heading>
+          <paragraph eId="art_7__para_1">
+            <intro>
+              <p>本會會員於本會會務內享有下列各權利：</p>
+            </intro>
+            <list eId="art_7__para_1__list_1">
+              <point eId="art_7__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>有選舉、罷免之權。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>有創制、複決之權。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>有加入本會所屬組織之權。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>有參加本會舉辦活動之權。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>其他學生應享之權利。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_7__para_2">
+            <content>
+              <p>會員有繳納會費與遵守本會法規及本會決議之義務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>會員權利限制</heading>
+          <paragraph eId="art_8__para_1">
+            <content>
+              <p>會員之權利限制，應以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>行政</heading>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>正副會長之產生與任期</heading>
+          <paragraph eId="art_9__para_1">
+            <content>
+              <p>本會置會長一名，副會長一名，任期一年，由每年七月一日，至翌年六月三十日止，不得連任，其選舉罷免事宜另以法律定之。 依法出任代理會長、代理副會長，則不受前項連任次數之限制。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>會長職權</heading>
+          <paragraph eId="art_10__para_1">
+            <intro>
+              <p>會長為最高行政首長，並對外代表本會，其職權如下:</p>
+            </intro>
+            <list eId="art_10__para_1__list_1">
+              <point eId="art_10__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>依法任免本會會務人員。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>依法公布本會法律。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>領導行政中心。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>認法律案、預算案、決算案有窒礙難行時，得於收受法案後十日內移請學生議會覆議，覆議案經出席學生議員三分之二以上同意，維持原決議。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>其他法律賦予之職權。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>繼任代理</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>會長出缺時或因故無法行使職權時，由副會長代理；正副會長均出缺時，由學生議會議長代理會長，如原任會長至任期屆滿尚存超過六個月，應辦理補選一次，選舉仍未果時，則議長持續代理會長至任期屆滿止，代理期間議長暫停行使學生議員職權。 副會長出缺時，會長應就其缺額提名，並經學生議會同意後任命之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>會長職權</heading>
+          <paragraph eId="art_10__para_1">
+            <intro>
+              <p>會長為最高行政首長，並對外代表本會，其職權如下:</p>
+            </intro>
+            <list eId="art_10__para_1__list_1">
+              <point eId="art_10__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>依法任免本會會務人員。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>依法公布本會法律。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>領導各行政中心。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>認法律案、預算案、決算案有窒礙難行時，得於收受法案後十日內移請學生議會覆議，覆議案經出席學生議員三分之二以上同意，維持 原決議。</p>
+                </content>
+              </point>
+              <point eId="art_10__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>其他法律賦予之職權。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>副會長職權</heading>
+          <paragraph eId="art_11__para_1">
+            <content>
+              <p>副會長承會長之命，協助處理會務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>繼任代理</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>會長出缺時或因故無法行使職權時，由副會長代理；正副會長均出缺時，由學生議會議長代理會長，如距原任會長任期屆滿之日六個月以上，應辦理補選一次，選舉仍未果時則議長持續代理會長至任期屆滿止，代理期間議長暫停行使學生議員職權，代理學生會之組成，另以法律定之。 副會長出缺時，會長應就其缺額提名，並經學生議會同意後任命之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>行政中心</heading>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>行政中心為本會最高行政機關，並由會長直接領導。 行政中心設各行政部門，襄助會長執行本會會務，行政中心之組織，另以法律定之。 會長得經學生議會同意，於行政中心另設立政策部門，其存續期間至該會長任期屆滿止，其組織另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>報告義務及議會問政權</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>會長及其各行政部門首長，應向學生議會提出施政方針及施政報告，並尊重議會之質詢權利。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>校級會議學生代表協調會</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>本會設校級會議學生代表協調會，由各校級會議學生代表組成，以會長為主席，其組織另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>立法</heading>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>學生議會</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>本會設學生議會（下稱議會），為本會最高立法及監察機關。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>議員之產生</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>議會由會員選舉之議員組成，代表會員行使職權，其選舉罷免事宜，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>議員之任期、法定席次</heading>
+          <paragraph eId="art_18__para_1">
+            <content>
+              <p>議員之任期為一年，由每年七月一日，至翌年六月三十日止，連選得連任，由各選舉區會員選舉產生。 議員席次應達九席始得成立議會，未足席次時應辦理補選。 議會成立運作後，議員因故辭職或因故無法行使職權之人數達該屆全體議員三分之一時，且至任期屆滿尚存超過四個月，仍應辦理補選，但以一次為限。 本條補選之議員任期適用本條第一項之規定。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>職權</heading>
+          <paragraph eId="art_19__para_1">
+            <intro>
+              <p>議會職權如下：</p>
+            </intro>
+            <list eId="art_19__para_1__list_1">
+              <point eId="art_19__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>制定、修改本會章程及相關法規。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>本會入會案議決權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>依法對人事任命案行使同意權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>審查、稽核本會之預、決算案。但不得為增加預算之決議。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>行使議案議決權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>對本會失職人員行使彈劾權、糾舉權，對本會之事務行使糾正權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>有要求會長率行政部門首長列席備詢之權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>行政命令審查權。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_9">
+                <num>9.</num>
+                <content>
+                  <p>其他依法規賦予之職權。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>正副議長之產生</heading>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>議會置正副議長各一人，由議員互選之，任期一年。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>正副議長職權</heading>
+          <paragraph eId="art_21__para_1">
+            <intro>
+              <p>議長對外代表議會，並行使以下職權</p>
+            </intro>
+            <list eId="art_21__para_1__list_1">
+              <point eId="art_21__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>依法召集並主持會議。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>代表本會應邀出列席學校會議。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>統籌議會行政事務。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_21__para_2">
+            <content>
+              <p>副議長應協助議長處理議會行政事務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>代理</heading>
+          <paragraph eId="art_22__para_1">
+            <content>
+              <p>議長不克執行其職權時，由副議長代理之。 議長、副議長均不克執行其職權時，由議員互選一人代行之。 議長出缺時，由副議長代理至任期屆滿止，議長、副議長均出缺時，議員應即集會選舉正副議長。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>秘書處之產生及職權</heading>
+          <paragraph eId="art_23__para_1">
+            <content>
+              <p>議會設秘書處，協助處理議會行政事務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>會期與會議類型</heading>
+          <paragraph eId="art_24__para_1">
+            <content>
+              <p>議會會期共兩次，第一次自八月至十二月底，第二次自二月至六月底，必要時經各議員協商得提前開始或延長。 會期期間，學生議會應每月召開一次定期大會，並應於每一次會期之第一次定期大會議決該會期之每月大會時間，每會期第一次定期大會開議日，由各議員協商。 經會長諮請議長或由全體議員三分之一以上連署時，議長應召集臨時大會。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>會議效力</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>議會開會之法定人數須達全體議員二分之一以上出席始得開議。前項法定人數，應扣除依法請假及停權之人數。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_26">
+          <num>第二十六條</num>
+          <heading>決議案公布施行</heading>
+          <paragraph eId="art_26__para_1">
+            <content>
+              <p>議會大會決議，秘書處應公布之，議案涉及本會相關部門者，秘書處於議決後應即將議案移送相關部門。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_27">
+          <num>第二十七條</num>
+          <heading>委員會</heading>
+          <paragraph eId="art_27__para_1">
+            <content>
+              <p>議會得依需要設立各委員會，各委員會得邀請會長、各部部長與本校相關同學列席備詢。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_28">
+          <num>第二十八條</num>
+          <heading>身分禁止</heading>
+          <paragraph eId="art_28__para_1">
+            <content>
+              <p>議員不得兼任除議會或校級會議學生代表以外之本會職務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_29">
+          <num>第二十九條</num>
+          <heading>組織法</heading>
+          <paragraph eId="art_29__para_1">
+            <content>
+              <p>議會之組織，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_5">
+        <num>第五章</num>
+        <heading>司法</heading>
+        <article eId="art_30">
+          <num>第三十條</num>
+          <heading>學生評議會</heading>
+          <paragraph eId="art_30__para_1">
+            <content>
+              <p>本會設學生評議會（下稱評議會），為本會最高司法機關。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_31">
+          <num>第三十一條</num>
+          <heading>職權</heading>
+          <paragraph eId="art_31__para_1">
+            <intro>
+              <p>評議會職權如下：</p>
+            </intro>
+            <list eId="art_31__para_1__list_1">
+              <point eId="art_31__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>章程之解釋。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>本會違反自治行為之訴訟。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>彈劾案之審議。</p>
+                </content>
+              </point>
+              <point eId="art_31__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>其他法規賦予之職權。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_32">
+          <num>第三十二條</num>
+          <heading>評議委員資格</heading>
+          <paragraph eId="art_32__para_1">
+            <intro>
+              <p>評議會置評議委員七名，由會長提名，經議會大會同意後任命之。評議委員應具下列資格之一：</p>
+            </intro>
+            <list eId="art_32__para_1__list_1">
+              <point eId="art_32__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>曾任本會正副會長，擔任完整任期者未受彈劾者。</p>
+                </content>
+              </point>
+              <point eId="art_32__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>曾任本會學生議員，擔任完整任期者未受停權處分者。</p>
+                </content>
+              </point>
+              <point eId="art_32__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>曾任本校社團正副負責人，擔任完整任期者。</p>
+                </content>
+              </point>
+              <point eId="art_32__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>為本校公共行政學系大學部三年級以上之在學會員，或畢業於本校公共行政學系或他校法學院之在學會員。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_32__para_2">
+            <content>
+              <p>具前項任一款資格之評議委員，不得超過全體評議委員人數三分一。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_33">
+          <num>第三十三條</num>
+          <heading>司法獨立</heading>
+          <paragraph eId="art_33__para_1">
+            <content>
+              <p>評議會及評議委員應依章程獨立行使職權，不受任何指示及干涉。評議委員不得兼任本會其他任何職務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_34">
+          <num>第三十四條</num>
+          <heading>評議會主席之產生、任期、代理</heading>
+          <paragraph eId="art_34__para_1">
+            <content>
+              <p>評議會置主席一名，由評議委員互選產生之，任期至其喪失評議委員身分止。 評議會主席因故無法行使其職權時，由評議委員互選一人代行之。評議會主席出缺時，評議委員應即集會互選新任評議會主席。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_35">
+          <num>第三十五條</num>
+          <heading>任期</heading>
+          <paragraph eId="art_35__para_1">
+            <content>
+              <p>評議委員任期至學籍消失止，非因辭職或彈劾不得使其去職。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_36">
+          <num>第三十六條</num>
+          <heading>秘書處</heading>
+          <paragraph eId="art_36__para_1">
+            <content>
+              <p>評議會設秘書處，置秘書長一名，由評議會主席任命，協助處理評議會行政事務。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_37">
+          <num>第三十七條</num>
+          <heading>組織法</heading>
+          <paragraph eId="art_37__para_1">
+            <content>
+              <p>評議會之組織，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_6">
+        <num>第六章</num>
+        <heading>選舉、罷免、創制、複決</heading>
+        <article eId="art_38">
+          <num>第三十八條</num>
+          <heading>選舉罷免制度</heading>
+          <paragraph eId="art_38__para_1">
+            <content>
+              <p>本章程之選舉罷免，應以普通、平等、直接、無記名投票之方法為之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_39">
+          <num>第三十九條</num>
+          <heading>選舉之辦理</heading>
+          <paragraph eId="art_39__para_1">
+            <content>
+              <p>本會會務人員之選舉，應於其任期屆滿三個月前開始辦理。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_40">
+          <num>第四十條</num>
+          <heading>罷免</heading>
+          <paragraph eId="art_40__para_1">
+            <content>
+              <p>被選舉人得由原選舉區依法罷免之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_41">
+          <num>第四十一條</num>
+          <heading>選舉、罷免、創制、複決權之行使</heading>
+          <paragraph eId="art_41__para_1">
+            <content>
+              <p>本會選舉、罷免、創制、複決權之行使，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_7">
+        <num>第七章</num>
+        <heading>財務</heading>
+        <article eId="art_42">
+          <num>第四十二條</num>
+          <heading>經費來源</heading>
+          <paragraph eId="art_42__para_1">
+            <intro>
+              <p>本會經費來源如下：</p>
+            </intro>
+            <list eId="art_42__para_1__list_1">
+              <point eId="art_42__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>會員繳納之會費。</p>
+                </content>
+              </point>
+              <point eId="art_42__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>學校補助之經費。</p>
+                </content>
+              </point>
+              <point eId="art_42__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>接受捐助。</p>
+                </content>
+              </point>
+              <point eId="art_42__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>存款孳息。</p>
+                </content>
+              </point>
+              <point eId="art_42__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>其他（如器材租押金、獎金、保證金之沒收等）。本會所獲取之費用，皆須存入本會之帳戶。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_43">
+          <num>第四十三條</num>
+          <heading>會費收取</heading>
+          <paragraph eId="art_43__para_1">
+            <content>
+              <p>本會會費收費年限以一學年為單位，會費之收取及退費程序，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_44">
+          <num>第四十四條</num>
+          <heading>存簿之保管</heading>
+          <paragraph eId="art_44__para_1">
+            <content>
+              <p>本會所有帳戶之存簿，應存放於議會秘書處，其相關財務存提之程序，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_45">
+          <num>第四十五條</num>
+          <heading>會費數額</heading>
+          <paragraph eId="art_45__para_1">
+            <content>
+              <p>會費收取數額由行政中心依據學年度之會務計畫、財政情形、會員人數進行調整。 若該學年度之會費收取數額相較於前一學年度有所調整，應經議會決議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_46">
+          <num>第四十六條</num>
+          <heading>預、決算</heading>
+          <paragraph eId="art_46__para_1">
+            <content>
+              <p>本會應公布其預、決算，相關程序，另以法律定之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_8">
+        <num>第八章</num>
+        <heading>附則</heading>
+        <article eId="art_47">
+          <num>第四十七條</num>
+          <heading>位階</heading>
+          <paragraph eId="art_47__para_1">
+            <content>
+              <p>本章程為本會最高單行法規，本會法規與本章程牴觸者無效。 學生議會之決議，與本規程牴觸者，不生效力。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_48">
+          <num>第四十八條</num>
+          <heading>章程之修正</heading>
+          <paragraph eId="art_48__para_1">
+            <content>
+              <p>章程之修改，應有全體學生議員五分之一連署，經出席議員三分之二同意，始得修改之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_49">
+          <num>第四十九條</num>
+          <heading>施行程序</heading>
+          <paragraph eId="art_49__para_1">
+            <content>
+              <p>本章程經議會通過，由會長於十日內公布，逾期未公布者，由學生議會秘書處公布，自公布日實施；修正時亦同。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

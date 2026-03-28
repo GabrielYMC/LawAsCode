@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/學生議會會議旁聽細則/main"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會會議旁聽細則"/>
+          <FRBRdate date="2021-02-25" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/學生議會會議旁聽細則/zho@2021-02-25"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會會議旁聽細則/zho@2021-02-25"/>
+          <FRBRdate date="2021-02-25" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/學生議會會議旁聽細則/zho@2021-02-25.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/學生議會會議旁聽細則/zho@2021-02-25"/>
+          <FRBRdate date="2021-02-25" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2021-02-25" type="generation" source="#tku-sa" refersTo="#110.02.25第四十屆學生議會大會告報施行"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>立法依據</heading>
+        <paragraph eId="art_1__para_1">
+          <content>
+            <p>本細則依淡江大學學生會（下稱本會）學生議會組織規則</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_25">
+        <num>第二十五條</num>
+        <paragraph eId="art_25__para_1">
+          <content>
+            <p>訂定之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>登記</heading>
+        <paragraph eId="art_2__para_1">
+          <content>
+            <p>旁聽者應持其學生證，親自於學生議會（下稱議會）會議向議會秘書處登記簽到，方得進入議場旁聽。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>登記之申請</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>為保持會議議事秩序，登記之申請應以書面方式於會議開會三天前向議會秘書處為之，並應記載申請者之姓名、學號、系級、連絡電話、電子信箱，及其欲旁聽之會議與日期。 旁聽之核准，議會秘書處應於會議三日前為之，逾時未核准之情況視為核准。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>禁止有影響議事之虞之物品</heading>
+        <paragraph eId="art_4__para_1">
+          <content>
+            <p>旁聽者不得攜帶武器、危險物品或其他有影響議事之虞之物品進入議場，違 反者不得入場旁聽；已入場者，會議主席或議會秘書處應勸導其離場，經勸導仍未離場時，會議主席得裁示會議延會或休會。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>禁止妨礙議場秩序或議事進行之行為</heading>
+        <paragraph eId="art_5__para_1">
+          <content>
+            <p>旁聽者於會議進行中或中途休息時，均應保持肅靜，不得鼓掌、喧鬧或其他妨礙議場秩序或議事進行之行為。 違反前項者，會議主席或議會秘書處應勸導其離場，經勸導仍未離場時，會議主席得裁示會議延會或休會。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>旁聽之禁止</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>旁聽者，不得於會議中要求發言。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>認證</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>於單學期旁聽學生議會三次會議者，得向學生議會秘書處申請核發本校活動參與之社團認證。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_8__para_1">
+          <content>
+            <p>本細則由議會議長提報議會大會後施行。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

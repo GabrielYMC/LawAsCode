@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/公文字號條例/main"/>
+          <FRBRuri value="/akn/tw-tku/act/公文字號條例"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/公文字號條例/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/公文字號條例/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/公文字號條例/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/公文字號條例/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2018-03-26" type="generation" source="#tku-sa" refersTo="#107.03.26第37屆學生議會大會通過全文8條"/>
+        <eventRef eId="e2" date="2018-04-16" type="amendment" source="#tku-sa" refersTo="#107.04.16淡學議字第10704160052號公布"/>
+        <eventRef eId="e3" date="2022-06-30" type="amendment" source="#tku-sa" refersTo="#111.06.30淡學議字第11106300037號公布"/>
+        <eventRef eId="e4" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43屆學生議會大會修正通過"/>
+        <eventRef eId="e5" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本字第11306230040號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>適用範圍</heading>
+        <paragraph eId="art_1__para_1">
+          <content>
+            <p>稱公文者，謂本會處理公務之各項文書，本會發文依本條例施行，否則為無 效文件。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>公文種類</heading>
+        <paragraph eId="art_2__para_1">
+          <intro>
+            <p>本條例之公文類別如下：</p>
+          </intro>
+          <list eId="art_2__para_1__list_1">
+            <point eId="art_2__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>令：公布法律、人事任免、人事獎懲之使用。</p>
+              </content>
+            </point>
+            <point eId="art_2__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>函：各機關間公文往復，或學生與機關間之申請與答覆時 用之。</p>
+              </content>
+            </point>
+            <point eId="art_2__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>報告：對學校單位間之陳請或報告時用之。</p>
+              </content>
+            </point>
+            <point eId="art_2__para_1__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>公告：各機關對學生有所宣布時用之。</p>
+              </content>
+            </point>
+            <point eId="art_2__para_1__list_1__item_5">
+              <num>5.</num>
+              <content>
+                <p>其他公文依用途及需求，另行定義。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_2__para_2">
+          <content>
+            <p>前項各款之公文，必要時得以電傳文件、傳真或其他電子文件行之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>公文發送及收受單位</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>本會公文發送及收受，由各機關秘書處為之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>公文字號</heading>
+        <paragraph eId="art_4__para_1">
+          <intro>
+            <p>本會會長及各機關單位發文字號如下：</p>
+          </intro>
+          <list eId="art_4__para_1__list_1">
+            <point eId="art_4__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>學生會會長為淡學會字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>學生會行政中心為淡學行字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>選舉委員會為淡學選字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>學生會財政部為淡學財字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_5">
+              <num>5.</num>
+              <content>
+                <p>學生會總務部為淡學總字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_6">
+              <num>6.</num>
+              <content>
+                <p>學生會學生權益及福利部為淡學權字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_7">
+              <num>7.</num>
+              <content>
+                <p>學生會公關部為淡學公字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_8">
+              <num>8.</num>
+              <content>
+                <p>學生會活動部為淡學活字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_9">
+              <num>9.</num>
+              <content>
+                <p>學生議會為淡學議字。</p>
+              </content>
+            </point>
+            <point eId="art_4__para_1__list_1__item_10">
+              <num>10.</num>
+              <content>
+                <p>學生議會程序委員會為淡學議程字。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_4__para_2">
+          <intro>
+            <p>十</p>
+          </intro>
+          <list eId="art_4__para_2__list_1">
+            <point eId="art_4__para_2__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>學生議會紀律委員會為淡學議紀字。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_4__para_3">
+          <intro>
+            <p>十</p>
+          </intro>
+          <list eId="art_4__para_3__list_1">
+            <point eId="art_4__para_3__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>學生議會法規委員會為淡學議法字。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_4__para_4">
+          <intro>
+            <p>十</p>
+          </intro>
+          <list eId="art_4__para_4__list_1">
+            <point eId="art_4__para_4__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>學生會會財政委員會為淡學議財字。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_4__para_5">
+          <intro>
+            <p>十</p>
+          </intro>
+          <list eId="art_4__para_5__list_1">
+            <point eId="art_4__para_5__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>學生評議會為淡學評字</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>日期及順序之記載</heading>
+        <paragraph eId="art_5__para_1">
+          <content>
+            <p>本會發文字號之後加十一位阿拉伯數字，發文編號前七位數為檔案發出之民 國年月日，後四位數字為該機關秘書處發文之順序。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>公文之蓋印或簽署</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>公文之令及公告，應蓋用該機關之印信及機關或單位首長之署名；其餘之公 文，應有其機關或單位首長之署名。 會議之通知及記錄，得不具蓋印或首長之簽署。 機關單位首長不能視事或出缺時，由其職務代理人行之，附署其首長職銜，並加註代理二字。 以本會名義之聲明，應具學生會會章、學生議會及學生評議會之關防印信，及會長之署名。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>未列單位之字號</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>本會政策部門、學生議會臨時委員會及其他未列於本條例之單位，應由該機 關另定字號，並由該機關秘書處通報學生議會備查。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_8__para_1">
+          <content>
+            <p>本條例自公布後施行。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

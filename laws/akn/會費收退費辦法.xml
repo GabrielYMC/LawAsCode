@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/會費收退費辦法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/會費收退費辦法"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/會費收退費辦法/zho@2024-06-23"/>
+          <FRBRuri value="/akn/tw-tku/act/會費收退費辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/會費收退費辦法/zho@2024-06-23.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/會費收退費辦法/zho@2024-06-23"/>
+          <FRBRdate date="2024-06-23" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2014-12-18" type="generation" source="#tku-sa" refersTo="#103.12.18第33屆學生議會大會通過全文14條"/>
+        <eventRef eId="e2" date="2015-01-09" type="amendment" source="#tku-sa" refersTo="#104.01.09103學年度第1學期第2次學生事務會議通過"/>
+        <eventRef eId="e3" date="2015-04-13" type="amendment" source="#tku-sa" refersTo="#104.04.13處學法字第1040000002號函公布"/>
+        <eventRef eId="e4" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30第38屆學生議會大會修正通過"/>
+        <eventRef eId="e5" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30淡學本字第10806300025號函公布"/>
+        <eventRef eId="e6" date="2021-06-15" type="amendment" source="#tku-sa" refersTo="#110.06.15第40屆學生議會大會全文修正通過"/>
+        <eventRef eId="e7" date="2021-06-30" type="amendment" source="#tku-sa" refersTo="#110.06.30淡學本字第11006300019號函公布"/>
+        <eventRef eId="e8" date="2024-06-17" type="amendment" source="#tku-sa" refersTo="#113.06.17第43屆學生議會大會修正通過"/>
+        <eventRef eId="e9" date="2024-06-23" type="amendment" source="#tku-sa" refersTo="#113.06.23淡學本字第11306230044號函公告"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <article eId="art_1">
+        <num>第一條</num>
+        <heading>立法依據</heading>
+        <paragraph eId="art_1__para_1">
+          <intro>
+            <p>本法依淡江大學學生會（下稱本會）組織章程第 四 十</p>
+          </intro>
+          <list eId="art_1__para_1__list_1">
+            <point eId="art_1__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>四十五條制訂之。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_2">
+        <num>第二條</num>
+        <heading>會費收取原則</heading>
+        <paragraph eId="art_2__para_1">
+          <content>
+            <p>會費每學年收取一次，由本會財政部（下稱財政部）執行之，並得委託由本校代收。 本校代收之學生會費，會長應於開學日起一個月內向校方提出轉帳申請，匯撥至本會專用帳戶。 本法所稱之學年、學期、開始日、開學日、學雜費繳費截止日、退費基準日、寒假、暑假，均以本校年度行事曆為準。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_3">
+        <num>第三條</num>
+        <heading>會費數額</heading>
+        <paragraph eId="art_3__para_1">
+          <content>
+            <p>會費收取數額由行政中心依據學年度之會務計畫、財政情形、會員人數進行調整。 會費收取額之調整，應由每屆會長或會長當選人提請學生議會決議之，使得收取；若未調整，當屆會長得依上屆會費額數逕行收取之。 前項會長當選人之提請，由當屆會長代為提出不得拒絕，會長當選人並應於學生議會大會備詢。 學生議會應於會費案提出後十五日內議決，並只得為贊成或否決之決議，逾期未議決，視為通過。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_4">
+        <num>第四條</num>
+        <heading>告知義務</heading>
+        <paragraph eId="art_4__para_1">
+          <intro>
+            <p>本會會費之收取程序，由財政部以細則規定之。 會費收取時，應告知以下事項：</p>
+          </intro>
+          <list eId="art_4__para_1__list_1">
+            <point eId="art_4__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>依大學法</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_33">
+        <num>第三十三條</num>
+        <paragraph eId="art_33__para_1">
+          <content>
+            <p>第三項，凡本校學生皆為本會當然會員；另依本會組織章程</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <paragraph eId="art_7__para_1">
+          <intro>
+            <p>，凡本會會員有繳納會費之義務。</p>
+          </intro>
+          <list eId="art_7__para_1__list_1">
+            <point eId="art_7__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>大學法施行細則</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_26">
+        <num>第二十六條</num>
+        <paragraph eId="art_26__para_1">
+          <intro>
+            <p>有關收取會費之規定。</p>
+          </intro>
+          <list eId="art_26__para_1__list_1">
+            <point eId="art_26__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>本會組織章程</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>及本法</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_10">
+        <num>第十條</num>
+        <paragraph eId="art_10__para_1">
+          <content>
+            <p>所生之會員權利影響說明。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_5">
+        <num>第五條</num>
+        <heading>收退費運作</heading>
+        <paragraph eId="art_5__para_1">
+          <content>
+            <p>除本校代收會費者外，財政部應於會員繳納會費後核發收據。 若有依本法退費者，財政部應予退費者證明。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_6">
+        <num>第六條</num>
+        <heading>會費收取</heading>
+        <paragraph eId="art_6__para_1">
+          <content>
+            <p>會費收取後應列入財政部期入，併入本會年度經費運用。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_7">
+        <num>第七條</num>
+        <heading>退費執行</heading>
+        <paragraph eId="art_7__para_1">
+          <content>
+            <p>退費應列入財政部期出，並檢附相關資料供學生議會審議。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <heading>免繳會費資格</heading>
+        <paragraph eId="art_8__para_1">
+          <intro>
+            <p>為減輕本校特殊境遇學生負擔，下列各款學生得免繳會費：</p>
+          </intro>
+          <list eId="art_8__para_1__list_1">
+            <point eId="art_8__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>中、低收入戶。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_1__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>身心障礙學生、身心障礙人士之子女。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_1__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>非自願失業勞工子女。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_1__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>其他境遇特殊並有證明者。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_8__para_2">
+          <content>
+            <p>前項各款已繳會費者，得持相關證明文件向財政部申請全額退費。符合本條資格之會員，視同已繳費之會員。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_9">
+        <num>第九條</num>
+        <heading>退費程序</heading>
+        <paragraph eId="art_9__para_1">
+          <content>
+            <p>各學期休學、退學並已繳納會費者，得持相關證明文件向財政部提出退費申請。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_10">
+        <num>第十條</num>
+        <heading>收退費公告</heading>
+        <paragraph eId="art_10__para_1">
+          <content>
+            <p>財政部應於每學年第一學期開學日三週內公告收費、退費相關事宜。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_11">
+        <num>第十一條</num>
+        <heading>退費申請</heading>
+        <paragraph eId="art_11__para_1">
+          <content>
+            <p>退費以書面為之，退費程序由財政部以細則訂定之，並送學生議會備查。 退費之申請書表及其他檢附之文件，由財政部訂之。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_12">
+        <num>第十二條</num>
+        <heading>退費行政期限</heading>
+        <paragraph eId="art_12__para_1">
+          <content>
+            <p>除寒假、暑假期間及期中考、期末考當週與前一週外，財政部應於申請日次日起一個月內完成退費。 寒假、暑假期間之退費申請，財政部應於次一開學日起一個月內完成退費。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_13">
+        <num>第十三條</num>
+        <heading>退費額度</heading>
+        <paragraph eId="art_13__para_1">
+          <content>
+            <p>會費之退費額度，除本辦法</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_8">
+        <num>第八條</num>
+        <paragraph eId="art_8__para_1">
+          <intro>
+            <p>外，以申請日為基準，依下列各款處理之：</p>
+          </intro>
+          <list eId="art_8__para_1__list_1">
+            <point eId="art_8__para_1__list_1__item_1">
+              <num>1.</num>
+              <content>
+                <p>第一學期開始日至該學期學雜費繳費截止日（含當日）申請者，全額</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_8__para_2">
+          <intro>
+            <p>退費。</p>
+          </intro>
+          <list eId="art_8__para_2__list_1">
+            <point eId="art_8__para_2__list_1__item_2">
+              <num>2.</num>
+              <content>
+                <p>第一學期繳費截止日次日起至該學期退費三分之一基準日（含當日）申請者，退費六分之五。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_2__list_1__item_3">
+              <num>3.</num>
+              <content>
+                <p>第一學期退費三分之一基準日次日起至該學期退費三分之二基準日</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+        <paragraph eId="art_8__para_3">
+          <intro>
+            <p>（含當日）申請者，退費三分之二。</p>
+          </intro>
+          <list eId="art_8__para_3__list_1">
+            <point eId="art_8__para_3__list_1__item_4">
+              <num>4.</num>
+              <content>
+                <p>第一學期退費三分之二基準日次日起至第二學期開學日之前一日申請者，退費半額。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_3__list_1__item_5">
+              <num>5.</num>
+              <content>
+                <p>第二學期開學日至該學期退費三分之一基準日（含當日）申請者，退費三分之一。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_3__list_1__item_6">
+              <num>6.</num>
+              <content>
+                <p>第二學期退費三分之一基準日次日起至該學期退費三分之二基準日（含當日）申請者，退費六分之一。</p>
+              </content>
+            </point>
+            <point eId="art_8__para_3__list_1__item_7">
+              <num>7.</num>
+              <content>
+                <p>第二學期退費三分之二基準日次日起至學年結束日（含當日）申請者，不予退費。</p>
+              </content>
+            </point>
+          </list>
+        </paragraph>
+      </article>
+      <article eId="art_14">
+        <num>第十四條</num>
+        <heading>優惠措施</heading>
+        <paragraph eId="art_14__para_1">
+          <content>
+            <p>本會若舉辦對外收費之活動，得對繳費會員提供收費金額減免或其他優惠之措施。 前項之金額減免額數或優惠措施，由該活動承辦機關另定之。 本會不得對未繳會費者課以第一項原活動要求以外之負擔。</p>
+          </content>
+        </paragraph>
+      </article>
+      <article eId="art_15">
+        <num>第十五條</num>
+        <heading>施行日</heading>
+        <paragraph eId="art_15__para_1">
+          <content>
+            <p>本法自公布日施行。</p>
+          </content>
+        </paragraph>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

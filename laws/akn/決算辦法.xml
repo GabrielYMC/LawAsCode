@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#tku-sa">
+        <FRBRWork>
+          <FRBRthis value="/akn/tw-tku/act/決算辦法/main"/>
+          <FRBRuri value="/akn/tw-tku/act/決算辦法"/>
+          <FRBRdate date="2021-06-30" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRcountry value="tw"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/tw-tku/act/決算辦法/zho@2021-06-30"/>
+          <FRBRuri value="/akn/tw-tku/act/決算辦法/zho@2021-06-30"/>
+          <FRBRdate date="2021-06-30" name="publication"/>
+          <FRBRauthor href="#tku-sa"/>
+          <FRBRlanguage language="zho"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/tw-tku/act/決算辦法/zho@2021-06-30.xml"/>
+          <FRBRuri value="/akn/tw-tku/act/決算辦法/zho@2021-06-30"/>
+          <FRBRdate date="2021-06-30" name="transform"/>
+          <FRBRauthor href="#tku-sa"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#tku-sa">
+        <eventRef eId="e1" date="2014-12-18" type="generation" source="#tku-sa" refersTo="#103.12.18第33屆學生議會大會通過全文22條"/>
+        <eventRef eId="e2" date="2015-01-09" type="amendment" source="#tku-sa" refersTo="#104.01.09103學年度第1學期第2次學生事務會議通過"/>
+        <eventRef eId="e3" date="2015-04-13" type="amendment" source="#tku-sa" refersTo="#104.04.13處學法字第1040000004號函公布"/>
+        <eventRef eId="e4" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30第38屆學生議會大會修正通過"/>
+        <eventRef eId="e5" date="2019-06-30" type="amendment" source="#tku-sa" refersTo="#108.06.30淡學本字第10806300025號函公布"/>
+        <eventRef eId="e6" date="2021-06-15" type="amendment" source="#tku-sa" refersTo="#110.06.15第40屆學生議會大會全文修正通過"/>
+        <eventRef eId="e7" date="2021-06-30" type="amendment" source="#tku-sa" refersTo="#110.06.30淡學本字第11006300019號函公布"/>
+      </lifecycle>
+      <references source="#tku-sa">
+        <TLCOrganization eId="tku-sa" href="/akn/tw-tku/ontology/organization/tku-sa" showAs="Tamkang University Student Association"/>
+      </references>
+    </meta>
+    <body>
+      <chapter eId="chp_1">
+        <num>第一章</num>
+        <heading>總則</heading>
+        <article eId="art_1">
+          <num>第一條</num>
+          <heading>立法依據</heading>
+          <paragraph eId="art_1__para_1">
+            <content>
+              <p>本法依淡江大學學生會（下稱本會）組織章程</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_46">
+          <num>第四十六條</num>
+          <paragraph eId="art_46__para_1">
+            <content>
+              <p>制定之。本會決算之編列、審議及公告，依本法之規定。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_2">
+          <num>第二條</num>
+          <heading>決算辦理期次</heading>
+          <paragraph eId="art_2__para_1">
+            <content>
+              <p>本會之決算，應每一預算執行期間辦理一次。 結束期間內有關出納整理事務期限，本法未規定者，由財政部訂之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_3">
+          <num>第三條</num>
+          <heading>決算種類</heading>
+          <paragraph eId="art_3__para_1">
+            <intro>
+              <p>本會之決算，應按法定預算分下列各種：</p>
+            </intro>
+            <list eId="art_3__para_1__list_1">
+              <point eId="art_3__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>總決算。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>機關決算。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>單位決算。</p>
+                </content>
+              </point>
+              <point eId="art_3__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>單位決算之分決算。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_4">
+          <num>第四條</num>
+          <heading>決算書編造格式</heading>
+          <paragraph eId="art_4__para_1">
+            <content>
+              <p>決算所用之單位名稱、會計科目和種類以及其記載之金額，依法定預算書所列為準。 如其收入為該預算執行期間內預算所未列者，應按收入性質另定科目，依其種類列入其決算。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_5">
+          <num>第五條</num>
+          <heading>應編入決算之事項</heading>
+          <paragraph eId="art_5__para_1">
+            <content>
+              <p>本會每一預算執行期間期入與期出及前一預算執行期結餘，均應編入其決算；執行完畢之特別預算及前一預算執行期間報告未及編入之決算收支，應另行 補編附入。 當預算執行期間學生議會為未來承諾之授權金額執行結果，應於決算內附註 表達；因契約可能造成未來的預算執行期間內之支出者，應於決算書中列表說明。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <heading>應收款及應付款之編列規定</heading>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>決算所列各項應收帳款、應付帳款，於其年度終了屆滿三年，而仍未能實現者，可免予編列。但依其他法律規定必須繼續收付而實現者，應於各該實現之預算期間內，準用適當預算科目辦理之。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_2">
+        <num>第二章</num>
+        <heading>決算之編造</heading>
+        <article eId="art_7">
+          <num>第七條</num>
+          <heading>決算編造程序</heading>
+          <paragraph eId="art_7__para_1">
+            <intro>
+              <p>本會各機關之決算依下列程序編造後，送財政部彙整：</p>
+            </intro>
+            <list eId="art_7__para_1__list_1">
+              <point eId="art_7__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>行政部門之決算由及各行政部門首長擬具，呈會長核可。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>學生議會之決算由學生議會秘書長擬具，呈議長核可。</p>
+                </content>
+              </point>
+              <point eId="art_7__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>學生評議會之決算由學生評議會秘書長擬具，呈學生評議會主席核可。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_7__para_2">
+            <content>
+              <p>行政部門辦理各活動之決算，應於該預算執行結束後十日內，由該活動負責人擬具後送財政部。 各單位決算之編送程序及期限，由財政部訂之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_8">
+          <num>第八條</num>
+          <heading>決算應列事項</heading>
+          <paragraph eId="art_8__para_1">
+            <content>
+              <p>決算之編造，應按其事實編製執行預算之各表，並附有關之出納證明、會計報告、執行預算經過以及執行工作計畫之說明。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_9">
+          <num>第九條</num>
+          <heading>決算編造之會計原則</heading>
+          <paragraph eId="art_9__para_1">
+            <intro>
+              <p>決算之編送、查核及綜合編造，應依下列之會計原則：</p>
+            </intro>
+            <list eId="art_9__para_1__list_1">
+              <point eId="art_9__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>各種會計報告，應依實際發生狀況充分表達。</p>
+                </content>
+              </point>
+              <point eId="art_9__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>各種會計報告表，應根據會計紀錄編造，並使其便於核對。</p>
+                </content>
+              </point>
+              <point eId="art_9__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>各種會計科目，依各種會計報告所應列入之事項訂之，其名稱應顯示其事項之性質；如其科目性質與預算、決算科目相同 者，其名稱應與預算、決算科目之名稱一致。</p>
+                </content>
+              </point>
+              <point eId="art_9__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>為便利綜合彙編及比較計算，對於事項相同或性質相同之會計科目，應使其一致。</p>
+                </content>
+              </point>
+              <point eId="art_9__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>各種會計科目之訂定，應兼用收付實現事項及權責發生事項，為編定之對象。</p>
+                </content>
+              </point>
+              <point eId="art_9__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>各種會計科目，應依所列入之報告，並各按其科目之性質，分類編號。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_10">
+          <num>第十條</num>
+          <heading>總決算書之編製</heading>
+          <paragraph eId="art_10__para_1">
+            <content>
+              <p>財政部部長應就本會各決算，參照其出納與會計紀錄，加具說明，編造總決算書。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_11">
+          <num>第十一條</num>
+          <heading>參考資料</heading>
+          <paragraph eId="art_11__para_1">
+            <intro>
+              <p>本會總決算書應附下列之參考資料文件：</p>
+            </intro>
+            <list eId="art_11__para_1__list_1">
+              <point eId="art_11__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>各單位之預計計劃書及實際計劃書。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>各活動執行評估報告書。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>該預算執行期間本會資產清單。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>本會上一屆同一預算執行期之法定決算書。</p>
+                </content>
+              </point>
+              <point eId="art_11__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>本會專用帳戶之存簿影本。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_12">
+          <num>第十二條</num>
+          <heading>總決算書之提出</heading>
+          <paragraph eId="art_12__para_1">
+            <content>
+              <p>總決算書由財政部編造後，應至遲於該學期期末考前一周首日前送交學生議會審議。 學生議會得延長前項期限至多三天，以一次為限。 若因任一單位拖延，導致學生議會無法審議，學生議會得不通過該單位之決算。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <heading>單位變更處理</heading>
+          <paragraph eId="art_13__para_1">
+            <intro>
+              <p>本會所屬單位在預算執行期內有變更者，其決算依下列規定辦理：</p>
+            </intro>
+            <list eId="art_13__para_1__list_1">
+              <point eId="art_13__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>單位改組者，由改組後之單位一併編造。</p>
+                </content>
+              </point>
+              <point eId="art_13__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>單位名稱更改者，由更改後之單位編造。</p>
+                </content>
+              </point>
+              <point eId="art_13__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>數單位合併為一單位者，在未合併前各該單位之決算，由合併後之單位代為分別編造。</p>
+                </content>
+              </point>
+              <point eId="art_13__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>單位之改組、變更致使預算分立者，其未分立期間之決算，由該單位編造。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_13__para_2">
+            <content>
+              <p>本會所屬單位在預算執行期終了前結束者，該單位應於結束之日辦理決算，並仍應以之編入其預算執行期之決算。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_14">
+          <num>第十四條</num>
+          <heading>特別預算之決算編列</heading>
+          <paragraph eId="art_14__para_1">
+            <content>
+              <p>預算跨越兩個預算執行期間以上者，其決算歸入執行期滿之預算執行期間內。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_3">
+        <num>第三章</num>
+        <heading>決算之審議</heading>
+        <article eId="art_15">
+          <num>第十五條</num>
+          <heading>一讀程序略過</heading>
+          <paragraph eId="art_15__para_1">
+            <content>
+              <p>學生議會秘書處收受總決算書後，應即送財政委員會審議，視為完成一讀程 序，不受本會學生議會職權行使辦法</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_6">
+          <num>第六條</num>
+          <paragraph eId="art_6__para_1">
+            <content>
+              <p>及</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_13">
+          <num>第十三條</num>
+          <paragraph eId="art_13__para_1">
+            <content>
+              <p>之限制，但於二讀前 經全體學生議員三分之一連署，仍應經一讀審議通過，決算案方得繼續審議。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_16">
+          <num>第十六條</num>
+          <heading>財政委員會之審核</heading>
+          <paragraph eId="art_16__para_1">
+            <content>
+              <p>財政委員會應於收受決算案後十五日內審核完畢後，將決算案提出於學生議會大會。 財政委員會審核決算時，應逐科審議，如有修正之主張，應立即通知原編造決算之單位限期答辯；逾期不答辯者，視為同意修正；於必要時，亦得通知相關人員列席備詢或提供資料。 財政委員會審查時，最高得以款為單位進行表決；決算經審定後，以副本分送本會會長與財政部部長及各機關。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_17">
+          <num>第十七條</num>
+          <heading>大會之審議</heading>
+          <paragraph eId="art_17__para_1">
+            <content>
+              <p>學生議會對總決算書中有關預算之執行、計劃之實施和效能及特別事件之審核等事項，予以審議。 學生議會審議時，會長、財政部部長應答覆質詢，並提供資料；對原編造決算之單位，於必要時，亦得通知其列席備詢或提供資料。決算案於二讀時，最高得以款為單位進行表決。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_18">
+          <num>第十八條</num>
+          <heading>決算審計原則</heading>
+          <paragraph eId="art_18__para_1">
+            <intro>
+              <p>各決算之審核，應注意下列情事及效能：</p>
+            </intro>
+            <list eId="art_18__para_1__list_1">
+              <point eId="art_18__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>總決算書之正確性及可靠性。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>各單位有無違法失職或不當之情事。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>各單位預算數之超過或剩餘；超支之部分不得動用會費補貼，應轉為本會自籌款，由預算執行單位自籌賠償。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>計畫已成與未成之程度。</p>
+                </content>
+              </point>
+              <point eId="art_18__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>其他有關決算之事項。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_19">
+          <num>第十九條</num>
+          <heading>總決算審計原則</heading>
+          <paragraph eId="art_19__para_1">
+            <intro>
+              <p>總決算之審核，應依下列情事於總決算書中加具說明：</p>
+            </intro>
+            <list eId="art_19__para_1__list_1">
+              <point eId="art_19__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>是否依本會預算辦法之規定辦理保留經費。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>期出、期入是否與預算相符，如不相符，其不符之原因。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>期入、期出是否與本會工作計畫相適應。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>期出加下期保留數後與期入是否平衡，如不平衡，其不平衡之原因。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_5">
+                <num>5.</num>
+                <content>
+                  <p>各單位有無違法失職或不當之情事。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_6">
+                <num>6.</num>
+                <content>
+                  <p>各單位預算數超過或剩餘之分析。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_7">
+                <num>7.</num>
+                <content>
+                  <p>計畫已成與未成之程度及其效能，及其改善措施。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_8">
+                <num>8.</num>
+                <content>
+                  <p>各方所擬關於期入、期出應行改善之意見。</p>
+                </content>
+              </point>
+              <point eId="art_19__para_1__list_1__item_9">
+                <num>9.</num>
+                <content>
+                  <p>其他有關決算之事項。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <heading>決算案之審議期限</heading>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>學生議會應於二讀後十日內完成其審議，如未完成，視同審議通過。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <heading>決算案公布</heading>
+          <paragraph eId="art_21__para_1">
+            <intro>
+              <p>決算案經學生議會審議通過後五日內由會長公布後生效；會長未於五日內公布時，由學生議會秘書處公布後生效。 財政部應製成法定決算書，分送本會各機關，及本會校方輔導單位備查。本會應以下列方式，適當公布法定決算書：</p>
+            </intro>
+            <list eId="art_21__para_1__list_1">
+              <point eId="art_21__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>張貼於本會行政及立法機關辦公室門口。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>公布於本會行政及立法機關之官方網站。</p>
+                </content>
+              </point>
+              <point eId="art_21__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>本會之公告欄。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+        </article>
+        <article eId="art_22">
+          <num>第二十二條</num>
+          <heading>審查延長期限</heading>
+          <paragraph eId="art_22__para_1">
+            <content>
+              <p>本法</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_20">
+          <num>第二十條</num>
+          <paragraph eId="art_20__para_1">
+            <content>
+              <p>、</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_21">
+          <num>第二十一條</num>
+          <paragraph eId="art_21__para_1">
+            <content>
+              <p>關於決算審查之期限，經學生議會大會決議，得延長至多七日，但以一次為限。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_23">
+          <num>第二十三條</num>
+          <heading>決算案應行事項</heading>
+          <paragraph eId="art_23__para_1">
+            <content>
+              <p>決算案經三讀通過後，本會各機關尚未收得之收入、未使用之經 費、已發生而尚未清償之債務或契約責任部分、以及結餘，其處理程序適用本會預算辦法</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_42">
+          <num>第四十二條</num>
+          <paragraph eId="art_42__para_1">
+            <content>
+              <p>之規定。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_24">
+          <num>第二十四條</num>
+          <heading>應處分事項之處理</heading>
+          <paragraph eId="art_24__para_1">
+            <intro>
+              <p>學生議會對總決算書應行處分之事項為下列之處理：</p>
+            </intro>
+            <list eId="art_24__para_1__list_1">
+              <point eId="art_24__para_1__list_1__item_1">
+                <num>1.</num>
+                <content>
+                  <p>與審定完成的法定決算書之差額，由會長及財政部部長執行追討之。</p>
+                </content>
+              </point>
+              <point eId="art_24__para_1__list_1__item_2">
+                <num>2.</num>
+                <content>
+                  <p>應賠償之收支尚未執行者，由會長及財政部部長執行之。</p>
+                </content>
+              </point>
+              <point eId="art_24__para_1__list_1__item_3">
+                <num>3.</num>
+                <content>
+                  <p>應懲處之事件，依法提出彈劾案、糾舉案以及糾正案，必要時交由本校校方處理或循法律途徑解決。</p>
+                </content>
+              </point>
+              <point eId="art_24__para_1__list_1__item_4">
+                <num>4.</num>
+                <content>
+                  <p>未盡職責或效能過低應予告誡者，提出糾正案。</p>
+                </content>
+              </point>
+            </list>
+          </paragraph>
+          <paragraph eId="art_24__para_2">
+            <content>
+              <p>會長得於執行前項第一款與第二款時，準用本會預算辦法</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_49">
+          <num>第四十九條</num>
+          <paragraph eId="art_49__para_1">
+            <content>
+              <p>之相關規定。 決算案經三讀通過後五日內，本會各機關應將剩餘之經費存回本會帳戶。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_4">
+        <num>第四章</num>
+        <heading>附則</heading>
+        <article eId="art_25">
+          <num>第二十五條</num>
+          <heading>財政部出納按月報告</heading>
+          <paragraph eId="art_25__para_1">
+            <content>
+              <p>財政部應按月將實際出納情形及其結餘報告於學生議會大會並對帳之，並應製作報告分送會長及財政委員會。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_26">
+          <num>第二十六條</num>
+          <heading>決算書表格式</heading>
+          <paragraph eId="art_26__para_1">
+            <content>
+              <p>決算書表格式應具單位名稱、計畫名稱、法定預算科目、法定預算金額、決算金額、財政委員會審定數額、附註說明及分析圖表等欄位。 除前項所訂決算書應有欄位以外，決算書表的格式由財政部訂之。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_27">
+          <num>第二十七條</num>
+          <heading>法定決算書之查存</heading>
+          <paragraph eId="art_27__para_1">
+            <content>
+              <p>財政部應將上一預算執行期之會計憑證正本及決算書表彙整刊印成紙本法定決算書，正本存放於學生議會，副本存放於財政部。 前項法定決算書之存放，應至少留存三年。</p>
+            </content>
+          </paragraph>
+        </article>
+        <article eId="art_28">
+          <num>第二十八條</num>
+          <heading>施行日</heading>
+          <paragraph eId="art_28__para_1">
+            <content>
+              <p>本法自公布日施行。</p>
+            </content>
+          </paragraph>
+        </article>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

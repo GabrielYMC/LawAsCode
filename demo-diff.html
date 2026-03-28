@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LawAsCode - 修正條文對照表 Demo</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --del-bg: rgba(248, 81, 73, 0.15);
+    --del-text: #ffa198;
+    --del-border: rgba(248, 81, 73, 0.4);
+    --ins-bg: rgba(63, 185, 80, 0.15);
+    --ins-text: #7ee787;
+    --ins-border: rgba(63, 185, 80, 0.4);
+    --comment-bg: #1c2128;
+    --ai-bg: rgba(136, 87, 255, 0.08);
+    --ai-border: rgba(136, 87, 255, 0.3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .diff-header {
+    border: 1px solid var(--border);
+    border-radius: 8px 8px 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .diff-header h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  .diff-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .diff-meta span { margin-right: 1.25rem; }
+
+  .diff-stats {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    align-self: center;
+  }
+  .stat-add { color: var(--ins-text); }
+  .stat-del { color: var(--del-text); }
+  .stat-files { color: var(--text-muted); }
+
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .badge-stage {
+    background: rgba(88, 166, 255, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+  }
+
+  /* Export bar */
+  .export-bar {
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 0.6rem 1.5rem;
+    background: var(--surface);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+  .btn {
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .btn:hover { background: var(--surface); }
+  .btn-primary {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: rgba(88, 166, 255, 0.3);
+    color: var(--accent);
+  }
+  .btn-primary:hover { background: rgba(88, 166, 255, 0.25); }
+
+  /* Section */
+  .diff-section {
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+  .diff-section:last-of-type {
+    border-radius: 0 0 8px 8px;
+  }
+  .section-title {
+    padding: 0.75rem 1.5rem;
+    background: rgba(88, 166, 255, 0.08);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-title:hover { background: rgba(88, 166, 255, 0.12); }
+  .section-title .arrow { transition: transform 0.2s; }
+  .section-title.collapsed .arrow { transform: rotate(-90deg); }
+
+  .section-ref {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  /* Diff table */
+  .diff-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .diff-table td {
+    padding: 0.5rem 1rem;
+    vertical-align: top;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .diff-table .col-label {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .col-old { border-right: 1px solid var(--border); }
+
+  .diff-row-old {
+    background: var(--del-bg);
+    border-right: 1px solid var(--border);
+  }
+  .diff-row-new {
+    background: var(--ins-bg);
+  }
+  .diff-row-unchanged {
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+  }
+  .diff-row-unchanged + .diff-row-unchanged {
+    border-right: none;
+  }
+
+  del {
+    text-decoration: none;
+    background: rgba(248, 81, 73, 0.3);
+    color: var(--del-text);
+    border-radius: 3px;
+    padding: 0.1rem 0.2rem;
+  }
+  ins {
+    text-decoration: none;
+    background: rgba(63, 185, 80, 0.3);
+    color: var(--ins-text);
+    border-radius: 3px;
+    padding: 0.1rem 0.2rem;
+  }
+
+  /* Explanation row */
+  .explanation-row td {
+    background: var(--surface);
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .explanation-row strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Discussion / Comments */
+  .discussion {
+    border-top: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    background: var(--comment-bg);
+  }
+  .discussion-toggle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .discussion-toggle:hover { color: var(--text); }
+  .comment-count {
+    background: var(--border);
+    padding: 0.1rem 0.45rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+  }
+
+  .comments {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .comment {
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .comment-author {
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+  .comment-time {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+  }
+
+  /* AI badge */
+  .ai-comment {
+    border-color: var(--ai-border);
+    background: var(--ai-bg);
+  }
+  .ai-badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(136, 87, 255, 0.2);
+    color: #d2a8ff;
+    border: 1px solid var(--ai-border);
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .check-pass { color: var(--ins-text); }
+  .check-warn { color: #d29922; }
+
+  /* Full-width sections */
+  .full-row td {
+    padding: 0;
+  }
+
+  /* New section (added) */
+  .added-section {
+    background: var(--ins-bg);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .added-section h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    color: var(--ins-text);
+  }
+  .added-section table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .added-section th, .added-section td {
+    padding: 0.35rem 0.6rem;
+    border: 1px solid rgba(63, 185, 80, 0.2);
+    text-align: left;
+  }
+  .added-section th {
+    background: rgba(63, 185, 80, 0.1);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  /* Separator */
+  .section-gap {
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 0.4rem 1.5rem;
+    background: var(--bg);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="diff-header">
+  <div>
+    <h1>
+      PLAN.md 修正對照
+      <span class="badge badge-stage">二讀審議中</span>
+    </h1>
+    <div class="diff-meta">
+      <span>提案人：Gabriel Chen</span>
+      <span>提案日期：2026-03-28</span>
+      <span>Commit: <code style="color:var(--accent)">a3f7c2d</code></span>
+    </div>
+  </div>
+  <div class="diff-stats">
+    <span class="stat-add">+128 行</span>
+    <span class="stat-del">-24 行</span>
+    <span class="stat-files">4 處修正</span>
+  </div>
+</div>
+
+<div class="export-bar">
+  <button class="btn">複製連結</button>
+  <button class="btn btn-primary">匯出三欄 PDF</button>
+</div>
+
+<!-- ===== SECTION 1: 角色與功能矩陣 ===== -->
+<div class="diff-section">
+  <div class="section-title">
+    <span>修正一：陸、使用者介面設計 — 角色與功能矩陣 <span class="section-ref">(PLAN.md L189-197)</span></span>
+    <span class="arrow">&#9660;</span>
+  </div>
+
+  <table class="diff-table">
+    <tr>
+      <td class="col-label col-old">現行條文</td>
+      <td class="col-label">修正條文</td>
+    </tr>
+    <tr>
+      <td class="diff-row-old">
+        | 功能 | 一般學生 | 議員 | <del>秘書處</del> | <del>會長</del> |<br>
+        | 瀏覽現行法規 | ✓ | ✓ | ✓ | ✓ |<br>
+        | AI 法規諮詢 | ✓ | ✓ | ✓ | ✓ |<br>
+        | 查看修法歷程 | ✓ | ✓ | ✓ | ✓ |<br>
+        | 提案 / 連署 | | ✓ | | |<br>
+        | 審查 / 表決 | | ✓ | | |<br>
+        | 收文 / 排案 / 發文 | | | ✓ | |<br>
+        | 公布施行 | | | | ✓ |
+      </td>
+      <td class="diff-row-new">
+        | 功能 | 一般學生 | 議員 | <ins>議長</ins> | 秘書處 | 會長 |<br>
+        | 瀏覽現行法規 | ✓ | ✓ | ✓ | ✓ | ✓ |<br>
+        | AI 法規諮詢（一般查詢） | ✓ | ✓ | ✓ | ✓ | ✓ |<br>
+        | <ins>AI 法規諮詢（修法輔助）</ins> | | ✓ | ✓ | ✓ | ✓ |<br>
+        | 查看修法歷程 | ✓ | ✓ | ✓ | ✓ | ✓ |<br>
+        | 提案 / 連署 | | ✓ | | | |<br>
+        | 審查 / 表決 | | ✓ | <ins>✓（主席裁決）</ins> | | |<br>
+        | <ins>召集會議 / 排定議程</ins> | | | <ins>✓</ins> | | |<br>
+        | <ins>指派委員會 / 交付審查</ins> | | | <ins>✓</ins> | | |<br>
+        | <ins>核定秘書處細則</ins> | | | <ins>✓</ins> | | |<br>
+        | 收文 / 排案 / 發文 | | | | ✓ | |<br>
+        | 公布施行 | | | | | ✓ |
+      </td>
+    </tr>
+  </table>
+
+  <div class="explanation-row"><table class="diff-table"><tr><td colspan="2" style="background:var(--surface);padding:0.6rem 1rem;font-size:0.85rem;color:var(--text-muted);border-bottom:1px solid var(--border);">
+    <strong>修正說明：</strong>新增「議長」角色欄位。議長依組織章程§21、職權行使辦法§5-6，具有召集會議、一讀宣付、交付委員會、主席裁決等權限，原矩陣遺漏此關鍵角色。同時將 AI 法規諮詢拆分為一般查詢與修法輔助兩種模式。
+  </td></tr></table></div>
+
+  <!-- Discussion -->
+  <div class="discussion">
+    <div class="discussion-toggle">
+      <span>&#128172;</span> 討論 <span class="comment-count">3</span>
+    </div>
+    <div class="comments">
+      <div class="comment">
+        <div class="comment-author">
+          王議員
+          <span class="comment-time">2026-03-28 14:32</span>
+        </div>
+        議長在表決平手時的裁決權是否也應反映在表決介面上？建議加入「主席裁決」的 UI 流程。
+      </div>
+      <div class="comment">
+        <div class="comment-author">
+          Gabriel Chen
+          <span class="comment-time">2026-03-28 14:45</span>
+        </div>
+        已在議長控制台中加入裁決介面。當系統偵測到票數相同時，自動彈出裁決請求給議長。
+      </div>
+      <div class="comment ai-comment">
+        <div class="comment-author">
+          AI 法規健檢
+          <span class="ai-badge">AUTO</span>
+          <span class="comment-time">2026-03-28 14:02</span>
+        </div>
+        <span class="check-pass">&#10003;</span> 本修正未與現行法規產生衝突<br>
+        <span class="check-pass">&#10003;</span> 議長職權對應正確（已比對組織章程§20-22、職權行使辦法§5-6）<br>
+        <span class="check-warn">&#9888;</span> 建議確認：副議長代理議長時（組織章程§22），系統權限是否自動繼承？
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: 狀態機 ===== -->
+<div class="diff-section">
+  <div class="section-title">
+    <span>修正二：肆、議事流程映射 — 狀態機 <span class="section-ref">(PLAN.md L101-110)</span></span>
+    <span class="arrow">&#9660;</span>
+  </div>
+
+  <table class="diff-table">
+    <tr>
+      <td class="col-label col-old">現行條文</td>
+      <td class="col-label">修正條文</td>
+    </tr>
+    <tr>
+      <td class="diff-row-old" style="font-family:monospace;font-size:0.82rem;white-space:pre-wrap;line-height:1.5;">提案 ──▶ 一讀 ──▶ 委員會審查 ──▶ 二讀 ──▶ 三讀 ──▶ 待公布 ──▶ 已公布
+ │                   │            │         │
+ ▼                   ▼            ▼         ▼
+退回               退回          退回      退回</td>
+      <td class="diff-row-new" style="font-family:monospace;font-size:0.82rem;white-space:pre-wrap;line-height:1.5;">提案 ──▶ 一讀 ──▶ 委員會審查 ──▶ 二讀 ──▶ 三讀 ──▶ 待公布 ──▶ 已公布
+ │       <ins> │</ins>         │            │         │         │
+<ins>  │      (議長)</ins>     (委員會)     (大會)    (大會)   <ins> (會長)</ins>
+ ▼       <ins> ▼</ins>         ▼            ▼         ▼        <ins> │</ins>
+退回   <ins>逕付二讀</ins>    退回          退回      退回    <ins>14日未公布</ins>
+                                                   <ins>→ 秘書處</ins>
+                                                     <ins>自動公布</ins></td>
+    </tr>
+  </table>
+
+  <div class="explanation-row"><table class="diff-table"><tr><td colspan="2" style="background:var(--surface);padding:0.6rem 1rem;font-size:0.85rem;color:var(--text-muted);border-bottom:1px solid var(--border);">
+    <strong>修正說明：</strong>標示各階段的權責角色。新增議長的「逕付二讀」分支路徑（職權行使§6），以及會長逾期未公布時秘書處自動公布的機制（法規標準規則§5）。
+  </td></tr></table></div>
+
+  <div class="discussion">
+    <div class="discussion-toggle">
+      <span>&#128172;</span> 討論 <span class="comment-count">1</span>
+    </div>
+    <div class="comments">
+      <div class="comment ai-comment">
+        <div class="comment-author">
+          AI 法規健檢
+          <span class="ai-badge">AUTO</span>
+          <span class="comment-time">2026-03-28 14:02</span>
+        </div>
+        <span class="check-pass">&#10003;</span> 「逕付二讀」路徑符合職權行使辦法§6第3項：「委員會提出之議案，視為已完成一讀程序得逕付二讀」<br>
+        <span class="check-pass">&#10003;</span> 14日自動公布符合法規標準規則§5：「會長應於收到十四日內公布，未公布者，由學生議會秘書處公布後生效」
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: AI 法規顧問 ===== -->
+<div class="diff-section">
+  <div class="section-title">
+    <span>修正三：捌、AI 法規顧問架構 — 全節重寫 <span class="section-ref">(PLAN.md L232-258)</span></span>
+    <span class="arrow">&#9660;</span>
+  </div>
+
+  <table class="diff-table">
+    <tr>
+      <td class="col-label col-old">現行條文</td>
+      <td class="col-label">修正條文</td>
+    </tr>
+    <tr>
+      <td class="diff-row-old">
+        <strong>捌、RAG 法規顧問架構</strong><br><br>
+        <del>（僅有單一 RAG 流程：使用者提問 → 向量檢索 → Gemma 3 回答）</del><br><br>
+        <del>檢索範圍：僅本會法規</del><br><br>
+        AKN 對 RAG 的優勢：每個條文自帶 eId...
+      </td>
+      <td class="diff-row-new">
+        <strong>捌、<ins>AI</ins> 法規顧問架構</strong><br><br>
+        <ins>AI 顧問不只是對外的查詢工具，也是對內的修法輔助工具。依使用情境分為三種模式：</ins><br><br>
+
+        <ins><strong>三種 AI 模式</strong></ins><br>
+        <ins>| 一般諮詢 | 一般學生 | 本會法規 |</ins><br>
+        <ins>| 修法輔助 | 法規委員會、議員 | 本會法規 + 修法歷程 + 中華民國行政法規 |</ins><br>
+        <ins>| 法規健檢 | 提案人 | 本會法規 + 上位法（大學法等） |</ins><br><br>
+
+        <ins><strong>知識庫</strong>：新增中華民國相關法規（大學法、人民團體法、行政程序法等）作為參照</ins><br><br>
+
+        <ins><strong>修法輔助模式的具體功能</strong></ins><br>
+        <ins>1. 母子法衝突偵測</ins><br>
+        <ins>2. 上位法合規檢查</ins><br>
+        <ins>3. 用語一致性掃描</ins><br>
+        <ins>4. 歷史脈絡查詢（從 Git 歷史找修訂 PR）</ins><br>
+        <ins>5. 立法理由建議</ins><br><br>
+
+        AKN 對 RAG 的優勢：每個條文自帶 eId...
+      </td>
+    </tr>
+  </table>
+
+  <div class="explanation-row"><table class="diff-table"><tr><td colspan="2" style="background:var(--surface);padding:0.6rem 1rem;font-size:0.85rem;color:var(--text-muted);border-bottom:1px solid var(--border);">
+    <strong>修正說明：</strong>
+    一、將 AI 顧問從單一對外查詢工具，擴展為三種模式（一般諮詢、修法輔助、法規健檢），分別服務不同角色。
+    二、知識庫加入中華民國相關行政法規，使系統能檢查本會法規是否牴觸上位法。
+    三、新增修法輔助模式的五項具體功能。
+  </td></tr></table></div>
+
+  <div class="discussion">
+    <div class="discussion-toggle">
+      <span>&#128172;</span> 討論 <span class="comment-count">2</span>
+    </div>
+    <div class="comments">
+      <div class="comment">
+        <div class="comment-author">
+          林議員（法規委員會）
+          <span class="comment-time">2026-03-28 15:10</span>
+        </div>
+        「歷史脈絡查詢」功能很需要。上屆修的預算辦法第34條，我們到現在都不知道為什麼改成四方簽名。如果能從 Git 歷史直接調出當時的討論就太好了。
+      </div>
+      <div class="comment ai-comment">
+        <div class="comment-author">
+          AI 法規健檢
+          <span class="ai-badge">AUTO</span>
+          <span class="comment-time">2026-03-28 14:02</span>
+        </div>
+        <span class="check-pass">&#10003;</span> 本修正未與現行法規產生衝突<br>
+        <span class="check-warn">&#9888;</span> 注意：中華民國法規的引用需標明來源與版本日期，避免法規已修正但知識庫未同步的情況。建議加入知識庫更新機制的說明。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: 轉換策略 ===== -->
+<div class="diff-section" style="border-radius: 0 0 8px 8px;">
+  <div class="section-title">
+    <span>修正四：伍、Akoma Ntoso 法規資料化 — 轉換策略 <span class="section-ref">(PLAN.md L173-183)</span></span>
+    <span class="arrow">&#9660;</span>
+  </div>
+
+  <table class="diff-table">
+    <tr>
+      <td class="col-label col-old">現行條文</td>
+      <td class="col-label">修正條文</td>
+    </tr>
+    <tr>
+      <td class="diff-row-old">
+        <strong>轉換策略</strong><br><br>
+        1. <del>自動解析器：開發工具將現有 Word 法規錄解析為 Markdown</del><br>
+        2. 人工校對：以 Markdown 形式校對結構是否正確<br>
+        3. <del>AKN 轉換器：將校對後的 Markdown 轉為 AKN XML</del><br>
+        4. <del>兩個轉換器皆開源，作為本專案對社群的貢獻</del>
+      </td>
+      <td class="diff-row-new">
+        <strong>轉換策略</strong><br><br>
+        <ins><strong>優先採用既有開源工具</strong></ins><br>
+        <ins>| AKN 編輯/管理 | <strong>Indigo</strong> (Laws.Africa) | 成熟的開源立法管理平台 |</ins><br>
+        <ins>| AKN 編輯器 | <strong>LIME</strong> (Univ. of Bologna) | OASIS 官方推薦 |</ins><br>
+        <ins>| AKN Schema | <strong>OASIS 3.0 Schema</strong> | 官方 XSD 驗證 |</ins><br>
+        <ins>| Word 解析 | <strong>mammoth / pandoc</strong> |</ins><br>
+        <ins>| XML 處理 | <strong>lxml</strong> (Python) |</ins><br><br>
+        <ins><strong>自建部分（開源貢獻）</strong></ins><br>
+        <ins>1. 中文法規結構解析器（第X條/項/款/目）</ins><br>
+        <ins>2. Markdown→AKN 轉換器（符合 OASIS 3.0 Schema）</ins><br>
+        <ins>3. 以 MIT License 開源</ins>
+      </td>
+    </tr>
+  </table>
+
+  <div class="explanation-row"><table class="diff-table"><tr><td colspan="2" style="background:var(--surface);padding:0.6rem 1rem;font-size:0.85rem;color:var(--text-muted);border-bottom:1px solid var(--border);">
+    <strong>修正說明：</strong>遵循「不重造輪子」原則，優先列舉可採用的開源工具（Indigo、LIME、OASIS Schema、mammoth、lxml），僅在無既有方案的部分自行開發（中文法規結構解析器、MD→AKN 轉換器），並以 MIT License 回饋社群。
+  </td></tr></table></div>
+
+  <div class="discussion">
+    <div class="discussion-toggle">
+      <span>&#128172;</span> 討論 <span class="comment-count">1</span>
+    </div>
+    <div class="comments">
+      <div class="comment ai-comment">
+        <div class="comment-author">
+          AI 法規健檢
+          <span class="ai-badge">AUTO</span>
+          <span class="comment-time">2026-03-28 14:02</span>
+        </div>
+        <span class="check-pass">&#10003;</span> 所列開源工具授權皆相容 MIT License<br>
+        <span class="check-pass">&#10003;</span> Indigo (Laws.Africa) 為目前最活躍的 AKN 開源平台，GitHub 星數 200+<br>
+        <span class="check-warn">&#9888;</span> LIME 編輯器近年更新頻率較低，建議評估後決定是否採用或僅作參考
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

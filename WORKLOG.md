@@ -306,6 +306,42 @@ Phase 1 的人工校對步驟暫時跳過。理由：
 - **Server 端守衛**：hooks.server.ts 在每個請求驗證，無法透過直接輸入 URL 繞過
 - **Cookie**：httpOnly（前端 JS 無法讀取），path=/，sameSite=lax
 
+---
+
+## 2026-03-29
+
+### Phase 3：AI 法規顧問
+
+**時間**：2026-03-29
+
+#### 完成項目
+
+| 任務 | 產出 | 狀態 |
+|------|------|------|
+| 顧問型別定義 | `$lib/types/advisor.ts` — AdvisorMode, ChatMessage, LawSource | 完成 |
+| 法規語意搜尋 | `$lib/server/advisor/search.ts` — fuse.js 關鍵字搜尋 + 關鍵字擷取 | 完成（待替換為 embedding） |
+| LLM 服務抽象 | `$lib/server/advisor/llm.ts` — Mock 回覆，含 Ollama API 接口 | 完成（待串接 Ollama） |
+| API 端點 | `/api/advisor` POST — 搜尋→組裝 prompt→呼叫 LLM→回傳 | 完成 |
+| 聊天 UI | `/advisor` — 三模式切換、範例問題、對話氣泡、引用來源 | 完成 |
+
+#### 三種顧問模式
+
+| 模式 | 對象 | 功能 |
+|------|------|------|
+| 法規諮詢 💬 | 一般同學 | 用白話文回答法規問題 |
+| 修法輔助 📝 | 議員 | 分析條文、比較修法方案、連動修正提醒 |
+| 法規健檢 🔍 | 提案 | 檢查是否牴觸現行法規 |
+
+#### 技術架構
+
+- **搜尋**：fuse.js 全文搜尋 672 條條文，關鍵字擷取提高召回率
+- **LLM**：Mock 服務（模擬延遲 + 依模式/關鍵字生成回覆），Ollama API 接口已備妥
+- **Prompt 工程**：三種系統提示詞，法規上下文自動注入
+- **UI**：左側模式面板 + 右側聊天區域，支援連續對話、引用來源 chip 可跳轉至法規頁面
+- **串接準備**：`callOllama()` 已實作完整 API 呼叫邏輯，切換 `useOllama` flag 即可啟用
+
+---
+
 #### 設計原則文件化
 
 在 `PLAN.md` 貳、解決方案中新增「設計原則：不可繞過與完整可追溯」段落：

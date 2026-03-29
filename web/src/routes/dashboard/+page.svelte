@@ -1,37 +1,14 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { STATE_LABELS, STATE_COLORS } from '$lib/types/workflow';
-	import { ROLE_LABELS, Role } from '$lib/types/user';
+	import { ROLE_LABELS } from '$lib/types/user';
 
 	let { data }: { data: PageData } = $props();
 
-	// 模擬當前角色（之後整合角色切換器）
-	let currentRole: Role = $state(Role.SPEAKER);
-
-	const ROLE_OPTIONS = [
-		{ role: Role.SPEAKER, label: '議長', icon: '🏛️' },
-		{ role: Role.PRESIDENT, label: '會長', icon: '👔' },
-		{ role: Role.SECRETARY_GENERAL, label: '秘書長', icon: '📋' }
-	];
-
-	let activeQueue = $derived(
-		currentRole === Role.SPEAKER
-			? data.speakerQueue
-			: currentRole === Role.PRESIDENT
-				? data.presidentQueue
-				: data.secretaryQueue
-	);
-
-	function getActionsForRole(proposal: (typeof data.proposals)[number]) {
-		if (currentRole === Role.SPEAKER) return proposal.speakerActions;
-		if (currentRole === Role.PRESIDENT) return proposal.presidentActions;
-		return proposal.secretaryActions;
-	}
-
 	const ROLE_DESCRIPTIONS: Record<string, string> = {
-		[Role.SPEAKER]: '管理議事流程，主持一讀至三讀程序',
-		[Role.PRESIDENT]: '公布通過之法規，行使否決權',
-		[Role.SECRETARY_GENERAL]: '排入議程，管理提案收受'
+		speaker: '管理議事流程，主持一讀至三讀程序',
+		president: '公布通過之法規，行使否決權',
+		secretary_general: '排入議程，管理提案收受'
 	};
 </script>
 
@@ -41,28 +18,16 @@
 
 <div class="dashboard-header">
 	<h1>控制台</h1>
-	<div class="role-tabs">
-		{#each ROLE_OPTIONS as opt}
-			<button
-				class="role-tab"
-				class:active={currentRole === opt.role}
-				onclick={() => (currentRole = opt.role)}
-			>
-				<span class="role-icon">{opt.icon}</span>
-				<span class="role-name">{opt.label}</span>
-				{#if opt.role === Role.SPEAKER && data.stats.speakerPending > 0}
-					<span class="pending-count">{data.stats.speakerPending}</span>
-				{:else if opt.role === Role.PRESIDENT && data.stats.presidentPending > 0}
-					<span class="pending-count">{data.stats.presidentPending}</span>
-				{:else if opt.role === Role.SECRETARY_GENERAL && data.stats.secretaryPending > 0}
-					<span class="pending-count">{data.stats.secretaryPending}</span>
-				{/if}
-			</button>
-		{/each}
-	</div>
+	{#if data.user}
+		<div class="role-badge">
+			{ROLE_LABELS[data.user.role]}
+		</div>
+	{/if}
 </div>
 
-<p class="role-desc">{ROLE_DESCRIPTIONS[currentRole]}</p>
+{#if data.user}
+	<p class="role-desc">{ROLE_DESCRIPTIONS[data.user.role] ?? ''}</p>
+{/if}
 
 <!-- 統計卡片 -->
 <div class="stat-cards">
@@ -71,7 +36,7 @@
 		<div class="stat-label">總提案數</div>
 	</div>
 	<div class="stat-card highlight">
-		<div class="stat-number">{activeQueue.length}</div>
+		<div class="stat-number">{data.stats.pending}</div>
 		<div class="stat-label">待處理</div>
 	</div>
 </div>
@@ -80,12 +45,12 @@
 <section class="section">
 	<h2 class="section-title">
 		待處理提案
-		{#if activeQueue.length === 0}
+		{#if data.myQueue.length === 0}
 			<span class="empty-hint">— 目前無待處理項目</span>
 		{/if}
 	</h2>
 
-	{#each activeQueue as proposal}
+	{#each data.myQueue as proposal}
 		<div class="action-card">
 			<div class="action-card-header">
 				<a href="/proposals/{proposal.id}" class="proposal-link">
@@ -109,10 +74,9 @@
 			</div>
 
 			<div class="action-buttons">
-				{#each getActionsForRole(proposal) as action}
+				{#each proposal.myActions as action}
 					<button
 						class="action-btn"
-						class:vote-required={action.requiresVote}
 						title={action.description}
 					>
 						{action.label}
@@ -161,60 +125,20 @@
 	.dashboard-header {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 8px;
-		flex-wrap: wrap;
 		gap: 12px;
+		margin-bottom: 8px;
 	}
 	h1 {
 		font-size: 24px;
 		font-weight: 700;
 	}
-
-	.role-tabs {
-		display: flex;
-		gap: 4px;
-		background: var(--surface);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: 3px;
-	}
-	.role-tab {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-		padding: 6px 14px;
-		border-radius: calc(var(--radius) - 2px);
-		border: none;
-		background: transparent;
-		color: var(--text-muted);
+	.role-badge {
+		padding: 4px 12px;
+		border-radius: 12px;
+		background: rgba(88, 166, 255, 0.15);
+		color: var(--accent);
 		font-size: 13px;
-		cursor: pointer;
-		transition: all 0.15s;
-	}
-	.role-tab:hover {
-		background: var(--surface-hover);
-		color: var(--text);
-	}
-	.role-tab.active {
-		background: var(--accent);
-		color: #fff;
-	}
-	.role-icon {
-		font-size: 16px;
-	}
-	.pending-count {
-		background: #f85149;
-		color: #fff;
-		font-size: 10px;
-		font-weight: 700;
-		padding: 1px 6px;
-		border-radius: 10px;
-		min-width: 18px;
-		text-align: center;
-	}
-	.role-tab.active .pending-count {
-		background: rgba(255, 255, 255, 0.3);
+		font-weight: 600;
 	}
 
 	.role-desc {

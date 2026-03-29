@@ -285,6 +285,27 @@ Phase 1 的人工校對步驟暫時跳過。理由：
 - **門檻計算**：支援簡單多數（出席過半）、三分之二、五分之一三種門檻
 - **歷史紀錄**：提案詳情頁自動載入該提案的所有歷史表決
 
+#### 認證與權限系統
+
+| 任務 | 產出 | 狀態 |
+|------|------|------|
+| 認證服務 | `$lib/server/auth/index.ts` — Session 管理（Mock，可替換為 PocketBase） | 完成 |
+| 路由守衛 | `$lib/server/auth/guards.ts` — requireAuth/requireRole/checkPageAccess | 完成 |
+| Server Hooks | `hooks.server.ts` — 每個請求驗證 session + 路由守衛 | 完成 |
+| 登入頁 | `/login` — 7 角色選擇卡片（DEV 模式），生產環境接 SSO | 完成 |
+| 登出機制 | `/logout` — 清除 httpOnly cookie，重導登入頁 | 完成 |
+| 無權限頁 | `/unauthorized` — 403 提示，附返回首頁/切換帳號按鈕 | 完成 |
+| Layout 整合 | Sidebar 依登入狀態顯示導航、用戶資訊、登出按鈕 | 完成 |
+| 角色過濾 | 控制台僅議長/會長/秘書長可見，提案審議需登入 | 完成 |
+
+#### 權限系統行為
+
+- **未登入**：首頁、法規瀏覽、搜尋可存取；提案審議→重導登入頁；控制台→重導登入頁
+- **一般學生/議員**：可存取提案審議；控制台→重導無權限頁；sidebar 隱藏控制台連結
+- **議長/會長/秘書長**：完整存取所有頁面
+- **Server 端守衛**：hooks.server.ts 在每個請求驗證，無法透過直接輸入 URL 繞過
+- **Cookie**：httpOnly（前端 JS 無法讀取），path=/，sameSite=lax
+
 #### 設計原則文件化
 
 在 `PLAN.md` 貳、解決方案中新增「設計原則：不可繞過與完整可追溯」段落：

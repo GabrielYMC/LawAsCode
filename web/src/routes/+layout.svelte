@@ -1,62 +1,90 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
-	import { ROLE_LABELS, DEV_USERS } from '$lib/types/user';
+	import { ROLE_LABELS, Role } from '$lib/types/user';
+	import type { LayoutData } from './$types';
 
-	let { children } = $props();
+	let { children, data }: { children: any; data: LayoutData } = $props();
 
-	let currentUserIndex = $state(6); // 預設一般學生
-	let currentUser = $derived(DEV_USERS[currentUserIndex]);
+	// 登入頁不顯示 sidebar
+	let isLoginPage = $derived($page.url.pathname === '/login');
+
+	const ROLE_ICONS: Record<string, string> = {
+		president: '👔',
+		speaker: '🏛️',
+		legislator: '🗳️',
+		secretary_general: '📋',
+		secretariat: '📁',
+		student: '🎓'
+	};
+
+	const DASHBOARD_ROLES = [Role.SPEAKER, Role.PRESIDENT, Role.SECRETARY_GENERAL];
 
 	const navItems = [
-		{ href: '/', label: '首頁', icon: '🏠' },
-		{ href: '/laws', label: '法規瀏覽', icon: '📜' },
-		{ href: '/proposals', label: '提案審議', icon: '📋' },
-		{ href: '/dashboard', label: '控制台', icon: '⚙️' },
-		{ href: '/search', label: '搜尋', icon: '🔍' }
+		{ href: '/', label: '首頁', icon: '🏠', auth: false, roles: null },
+		{ href: '/laws', label: '法規瀏覽', icon: '📜', auth: false, roles: null },
+		{ href: '/proposals', label: '提案審議', icon: '📋', auth: true, roles: null },
+		{ href: '/dashboard', label: '控制台', icon: '⚙️', auth: true, roles: DASHBOARD_ROLES },
+		{ href: '/search', label: '搜尋', icon: '🔍', auth: false, roles: null }
 	];
+
+	let visibleNavItems = $derived(
+		navItems.filter((item) => {
+			if (!item.auth) return true;
+			if (!data.user) return false;
+			if (item.roles && !item.roles.includes(data.user.role)) return false;
+			return true;
+		})
+	);
 </script>
 
-<div class="app">
-	<nav class="sidebar">
-		<div class="logo">
-			<span class="logo-icon">⚖️</span>
-			<span class="logo-text">LawAsCode</span>
-		</div>
-
-		<div class="nav-links">
-			{#each navItems as item}
-				<a
-					href={item.href}
-					class="nav-item"
-					class:active={$page.url.pathname === item.href ||
-						(item.href !== '/' && $page.url.pathname.startsWith(item.href))}
-				>
-					<span class="nav-icon">{item.icon}</span>
-					<span class="nav-label">{item.label}</span>
-				</a>
-			{/each}
-		</div>
-
-		<div class="nav-footer">
-			<div class="dev-role-switcher">
-				<span class="dev-badge">DEV</span>
-				<select
-					class="dev-select"
-					bind:value={currentUserIndex}
-				>
-					{#each DEV_USERS as user, i}
-						<option value={i}>{user.name}（{ROLE_LABELS[user.role]}）</option>
-					{/each}
-				</select>
+{#if isLoginPage}
+	{@render children()}
+{:else}
+	<div class="app">
+		<nav class="sidebar">
+			<div class="logo">
+				<span class="logo-icon">⚖️</span>
+				<span class="logo-text">LawAsCode</span>
 			</div>
-		</div>
-	</nav>
 
-	<main class="content">
-		{@render children()}
-	</main>
-</div>
+			<div class="nav-links">
+				{#each visibleNavItems as item}
+					<a
+						href={item.href}
+						class="nav-item"
+						class:active={$page.url.pathname === item.href ||
+							(item.href !== '/' && $page.url.pathname.startsWith(item.href))}
+					>
+						<span class="nav-icon">{item.icon}</span>
+						<span class="nav-label">{item.label}</span>
+					</a>
+				{/each}
+			</div>
+
+			<div class="nav-footer">
+				{#if data.user}
+					<div class="user-info">
+						<span class="user-avatar">{ROLE_ICONS[data.user.role]}</span>
+						<div class="user-detail">
+							<span class="user-name">{data.user.name}</span>
+							<span class="user-role">{ROLE_LABELS[data.user.role]}</span>
+						</div>
+					</div>
+					<form method="POST" action="/logout">
+						<button type="submit" class="logout-btn">登出</button>
+					</form>
+				{:else}
+					<a href="/login" class="login-link">登入</a>
+				{/if}
+			</div>
+		</nav>
+
+		<main class="content">
+			{@render children()}
+		</main>
+	</div>
+{/if}
 
 <style>
 	.app {
@@ -124,34 +152,66 @@
 		padding: 12px 16px;
 		border-top: 1px solid var(--border);
 	}
-	.dev-role-switcher {
+
+	/* 使用者資訊 */
+	.user-info {
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		font-size: 12px;
+		gap: 10px;
+		margin-bottom: 8px;
 	}
-	.dev-badge {
-		background: var(--warning);
-		color: #000;
-		padding: 1px 6px;
-		border-radius: 4px;
-		font-weight: 700;
-		font-size: 10px;
+	.user-avatar {
+		font-size: 22px;
 	}
-	.dev-select {
-		background: var(--bg);
-		color: var(--text-muted);
-		border: 1px solid var(--border);
-		border-radius: 4px;
-		padding: 3px 6px;
-		font-size: 11px;
-		cursor: pointer;
-		flex: 1;
+	.user-detail {
+		display: flex;
+		flex-direction: column;
 		min-width: 0;
 	}
-	.dev-select:focus {
-		outline: 1px solid var(--accent);
-		border-color: var(--accent);
+	.user-name {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--text);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.user-role {
+		font-size: 11px;
+		color: var(--text-muted);
+	}
+
+	.logout-btn {
+		width: 100%;
+		padding: 5px;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--border);
+		background: transparent;
+		color: var(--text-muted);
+		font-size: 11px;
+		cursor: pointer;
+		transition: all 0.15s;
+	}
+	.logout-btn:hover {
+		border-color: var(--error);
+		color: var(--error);
+	}
+
+	.login-link {
+		display: block;
+		text-align: center;
+		padding: 8px;
+		border-radius: var(--radius);
+		background: var(--accent);
+		color: #fff;
+		font-size: 13px;
+		font-weight: 500;
+		text-decoration: none;
+	}
+	.login-link:hover {
+		background: var(--accent-hover);
+		text-decoration: none;
+		color: #fff;
 	}
 
 	.content {

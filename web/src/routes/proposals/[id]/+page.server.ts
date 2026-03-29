@@ -3,9 +3,11 @@ import { MOCK_VOTE_SESSIONS } from '$lib/server/proposals/mock-votes.js';
 import { buildComparisonTable } from '$lib/server/proposals/diff.js';
 import { TRANSITIONS } from '$lib/types/workflow.js';
 import { error } from '@sveltejs/kit';
+import { requireAuth } from '$lib/server/auth/guards.js';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params, locals }) => {
+	requireAuth(locals.user);
 	const proposal = MOCK_PROPOSALS.find((p) => p.id === params.id);
 
 	if (!proposal) {

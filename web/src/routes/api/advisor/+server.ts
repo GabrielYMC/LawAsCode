@@ -9,12 +9,7 @@ import { searchRelevantArticles } from '$lib/server/advisor/search.js';
 import { callLlm } from '$lib/server/advisor/llm.js';
 import { AdvisorMode } from '$lib/types/advisor.js';
 
-export const POST: RequestHandler = async ({ request, locals }) => {
-	// 需登入
-	if (!locals.user) {
-		throw error(401, '請先登入');
-	}
-
+export const POST: RequestHandler = async ({ request }) => {
 	const body = await request.json();
 	const { mode, message, history } = body;
 

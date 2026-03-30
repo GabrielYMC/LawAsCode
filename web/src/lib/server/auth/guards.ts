@@ -33,6 +33,7 @@ export const PAGE_PERMISSIONS: Record<string, Role[] | 'public' | 'authenticated
 	'/login': 'public',
 	'/unauthorized': 'public',
 	'/laws': 'public', // 法規瀏覽開放所有人
+	'/advisor': 'public', // AI 顧問開放所有人
 	'/search': 'public', // 搜尋開放所有人
 	'/proposals': 'authenticated', // 提案列表需登入
 	'/proposals/new': [Role.LEGISLATOR, Role.PRESIDENT, Role.SPEAKER], // 新增提案限有提案權的角色

@@ -25,7 +25,7 @@
 		{ href: '/', label: '首頁', icon: '🏠', auth: false, roles: null },
 		{ href: '/laws', label: '法規瀏覽', icon: '📜', auth: false, roles: null },
 		{ href: '/proposals', label: '提案審議', icon: '📋', auth: true, roles: null },
-		{ href: '/advisor', label: 'AI 顧問', icon: '🤖', auth: true, roles: null },
+		{ href: '/advisor', label: 'AI 顧問', icon: '🤖', auth: false, roles: null },
 		{ href: '/dashboard', label: '控制台', icon: '⚙️', auth: true, roles: DASHBOARD_ROLES },
 		{ href: '/admin', label: '系統設定', icon: '🔧', auth: true, roles: ADMIN_ROLES },
 		{ href: '/search', label: '搜尋', icon: '🔍', auth: false, roles: null }

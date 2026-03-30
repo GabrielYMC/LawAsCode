@@ -7,6 +7,7 @@
 import Fuse from 'fuse.js';
 import type { LawSource } from '$lib/types/advisor.js';
 import { getLawRepository } from '$lib/server/repositories/index.js';
+import { getConfig } from '$lib/server/config.js';
 
 interface SearchableArticle {
 	lawName: string;
@@ -61,13 +62,14 @@ async function getSearchIndex(): Promise<Fuse<SearchableArticle>> {
 		}
 	}
 
+	const config = getConfig();
 	_fuse = new Fuse(_articles, {
 		keys: [
 			{ name: 'text', weight: 0.7 },
 			{ name: 'lawName', weight: 0.2 },
 			{ name: 'articleNum', weight: 0.1 }
 		],
-		threshold: 0.5,
+		threshold: config.search.threshold,
 		includeScore: true,
 		minMatchCharLength: 2,
 		useExtendedSearch: true
@@ -91,8 +93,11 @@ function extractKeywords(query: string): string[] {
 /** 搜尋相關法規條文 */
 export async function searchRelevantArticles(
 	query: string,
-	maxResults: number = 5
+	maxResults?: number
 ): Promise<LawSource[]> {
+	if (maxResults === undefined) {
+		maxResults = getConfig().search.maxResults;
+	}
 	const fuse = await getSearchIndex();
 
 	// 先用完整問句搜尋

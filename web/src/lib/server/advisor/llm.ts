@@ -6,6 +6,7 @@
 
 import { AdvisorMode } from '$lib/types/advisor.js';
 import type { LawSource } from '$lib/types/advisor.js';
+import { getConfig } from '$lib/server/config.js';
 
 export interface LlmRequest {
 	mode: AdvisorMode;
@@ -18,11 +19,16 @@ export interface LlmResponse {
 	content: string;
 }
 
-/** 生產環境設定（待串接） */
-const OLLAMA_CONFIG = {
-	baseUrl: 'http://localhost:11434',
-	model: 'gemma3:12b'
-};
+/** 從集中設定取得 Ollama 參數 */
+function getOllamaConfig() {
+	const config = getConfig();
+	return {
+		baseUrl: config.llm.baseUrl,
+		model: config.llm.model,
+		temperature: config.llm.temperature,
+		maxTokens: config.llm.maxTokens
+	};
+}
 
 /** 建立系統提示詞 */
 function buildSystemPrompt(mode: AdvisorMode): string {
@@ -76,9 +82,9 @@ function buildContextPrompt(sources: LawSource[]): string {
  * 生產環境替換為 Ollama API call
  */
 export async function callLlm(request: LlmRequest): Promise<LlmResponse> {
-	const useOllama = false; // TODO: 環境變數切換
+	const config = getConfig();
 
-	if (useOllama) {
+	if (config.llm.provider === 'ollama') {
 		return callOllama(request);
 	}
 
@@ -185,8 +191,9 @@ function generateComplianceResponse(question: string, sources: LawSource[]): str
 	return response;
 }
 
-/** Ollama API 呼叫（待整合） */
+/** Ollama API 呼叫 */
 async function callOllama(request: LlmRequest): Promise<LlmResponse> {
+	const ollamaConfig = getOllamaConfig();
 	const systemPrompt = buildSystemPrompt(request.mode);
 	const contextPrompt = buildContextPrompt(request.sources);
 
@@ -196,16 +203,16 @@ async function callOllama(request: LlmRequest): Promise<LlmResponse> {
 		{ role: 'user', content: request.userMessage }
 	];
 
-	const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/chat`, {
+	const response = await fetch(`${ollamaConfig.baseUrl}/api/chat`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
-			model: OLLAMA_CONFIG.model,
+			model: ollamaConfig.model,
 			messages,
 			stream: false,
 			options: {
-				temperature: 0.3, // 法規回答要精確，降低隨機性
-				num_predict: 1024
+				temperature: ollamaConfig.temperature,
+				num_predict: ollamaConfig.maxTokens
 			}
 		})
 	});

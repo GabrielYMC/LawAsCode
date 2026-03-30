@@ -19,6 +19,7 @@
 	};
 
 	const DASHBOARD_ROLES = [Role.SPEAKER, Role.PRESIDENT, Role.SECRETARY_GENERAL];
+	const ADMIN_ROLES = [Role.SPEAKER, Role.PRESIDENT];
 
 	const navItems = [
 		{ href: '/', label: '首頁', icon: '🏠', auth: false, roles: null },
@@ -26,6 +27,7 @@
 		{ href: '/proposals', label: '提案審議', icon: '📋', auth: true, roles: null },
 		{ href: '/advisor', label: 'AI 顧問', icon: '🤖', auth: true, roles: null },
 		{ href: '/dashboard', label: '控制台', icon: '⚙️', auth: true, roles: DASHBOARD_ROLES },
+		{ href: '/admin', label: '系統設定', icon: '🔧', auth: true, roles: ADMIN_ROLES },
 		{ href: '/search', label: '搜尋', icon: '🔍', auth: false, roles: null }
 	];
 

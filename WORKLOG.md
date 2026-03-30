@@ -350,3 +350,37 @@ Phase 1 的人工校對步驟暫時跳過。理由：
 - **五大原則**：唯一變更路徑、權力必須授予、變更必留紀錄、歷程不可竄改、系統即程序
 - **Gitea 分支保護設定**：禁止直接 push to main、merge 限指定角色、需議長 approve
 - **Web UI 守則**：BFF 為唯一入口、server 端驗證角色×狀態、不合法操作 403 拒絕
+
+---
+
+### 系統設定集中管理
+
+**時間**：2026-03-30
+
+#### 完成項目
+
+| 任務 | 產出 | 狀態 |
+|------|------|------|
+| 集中設定模組 | `$lib/server/config.ts` — SystemConfig 介面、getConfig/updateConfig/resetConfig | 完成 |
+| 管理員設定頁（Server） | `/admin/+page.server.ts` — 僅議長/會長可存取，save/reset actions | 完成 |
+| 管理員設定頁（UI） | `/admin/+page.svelte` — 五大設定區塊、Ollama 連線測試 | 完成 |
+| Sidebar 整合 | `+layout.svelte` — 系統設定連結僅議長/會長可見 | 完成 |
+| 路由守衛整合 | `guards.ts` — `/admin` 加入 PAGE_PERMISSIONS | 完成 |
+| LLM 服務串接 | `llm.ts` — 從 config 讀取 provider/baseUrl/model/temperature/maxTokens | 完成 |
+| 搜尋服務串接 | `search.ts` — 從 config 讀取 threshold/maxResults | 完成 |
+
+#### 設定頁面五大區塊
+
+| 區塊 | 設定項 |
+|------|--------|
+| 🤖 AI 語言模型 | provider（mock/ollama）、baseUrl、model、temperature、maxTokens、連線測試按鈕 |
+| 🔍 法規搜尋 | provider（fuse/embedding）、threshold、maxResults |
+| 📦 Gitea 法規倉庫 | enabled、baseUrl、owner、repo、token |
+| 🔐 PocketBase 認證 | enabled、baseUrl |
+| 🏛️ 議事流程 | promulgationDeadlineDays、autoPromulgation |
+
+#### 設計
+
+- **In-memory config**：執行期設定存在記憶體中，重啟後恢復預設值（正式部署後可改為持久化）
+- **Config → Service 連動**：LLM 和搜尋服務直接從 `getConfig()` 讀取參數，管理員改設定即時生效
+- **Mock/Production 切換**：管理員可直接在 UI 切換 mock ↔ ollama，無需改程式碼或環境變數

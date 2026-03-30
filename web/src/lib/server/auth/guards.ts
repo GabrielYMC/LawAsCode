@@ -36,6 +36,7 @@ export const PAGE_PERMISSIONS: Record<string, Role[] | 'public' | 'authenticated
 	'/search': 'public', // 搜尋開放所有人
 	'/proposals': 'authenticated', // 提案列表需登入
 	'/dashboard': [Role.SPEAKER, Role.PRESIDENT, Role.SECRETARY_GENERAL], // 控制台限特定角色
+	'/admin': [Role.SPEAKER, Role.PRESIDENT], // 系統設定限議長/會長
 };
 
 /** 根據路徑檢查存取權限 */

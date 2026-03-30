@@ -1,5 +1,4 @@
-import { MOCK_PROPOSALS } from '$lib/server/proposals/mock-data.js';
-import { MOCK_VOTE_SESSIONS } from '$lib/server/proposals/mock-votes.js';
+import { getProposal, getVoteSessionsForProposal, getOpenVoteSession } from '$lib/server/proposals/service.js';
 import { buildComparisonTable } from '$lib/server/proposals/diff.js';
 import { TRANSITIONS } from '$lib/types/workflow.js';
 import { error } from '@sveltejs/kit';
@@ -8,7 +7,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, locals }) => {
 	requireAuth(locals.user);
-	const proposal = MOCK_PROPOSALS.find((p) => p.id === params.id);
+	const proposal = getProposal(params.id);
 
 	if (!proposal) {
 		throw error(404, '找不到此提案');
@@ -32,13 +31,17 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	const currentIndex = stateOrder.indexOf(proposal.state);
 
 	// 此提案的歷史表決紀錄
-	const voteHistory = MOCK_VOTE_SESSIONS.filter((v) => v.proposalId === proposal.id);
+	const voteHistory = getVoteSessionsForProposal(proposal.id);
+
+	// 進行中的投票
+	const openVote = getOpenVoteSession(proposal.id);
 
 	return {
 		proposal,
 		comparisonTable,
 		availableTransitions,
 		voteHistory,
+		openVote: openVote ?? null,
 		stateProgress: {
 			steps: stateOrder,
 			currentIndex

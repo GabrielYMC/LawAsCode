@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import { STATE_LABELS, STATE_COLORS } from '$lib/types/workflow';
 	import { ROLE_LABELS } from '$lib/types/user';
+	import { goto, invalidateAll } from '$app/navigation';
 
 	let { data }: { data: PageData } = $props();
 
@@ -10,6 +11,49 @@
 		president: '公布通過之法規，行使否決權',
 		secretary_general: '排入議程，管理提案收受'
 	};
+
+	let actionLoading = $state<string | null>(null);
+	let actionMessage = $state<{ type: 'success' | 'error'; text: string } | null>(null);
+
+	async function handleAction(proposalId: string, action: any) {
+		actionLoading = `${proposalId}-${action.label}`;
+		actionMessage = null;
+
+		try {
+			if (action.requiresVote) {
+				// 需要投票的操作：發起投票後跳轉到提案詳情頁
+				const res = await fetch(`/api/proposals/${proposalId}/vote`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ action: 'create', transitionLabel: action.label })
+				});
+				const result = await res.json();
+				if (result.success) {
+					goto(`/proposals/${proposalId}`);
+				} else {
+					actionMessage = { type: 'error', text: result.error };
+				}
+			} else {
+				// 不需要投票：直接執行狀態轉移
+				const res = await fetch(`/api/proposals/${proposalId}/transition`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ transitionLabel: action.label })
+				});
+				const result = await res.json();
+				if (result.success) {
+					actionMessage = { type: 'success', text: `已執行「${action.label}」` };
+					await invalidateAll();
+				} else {
+					actionMessage = { type: 'error', text: result.error };
+				}
+			}
+		} catch (e: any) {
+			actionMessage = { type: 'error', text: `操作失敗：${e.message}` };
+		} finally {
+			actionLoading = null;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -27,6 +71,12 @@
 
 {#if data.user}
 	<p class="role-desc">{ROLE_DESCRIPTIONS[data.user.role] ?? ''}</p>
+{/if}
+
+{#if actionMessage}
+	<div class="toast {actionMessage.type}">
+		{actionMessage.text}
+	</div>
 {/if}
 
 <!-- 統計卡片 -->
@@ -78,10 +128,16 @@
 					<button
 						class="action-btn"
 						title={action.description}
+						disabled={actionLoading !== null}
+						onclick={() => handleAction(proposal.id, action)}
 					>
-						{action.label}
-						{#if action.requiresVote}
-							<span class="vote-tag">需表決</span>
+						{#if actionLoading === `${proposal.id}-${action.label}`}
+							執行中...
+						{:else}
+							{action.label}
+							{#if action.requiresVote}
+								<span class="vote-tag">需表決</span>
+							{/if}
 						{/if}
 					</button>
 				{/each}
@@ -145,6 +201,24 @@
 		color: var(--text-muted);
 		font-size: 13px;
 		margin-bottom: 20px;
+	}
+
+	/* Toast */
+	.toast {
+		padding: 10px 16px;
+		border-radius: var(--radius);
+		font-size: 13px;
+		margin-bottom: 16px;
+	}
+	.toast.success {
+		background: rgba(63, 185, 80, 0.1);
+		border: 1px solid rgba(63, 185, 80, 0.3);
+		color: var(--success);
+	}
+	.toast.error {
+		background: rgba(248, 81, 73, 0.1);
+		border: 1px solid rgba(248, 81, 73, 0.3);
+		color: var(--error);
 	}
 
 	/* Stats */
@@ -276,9 +350,13 @@
 		transition: all 0.15s;
 		white-space: nowrap;
 	}
-	.action-btn:hover {
+	.action-btn:hover:not(:disabled) {
 		background: var(--accent);
 		color: #fff;
+	}
+	.action-btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 	.vote-tag {
 		font-size: 10px;

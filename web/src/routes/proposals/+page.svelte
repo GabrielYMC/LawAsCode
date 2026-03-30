@@ -1,16 +1,27 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { STATE_LABELS, STATE_COLORS } from '$lib/types/workflow';
+	import { Role } from '$lib/types/user';
 
 	let { data }: { data: PageData } = $props();
+
+	const PROPOSAL_ROLES = [Role.LEGISLATOR, Role.PRESIDENT, Role.SPEAKER];
+	let canPropose = $derived(data.user && PROPOSAL_ROLES.includes(data.user.role));
 </script>
 
 <svelte:head>
 	<title>提案審議 — LawAsCode</title>
 </svelte:head>
 
-<h1>提案審議</h1>
-<p class="subtitle">{data.proposals.length} 件提案</p>
+<div class="page-header">
+	<div>
+		<h1>提案審議</h1>
+		<p class="subtitle">{data.proposals.length} 件提案</p>
+	</div>
+	{#if canPropose}
+		<a href="/proposals/new" class="new-proposal-btn">+ 新增提案</a>
+	{/if}
+</div>
 
 <div class="proposal-list">
 	{#each data.proposals as proposal}
@@ -36,8 +47,30 @@
 </div>
 
 <style>
+	.page-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 24px;
+	}
 	h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-	.subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+	.subtitle { color: var(--text-muted); font-size: 14px; }
+
+	.new-proposal-btn {
+		padding: 8px 18px;
+		border-radius: var(--radius);
+		background: var(--accent);
+		color: #fff;
+		font-size: 13px;
+		font-weight: 500;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.new-proposal-btn:hover {
+		background: var(--accent-hover);
+		text-decoration: none;
+		color: #fff;
+	}
 
 	.proposal-list {
 		display: flex;

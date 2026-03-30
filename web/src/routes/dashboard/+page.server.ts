@@ -1,4 +1,4 @@
-import { MOCK_PROPOSALS } from '$lib/server/proposals/mock-data.js';
+import { getAllProposals } from '$lib/server/proposals/service.js';
 import { TRANSITIONS } from '$lib/types/workflow.js';
 import { Role } from '$lib/types/user.js';
 import { requireRole } from '$lib/server/auth/guards.js';
@@ -10,9 +10,10 @@ export const load: PageServerLoad = async ({ locals }) => {
 	requireRole(locals.user, ...DASHBOARD_ROLES);
 
 	const currentRole = locals.user.role;
+	const proposals = getAllProposals();
 
 	// 為每個提案計算可用操作
-	const proposalsWithActions = MOCK_PROPOSALS.map((proposal) => {
+	const proposalsWithActions = proposals.map((proposal) => {
 		const transitions = TRANSITIONS.filter((t) => t.from === proposal.state);
 
 		// 只顯示當前角色的操作
@@ -31,7 +32,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 		proposals: proposalsWithActions,
 		myQueue,
 		stats: {
-			total: MOCK_PROPOSALS.length,
+			total: proposals.length,
 			pending: myQueue.length
 		}
 	};

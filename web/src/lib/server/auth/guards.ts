@@ -35,6 +35,7 @@ export const PAGE_PERMISSIONS: Record<string, Role[] | 'public' | 'authenticated
 	'/laws': 'public', // 法規瀏覽開放所有人
 	'/search': 'public', // 搜尋開放所有人
 	'/proposals': 'authenticated', // 提案列表需登入
+	'/proposals/new': [Role.LEGISLATOR, Role.PRESIDENT, Role.SPEAKER], // 新增提案限有提案權的角色
 	'/dashboard': [Role.SPEAKER, Role.PRESIDENT, Role.SECRETARY_GENERAL], // 控制台限特定角色
 	'/admin': [Role.SPEAKER, Role.PRESIDENT], // 系統設定限議長/會長
 };

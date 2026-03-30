@@ -1,30 +1,22 @@
 /**
- * PocketBase 認證服務
+ * PocketBase 認證服務（PB v0.23+ 相容）
  * 生產環境使用 PocketBase 管理帳號與 session
  *
- * PocketBase collections 設計：
+ * PocketBase collections：
  *
- * users (auth collection):
- *   - id: string (auto)
- *   - email: string
- *   - name: string
- *   - role: string (president|speaker|legislator|secretary_general|secretariat|student)
- *   - studentId: string (學號，可選)
+ * users (PB 內建 auth collection):
+ *   - id, email, name, role (select), studentId (text, optional)
  *
- * sessions (base collection):
- *   - id: string (auto)
- *   - userId: string (relation → users)
- *   - token: string (unique, indexed)
- *   - expiresAt: string (datetime)
- *   - createdAt: string (datetime, auto)
+ * lac_sessions (base collection):
+ *   - userId: text (存 user id)
+ *   - token: text (session token)
+ *   - expiresAt: date
  *
- * audit_log (base collection, append-only):
- *   - id: string (auto)
- *   - userId: string (relation → users)
- *   - action: string (e.g., 'login', 'transition', 'vote', 'create_proposal')
- *   - target: string (e.g., proposal ID, vote session ID)
- *   - detail: json (操作細節)
- *   - createdAt: string (datetime, auto)
+ * lac_audit_log (base collection, append-only):
+ *   - userId: text
+ *   - action: text
+ *   - target: text
+ *   - detail: json
  */
 
 import { getConfig } from '$lib/server/config.js';
@@ -41,7 +33,11 @@ function getPbConfig() {
 	};
 }
 
-/** 發送 PocketBase API 請求 */
+/**
+ * 發送 PocketBase API 請求
+ * PB v0.23+ 預設 API rules 全鎖，需帶 superuser token 才能操作自訂 collection
+ * 我們使用 PB auth token（登入時取得）或用無 auth 存取 users auth endpoint
+ */
 async function pbFetch(
 	path: string,
 	options: { method?: string; body?: any; token?: string } = {}
@@ -74,15 +70,16 @@ function generateToken(): string {
 
 /**
  * 從 session token 還原使用者
- * 查詢 PocketBase sessions collection → 取得 user record
+ * 1. 查 lac_sessions 找到 userId
+ * 2. 查 users 取得完整 user record
  */
 export async function getUserFromSessionPb(sessionToken: string | undefined): Promise<User | null> {
 	if (!sessionToken) return null;
 
 	try {
-		// 查詢 sessions collection 中 token 符合的記錄
+		// 查詢 lac_sessions 中 token 符合的記錄
 		const res = await pbFetch(
-			`/collections/sessions/records?filter=(token='${encodeURIComponent(sessionToken)}')&expand=userId`
+			`/collections/lac_sessions/records?filter=(token='${encodeURIComponent(sessionToken)}')`
 		);
 
 		if (!res.ok) return null;
@@ -95,14 +92,15 @@ export async function getUserFromSessionPb(sessionToken: string | undefined): Pr
 		// 檢查是否過期
 		if (session.expiresAt && new Date(session.expiresAt) < new Date()) {
 			// 清除過期 session
-			await pbFetch(`/collections/sessions/records/${session.id}`, { method: 'DELETE' });
+			await pbFetch(`/collections/lac_sessions/records/${session.id}`, { method: 'DELETE' });
 			return null;
 		}
 
-		// 展開的 user 資料
-		const userRecord = session.expand?.userId;
-		if (!userRecord) return null;
+		// 用 userId 查 users collection
+		const userRes = await pbFetch(`/collections/users/records/${session.userId}`);
+		if (!userRes.ok) return null;
 
+		const userRecord = await userRes.json();
 		return mapPbUserToUser(userRecord);
 	} catch {
 		return null;
@@ -111,14 +109,13 @@ export async function getUserFromSessionPb(sessionToken: string | undefined): Pr
 
 /**
  * 用 PocketBase auth 登入（email + password）
- * 回傳 session token
+ * PB v0.23+: POST /api/collections/users/auth-with-password
  */
 export async function loginWithPassword(
 	email: string,
 	password: string
 ): Promise<{ token: string; user: User } | null> {
 	try {
-		// PocketBase auth endpoint
 		const res = await pbFetch('/collections/users/auth-with-password', {
 			method: 'POST',
 			body: { identity: email, password }
@@ -133,9 +130,10 @@ export async function loginWithPassword(
 		const sessionToken = generateToken();
 		const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(); // 7 天
 
-		await pbFetch('/collections/sessions/records', {
+		// 用 PB auth token 寫入 lac_sessions
+		await pbFetch('/collections/lac_sessions/records', {
 			method: 'POST',
-			token: data.token, // 使用 PocketBase 回傳的 auth token 寫入
+			token: data.token,
 			body: {
 				userId: data.record.id,
 				token: sessionToken,
@@ -147,25 +145,26 @@ export async function loginWithPassword(
 		await writeAuditLog(data.record.id, 'login', '', { email }, data.token);
 
 		return { token: sessionToken, user };
-	} catch {
+	} catch (err) {
+		console.error('[PB AUTH] Login error:', err);
 		return null;
 	}
 }
 
 /**
- * 登出：刪除 session record
+ * 登出：刪除 lac_sessions record
  */
 export async function logoutPb(sessionToken: string): Promise<void> {
 	try {
 		const res = await pbFetch(
-			`/collections/sessions/records?filter=(token='${encodeURIComponent(sessionToken)}')`
+			`/collections/lac_sessions/records?filter=(token='${encodeURIComponent(sessionToken)}')`
 		);
 
 		if (!res.ok) return;
 
 		const data = await res.json();
 		if (data.items && data.items.length > 0) {
-			await pbFetch(`/collections/sessions/records/${data.items[0].id}`, {
+			await pbFetch(`/collections/lac_sessions/records/${data.items[0].id}`, {
 				method: 'DELETE'
 			});
 		}
@@ -178,7 +177,6 @@ export async function logoutPb(sessionToken: string): Promise<void> {
 
 /**
  * 寫入審計日誌（append-only）
- * 記錄所有重要操作：登入、狀態轉移、投票、建立提案等
  */
 export async function writeAuditLog(
 	userId: string,
@@ -188,7 +186,7 @@ export async function writeAuditLog(
 	authToken?: string
 ): Promise<void> {
 	try {
-		await pbFetch('/collections/audit_log/records', {
+		await pbFetch('/collections/lac_audit_log/records', {
 			method: 'POST',
 			token: authToken,
 			body: {
@@ -199,7 +197,6 @@ export async function writeAuditLog(
 			}
 		});
 	} catch {
-		// 審計失敗不應阻擋主流程，但應該記錄到 server log
 		console.error(`[AUDIT] Failed to write audit log: ${action} ${target}`);
 	}
 }

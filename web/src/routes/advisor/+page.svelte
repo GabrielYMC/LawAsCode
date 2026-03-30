@@ -164,6 +164,26 @@
 			sendMessage();
 		}
 	}
+
+	/** 簡易 Markdown → HTML（粗體、標題、列表、引用、程式碼） */
+	function formatMarkdown(text: string): string {
+		return text
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/^### (.+)$/gm, '<h4>$1</h4>')
+			.replace(/^## (.+)$/gm, '<h3>$1</h3>')
+			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+			.replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>')
+			.replace(/^- (.+)$/gm, '<li>$1</li>')
+			.replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+			.replace(/✅/g, '<span class="check-pass">✅</span>')
+			.replace(/⚠️/g, '<span class="check-warn">⚠️</span>')
+			.replace(/\n\n/g, '</p><p>')
+			.replace(/\n/g, '<br>')
+			.replace(/^/, '<p>')
+			.replace(/$/, '</p>');
+	}
 </script>
 
 <svelte:head>
@@ -290,34 +310,6 @@
 	</div>
 </div>
 
-<script lang="ts" context="module">
-	/** 簡易 Markdown → HTML（粗體、標題、列表、引用、程式碼） */
-	function formatMarkdown(text: string): string {
-		return text
-			.replace(/&/g, '&amp;')
-			.replace(/</g, '&lt;')
-			.replace(/>/g, '&gt;')
-			// headers
-			.replace(/^### (.+)$/gm, '<h4>$1</h4>')
-			.replace(/^## (.+)$/gm, '<h3>$1</h3>')
-			// bold
-			.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-			// blockquote
-			.replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>')
-			// unordered list
-			.replace(/^- (.+)$/gm, '<li>$1</li>')
-			// ordered list
-			.replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
-			// checkmarks
-			.replace(/✅/g, '<span class="check-pass">✅</span>')
-			.replace(/⚠️/g, '<span class="check-warn">⚠️</span>')
-			// paragraphs
-			.replace(/\n\n/g, '</p><p>')
-			.replace(/\n/g, '<br>')
-			.replace(/^/, '<p>')
-			.replace(/$/, '</p>');
-	}
-</script>
 
 <style>
 	.advisor-layout {

@@ -50,7 +50,7 @@
 
 		// 加入使用者訊息
 		const userMsg: ChatMessage = {
-			id: crypto.randomUUID(),
+			id: (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2)),
 			role: 'user',
 			content: msg,
 			timestamp: new Date().toISOString()
@@ -80,7 +80,7 @@
 			if (useStream && response.headers.get('Content-Type')?.includes('text/event-stream')) {
 				// 串流模式：逐步顯示回覆
 				const assistantMsg: ChatMessage = {
-					id: crypto.randomUUID(),
+					id: (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2)),
 					role: 'assistant',
 					content: '',
 					timestamp: new Date().toISOString()
@@ -128,7 +128,7 @@
 				// JSON 模式
 				const resData = await response.json();
 				const assistantMsg: ChatMessage = {
-					id: crypto.randomUUID(),
+					id: (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2)),
 					role: 'assistant',
 					content: resData.message,
 					timestamp: new Date().toISOString(),
@@ -138,7 +138,7 @@
 			}
 		} catch (err: any) {
 			const errorMsg: ChatMessage = {
-				id: crypto.randomUUID(),
+				id: (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2)),
 				role: 'assistant',
 				content: `抱歉，發生錯誤：${err.message || '請稍後再試'}`,
 				timestamp: new Date().toISOString()

@@ -190,6 +190,22 @@
 		</div>
 	</section>
 
+	<!-- 展示模式 -->
+	<section class="config-section">
+		<div class="section-header">
+			<h2>🎭 展示模式</h2>
+			<p>允許外部訪客以預設角色體驗系統，無需 PocketBase 帳號</p>
+		</div>
+
+		<div class="field-group">
+			<label class="field toggle-field">
+				<input type="checkbox" name="demo_enabled" checked={config.demo.enabled} />
+				<span class="field-label">啟用展示模式</span>
+				<span class="field-hint">登入頁將顯示「以角色身份體驗」選項</span>
+			</label>
+		</div>
+	</section>
+
 	<!-- 議事設定 -->
 	<section class="config-section">
 		<div class="section-header">

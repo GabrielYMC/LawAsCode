@@ -41,6 +41,11 @@ export interface SystemConfig {
 		promulgationDeadlineDays: number; // 會長公布期限（天）
 		autoPromulgation: boolean; // 逾期自動公布
 	};
+
+	/** 展示模式 */
+	demo: {
+		enabled: boolean; // 允許用 DEV 角色卡片登入（即使 PocketBase 已啟用）
+	};
 }
 
 /** 預設設定 */
@@ -71,6 +76,9 @@ const DEFAULT_CONFIG: SystemConfig = {
 	legislative: {
 		promulgationDeadlineDays: 14,
 		autoPromulgation: true
+	},
+	demo: {
+		enabled: true
 	}
 };
 
@@ -89,6 +97,7 @@ export function updateConfig(partial: Partial<SystemConfig>): SystemConfig {
 	if (partial.gitea) _config.gitea = { ..._config.gitea, ...partial.gitea };
 	if (partial.pocketbase) _config.pocketbase = { ..._config.pocketbase, ...partial.pocketbase };
 	if (partial.legislative) _config.legislative = { ..._config.legislative, ...partial.legislative };
+	if (partial.demo) _config.demo = { ..._config.demo, ...partial.demo };
 	return _config;
 }
 

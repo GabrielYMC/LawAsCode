@@ -15,12 +15,15 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 		throw redirect(303, url.searchParams.get('redirect') || '/');
 	}
 
-	const isPb = getConfig().pocketbase.enabled;
+	const config = getConfig();
+	const isPb = config.pocketbase.enabled;
+	const demoEnabled = config.demo.enabled;
 
 	return {
-		devUsers: isPb ? [] : DEV_USERS,
+		devUsers: (!isPb || demoEnabled) ? DEV_USERS : [],
 		redirect: url.searchParams.get('redirect') || '/',
-		usePocketBase: isPb
+		usePocketBase: isPb,
+		demoEnabled
 	};
 };
 

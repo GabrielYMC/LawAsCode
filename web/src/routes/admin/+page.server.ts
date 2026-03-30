@@ -49,6 +49,9 @@ export const actions: Actions = {
 				legislative: {
 					promulgationDeadlineDays: parseInt(formData.get('leg_deadline') as string) || 14,
 					autoPromulgation: formData.get('leg_autoPromulgation') === 'on'
+				},
+				demo: {
+					enabled: formData.get('demo_enabled') === 'on'
 				}
 			});
 

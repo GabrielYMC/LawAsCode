@@ -8,6 +8,7 @@
 	let email = $state(form?.email || '');
 	let password = $state('');
 	let loading = $state(false);
+	let showDemo = $state(false);
 
 	const ROLE_ICONS: Record<string, string> = {
 		president: '👔',
@@ -75,8 +76,50 @@
 					{loading ? '登入中...' : '登入'}
 				</button>
 			</form>
+
+			{#if data.demoEnabled && data.devUsers.length > 0}
+				<!-- 展示模式：可展開的角色卡片 -->
+				<div class="demo-divider">
+					<button type="button" class="demo-toggle" onclick={() => showDemo = !showDemo}>
+						<span class="demo-toggle-icon">{showDemo ? '▾' : '▸'}</span>
+						展示模式：以角色身份體驗系統
+					</button>
+				</div>
+
+				{#if showDemo}
+					<div class="demo-section">
+						<p class="demo-hint">選擇一個角色，無需帳號即可體驗各身份的操作介面</p>
+						<form method="POST" action="?/login">
+							<input type="hidden" name="redirect" value={data.redirect} />
+
+							<div class="user-grid">
+								{#each data.devUsers as user}
+									<label
+										class="user-option"
+										class:selected={selectedUser === user.id}
+									>
+										<input
+											type="radio"
+											name="userId"
+											value={user.id}
+											bind:group={selectedUser}
+										/>
+										<span class="user-icon">{ROLE_ICONS[user.role]}</span>
+										<span class="user-name">{user.name}</span>
+										<span class="user-role">{ROLE_LABELS[user.role]}</span>
+									</label>
+								{/each}
+							</div>
+
+							<button type="submit" class="login-btn demo-btn" disabled={!selectedUser}>
+								以此角色進入展示
+							</button>
+						</form>
+					</div>
+				{/if}
+			{/if}
 		{:else}
-			<!-- Mock 登入：選擇角色 -->
+			<!-- Mock 登入：選擇角色（開發模式） -->
 			<div class="dev-notice">
 				<span class="dev-badge">DEV</span>
 				<span>開發模式：選擇角色登入</span>
@@ -301,6 +344,53 @@
 	.login-btn:disabled {
 		opacity: 0.4;
 		cursor: not-allowed;
+	}
+
+	/* 展示模式 */
+	.demo-divider {
+		margin-top: 24px;
+		padding-top: 20px;
+		border-top: 1px solid var(--border);
+	}
+	.demo-toggle {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		width: 100%;
+		padding: 0;
+		border: none;
+		background: none;
+		color: var(--text-muted);
+		font-size: 13px;
+		cursor: pointer;
+		transition: color 0.15s;
+	}
+	.demo-toggle:hover {
+		color: var(--text);
+	}
+	.demo-toggle-icon {
+		font-size: 11px;
+		width: 12px;
+	}
+	.demo-section {
+		margin-top: 14px;
+		padding: 16px;
+		background: rgba(210, 153, 34, 0.04);
+		border: 1px solid rgba(210, 153, 34, 0.15);
+		border-radius: var(--radius);
+	}
+	.demo-hint {
+		font-size: 12px;
+		color: var(--text-muted);
+		margin-bottom: 14px;
+		line-height: 1.5;
+	}
+	.demo-btn {
+		background: var(--warning) !important;
+		color: #000 !important;
+	}
+	.demo-btn:hover:not(:disabled) {
+		filter: brightness(1.1);
 	}
 
 	.login-footer {

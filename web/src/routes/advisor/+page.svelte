@@ -6,12 +6,16 @@
 		MODE_ICONS
 	} from '$lib/types/advisor';
 	import type { ChatMessage, LawSource } from '$lib/types/advisor';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 
 	let currentMode: AdvisorMode = $state(AdvisorMode.GENERAL);
 	let messages: ChatMessage[] = $state([]);
 	let inputText = $state('');
 	let isLoading = $state(false);
 	let chatContainer: HTMLElement;
+	let useStream = $derived(data.llmProvider === 'ollama');
 
 	const MODES = [AdvisorMode.GENERAL, AdvisorMode.LEGISLATIVE, AdvisorMode.COMPLIANCE];
 
@@ -63,29 +67,80 @@
 				body: JSON.stringify({
 					mode: currentMode,
 					message: msg,
-					history: messages.map((m) => ({ role: m.role, content: m.content }))
+					history: messages.map((m) => ({ role: m.role, content: m.content })),
+					stream: useStream
 				})
 			});
 
 			if (!response.ok) {
-				throw new Error(`HTTP ${response.status}`);
+				const errBody = await response.json().catch(() => ({ message: `HTTP ${response.status}` }));
+				throw new Error(errBody.message || `HTTP ${response.status}`);
 			}
 
-			const data = await response.json();
+			if (useStream && response.headers.get('Content-Type')?.includes('text/event-stream')) {
+				// 串流模式：逐步顯示回覆
+				const assistantMsg: ChatMessage = {
+					id: crypto.randomUUID(),
+					role: 'assistant',
+					content: '',
+					timestamp: new Date().toISOString()
+				};
+				messages = [...messages, assistantMsg];
+				const msgIndex = messages.length - 1;
 
-			const assistantMsg: ChatMessage = {
-				id: crypto.randomUUID(),
-				role: 'assistant',
-				content: data.message,
-				timestamp: new Date().toISOString(),
-				sources: data.sources
-			};
-			messages = [...messages, assistantMsg];
-		} catch (err) {
+				const reader = response.body!.getReader();
+				const decoder = new TextDecoder();
+				let buffer = '';
+
+				while (true) {
+					const { done, value } = await reader.read();
+					if (done) break;
+
+					buffer += decoder.decode(value, { stream: true });
+					const lines = buffer.split('\n\n');
+					buffer = lines.pop() || '';
+
+					for (const line of lines) {
+						if (!line.startsWith('data: ')) continue;
+						try {
+							const event = JSON.parse(line.slice(6));
+							if (event.type === 'sources') {
+								messages[msgIndex] = { ...messages[msgIndex], sources: event.sources };
+								messages = [...messages];
+							} else if (event.type === 'token') {
+								messages[msgIndex] = {
+									...messages[msgIndex],
+									content: messages[msgIndex].content + event.content
+								};
+								messages = [...messages];
+								scrollToBottom();
+							} else if (event.type === 'error') {
+								messages[msgIndex] = {
+									...messages[msgIndex],
+									content: messages[msgIndex].content || `錯誤：${event.message}`
+								};
+								messages = [...messages];
+							}
+						} catch { /* skip */ }
+					}
+				}
+			} else {
+				// JSON 模式
+				const resData = await response.json();
+				const assistantMsg: ChatMessage = {
+					id: crypto.randomUUID(),
+					role: 'assistant',
+					content: resData.message,
+					timestamp: new Date().toISOString(),
+					sources: resData.sources
+				};
+				messages = [...messages, assistantMsg];
+			}
+		} catch (err: any) {
 			const errorMsg: ChatMessage = {
 				id: crypto.randomUUID(),
 				role: 'assistant',
-				content: '抱歉，發生錯誤。請稍後再試。',
+				content: `抱歉，發生錯誤：${err.message || '請稍後再試'}`,
 				timestamp: new Date().toISOString()
 			};
 			messages = [...messages, errorMsg];
@@ -133,10 +188,17 @@
 			</button>
 		{/each}
 
-		<div class="mode-notice">
-			<span class="notice-badge">DEV</span>
-			<span>目前為模擬回覆<br />生產環境接 Ollama</span>
-		</div>
+		{#if data.llmProvider === 'ollama'}
+			<div class="mode-notice live">
+				<span class="notice-badge live">AI</span>
+				<span>{data.llmModel}<br />串流回覆已啟用</span>
+			</div>
+		{:else}
+			<div class="mode-notice">
+				<span class="notice-badge">DEV</span>
+				<span>目前為模擬回覆<br />可在系統設定切換 Ollama</span>
+			</div>
+		{/if}
 	</div>
 
 	<!-- 右側：聊天區 -->
@@ -344,6 +406,12 @@
 		font-weight: 700;
 		font-size: 9px;
 		flex-shrink: 0;
+	}
+	.mode-notice.live {
+		background: rgba(63, 185, 80, 0.08);
+	}
+	.notice-badge.live {
+		background: var(--success);
 	}
 
 	/* Chat Panel */

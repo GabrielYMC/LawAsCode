@@ -1,18 +1,25 @@
 <script lang="ts">
-	import type { ActionData } from './$types';
 	import { enhance } from '$app/forms';
 
-	let { form }: { form: ActionData } = $props();
+	let { form }: { form: any } = $props();
 
 	// 動態修正條文列表
-	let amendments = $state([
-		{ articleNum: '', type: 'modify' as const, oldText: '', newText: '', reason: '' }
+	interface Amendment {
+		articleNum: string;
+		type: 'modify' | 'add' | 'delete';
+		oldText: string;
+		newText: string;
+		reason: string;
+	}
+
+	let amendments: Amendment[] = $state([
+		{ articleNum: '', type: 'modify', oldText: '', newText: '', reason: '' }
 	]);
 
 	function addAmendment() {
 		amendments = [
 			...amendments,
-			{ articleNum: '', type: 'modify' as const, oldText: '', newText: '', reason: '' }
+			{ articleNum: '', type: 'modify' as Amendment['type'], oldText: '', newText: '', reason: '' }
 		];
 	}
 

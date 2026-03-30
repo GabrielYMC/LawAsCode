@@ -1,6 +1,10 @@
+import { getConfig } from '$lib/server/config.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	// AI 顧問開放所有人使用（不需登入）
-	return {};
+	const config = getConfig();
+	return {
+		llmProvider: config.llm.provider,
+		llmModel: config.llm.model
+	};
 };

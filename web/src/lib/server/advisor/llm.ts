@@ -191,7 +191,7 @@ function generateComplianceResponse(question: string, sources: LawSource[]): str
 	return response;
 }
 
-/** Ollama API 呼叫 */
+/** Ollama API 呼叫（非串流模式） */
 async function callOllama(request: LlmRequest): Promise<LlmResponse> {
 	const ollamaConfig = getOllamaConfig();
 	const systemPrompt = buildSystemPrompt(request.mode);
@@ -203,24 +203,156 @@ async function callOllama(request: LlmRequest): Promise<LlmResponse> {
 		{ role: 'user', content: request.userMessage }
 	];
 
+	// 90 秒 timeout — Gemma 3 12B 在 3080Ti 上可能要 10-30 秒
+	const controller = new AbortController();
+	const timeout = setTimeout(() => controller.abort(), 90_000);
+
+	try {
+		const response = await fetch(`${ollamaConfig.baseUrl}/api/chat`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				model: ollamaConfig.model,
+				messages,
+				stream: false,
+				options: {
+					temperature: ollamaConfig.temperature,
+					num_predict: ollamaConfig.maxTokens
+				}
+			}),
+			signal: controller.signal
+		});
+
+		if (!response.ok) {
+			const body = await response.text().catch(() => '');
+			if (response.status === 404) {
+				throw new Error(`模型 "${ollamaConfig.model}" 不存在，請確認 Ollama 已下載此模型（ollama pull ${ollamaConfig.model}）`);
+			}
+			throw new Error(`Ollama 回應錯誤 (HTTP ${response.status})：${body.slice(0, 200)}`);
+		}
+
+		const data = await response.json();
+		return { content: data.message.content };
+	} catch (err: any) {
+		if (err.name === 'AbortError') {
+			throw new Error('Ollama 回應逾時（90 秒），模型可能正在載入中，請稍後再試');
+		}
+		if (err.cause?.code === 'ECONNREFUSED' || err.message?.includes('ECONNREFUSED')) {
+			throw new Error(`無法連線至 Ollama（${ollamaConfig.baseUrl}），請確認服務已啟動`);
+		}
+		throw err;
+	} finally {
+		clearTimeout(timeout);
+	}
+}
+
+/**
+ * Ollama 串流 API 呼叫
+ * 回傳 ReadableStream，前端可逐步顯示回覆
+ */
+export async function callLlmStream(request: LlmRequest): Promise<ReadableStream<string>> {
+	const config = getConfig();
+
+	if (config.llm.provider !== 'ollama') {
+		// Mock 模式：模擬串流
+		const mockResponse = await callMock(request);
+		return new ReadableStream({
+			async start(controller) {
+				const words = mockResponse.content.split('');
+				for (let i = 0; i < words.length; i += 3) {
+					controller.enqueue(words.slice(i, i + 3).join(''));
+					await new Promise((r) => setTimeout(r, 20));
+				}
+				controller.close();
+			}
+		});
+	}
+
+	const ollamaConfig = getOllamaConfig();
+	const systemPrompt = buildSystemPrompt(request.mode);
+	const contextPrompt = buildContextPrompt(request.sources);
+
+	const messages = [
+		{ role: 'system', content: systemPrompt + contextPrompt },
+		...request.history.slice(-6),
+		{ role: 'user', content: request.userMessage }
+	];
+
+	const controller = new AbortController();
+	const timeout = setTimeout(() => controller.abort(), 90_000);
+
 	const response = await fetch(`${ollamaConfig.baseUrl}/api/chat`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
 			model: ollamaConfig.model,
 			messages,
-			stream: false,
+			stream: true,
 			options: {
 				temperature: ollamaConfig.temperature,
 				num_predict: ollamaConfig.maxTokens
 			}
-		})
+		}),
+		signal: controller.signal
+	}).catch((err) => {
+		clearTimeout(timeout);
+		if (err.cause?.code === 'ECONNREFUSED' || err.message?.includes('ECONNREFUSED')) {
+			throw new Error(`無法連線至 Ollama（${ollamaConfig.baseUrl}），請確認服務已啟動`);
+		}
+		throw err;
 	});
 
 	if (!response.ok) {
-		throw new Error(`Ollama API error: ${response.status}`);
+		clearTimeout(timeout);
+		if (response.status === 404) {
+			throw new Error(`模型 "${ollamaConfig.model}" 不存在`);
+		}
+		throw new Error(`Ollama 回應錯誤 (HTTP ${response.status})`);
 	}
 
-	const data = await response.json();
-	return { content: data.message.content };
+	// 將 Ollama 的 NDJSON 串流轉為純文字串流
+	const reader = response.body!.getReader();
+	const decoder = new TextDecoder();
+
+	return new ReadableStream<string>({
+		async pull(streamController) {
+			try {
+				const { done, value } = await reader.read();
+				if (done) {
+					clearTimeout(timeout);
+					streamController.close();
+					return;
+				}
+
+				const text = decoder.decode(value, { stream: true });
+				// Ollama 回傳一行一個 JSON
+				for (const line of text.split('\n').filter(Boolean)) {
+					try {
+						const json = JSON.parse(line);
+						if (json.message?.content) {
+							streamController.enqueue(json.message.content);
+						}
+						if (json.done) {
+							clearTimeout(timeout);
+							streamController.close();
+							return;
+						}
+					} catch {
+						// skip malformed lines
+					}
+				}
+			} catch (err: any) {
+				clearTimeout(timeout);
+				if (err.name === 'AbortError') {
+					streamController.error(new Error('Ollama 回應逾時'));
+				} else {
+					streamController.error(err);
+				}
+			}
+		},
+		cancel() {
+			clearTimeout(timeout);
+			reader.cancel();
+		}
+	});
 }

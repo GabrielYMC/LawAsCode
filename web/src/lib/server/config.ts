@@ -82,8 +82,62 @@ const DEFAULT_CONFIG: SystemConfig = {
 	}
 };
 
-/** 執行期設定（記憶體中，重啟後重置為預設值） */
-let _config: SystemConfig = structuredClone(DEFAULT_CONFIG);
+/**
+ * 從環境變數載入設定覆蓋
+ * 部署時設環境變數即可，不需進 admin 頁手動改
+ *
+ * 支援的環境變數：
+ *   LAC_LLM_PROVIDER=ollama|mock
+ *   LAC_LLM_BASE_URL=http://localhost:11434
+ *   LAC_LLM_MODEL=gemma3:12b
+ *   LAC_LLM_TEMPERATURE=0.3
+ *   LAC_LLM_MAX_TOKENS=1024
+ *   LAC_SEARCH_THRESHOLD=0.5
+ *   LAC_SEARCH_MAX_RESULTS=5
+ *   LAC_GITEA_ENABLED=true|false
+ *   LAC_GITEA_BASE_URL=http://localhost:3000
+ *   LAC_GITEA_OWNER=student-association
+ *   LAC_GITEA_REPO=laws
+ *   LAC_GITEA_TOKEN=xxx
+ *   LAC_PB_ENABLED=true|false
+ *   LAC_PB_BASE_URL=http://localhost:8090
+ *   LAC_DEMO_ENABLED=true|false
+ */
+function loadEnvOverrides(config: SystemConfig): SystemConfig {
+	const env = process.env;
+
+	// LLM
+	if (env.LAC_LLM_PROVIDER === 'ollama' || env.LAC_LLM_PROVIDER === 'mock') {
+		config.llm.provider = env.LAC_LLM_PROVIDER;
+	}
+	if (env.LAC_LLM_BASE_URL) config.llm.baseUrl = env.LAC_LLM_BASE_URL;
+	if (env.LAC_LLM_MODEL) config.llm.model = env.LAC_LLM_MODEL;
+	if (env.LAC_LLM_TEMPERATURE) config.llm.temperature = parseFloat(env.LAC_LLM_TEMPERATURE);
+	if (env.LAC_LLM_MAX_TOKENS) config.llm.maxTokens = parseInt(env.LAC_LLM_MAX_TOKENS);
+
+	// Search
+	if (env.LAC_SEARCH_THRESHOLD) config.search.threshold = parseFloat(env.LAC_SEARCH_THRESHOLD);
+	if (env.LAC_SEARCH_MAX_RESULTS) config.search.maxResults = parseInt(env.LAC_SEARCH_MAX_RESULTS);
+
+	// Gitea
+	if (env.LAC_GITEA_ENABLED) config.gitea.enabled = env.LAC_GITEA_ENABLED === 'true';
+	if (env.LAC_GITEA_BASE_URL) config.gitea.baseUrl = env.LAC_GITEA_BASE_URL;
+	if (env.LAC_GITEA_OWNER) config.gitea.owner = env.LAC_GITEA_OWNER;
+	if (env.LAC_GITEA_REPO) config.gitea.repo = env.LAC_GITEA_REPO;
+	if (env.LAC_GITEA_TOKEN) config.gitea.token = env.LAC_GITEA_TOKEN;
+
+	// PocketBase
+	if (env.LAC_PB_ENABLED) config.pocketbase.enabled = env.LAC_PB_ENABLED === 'true';
+	if (env.LAC_PB_BASE_URL) config.pocketbase.baseUrl = env.LAC_PB_BASE_URL;
+
+	// Demo
+	if (env.LAC_DEMO_ENABLED) config.demo.enabled = env.LAC_DEMO_ENABLED === 'true';
+
+	return config;
+}
+
+/** 執行期設定（記憶體中，重啟後重置為預設值 + 環境變數覆蓋） */
+let _config: SystemConfig = loadEnvOverrides(structuredClone(DEFAULT_CONFIG));
 
 /** 取得目前設定 */
 export function getConfig(): SystemConfig {

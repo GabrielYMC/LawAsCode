@@ -9,9 +9,9 @@ import { getUserFromSession, COOKIE_NAME } from '$lib/server/auth/index.js';
 import { checkPageAccess } from '$lib/server/auth/guards.js';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	// 1. 從 cookie 還原使用者
+	// 1. 從 cookie 還原使用者（支援 async — PocketBase 模式需查詢 API）
 	const sessionId = event.cookies.get(COOKIE_NAME);
-	const user = getUserFromSession(sessionId);
+	const user = await getUserFromSession(sessionId);
 	event.locals.user = user;
 
 	// 2. 路由守衛

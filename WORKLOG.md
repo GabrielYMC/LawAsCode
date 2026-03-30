@@ -463,3 +463,47 @@ Phase 1 的人工校對步驟暫時跳過。理由：
 | 登入 | `/login` | 開發模式角色選擇 |
 
 需登入的頁面：提案審議（`/proposals`）、控制台（`/dashboard`）、系統設定（`/admin`）
+
+---
+
+### 生產環境後端整合框架
+
+**時間**：2026-03-30
+
+#### 完成項目
+
+| 任務 | 產出 | 狀態 |
+|------|------|------|
+| Gitea 法規倉庫 | `$lib/server/repositories/gitea.ts` — GiteaLawRepository 完整實作 | 完成 |
+| Repository 工廠更新 | `$lib/server/repositories/index.ts` — 根據 config 切換 Filesystem/Gitea | 完成 |
+| PocketBase 認證服務 | `$lib/server/auth/pocketbase.ts` — 登入/登出/Session 查詢/審計日誌 | 完成 |
+| 認證服務統一入口 | `$lib/server/auth/index.ts` — async 化，Mock/PB 自動切換 | 完成 |
+| Server Hooks 更新 | `hooks.server.ts` — getUserFromSession 改為 await | 完成 |
+| 登入頁雙模式 | `login/+page.server.ts` — pbLogin action + usePocketBase flag | 完成 |
+| 登入頁 UI 雙模式 | `login/+page.svelte` — PB 帳密表單 / DEV 角色卡片 條件渲染 | 完成 |
+| 登出整合 | `logout/+page.server.ts` — destroySession 支援 PB 模式 | 完成 |
+
+#### GiteaLawRepository 架構
+
+- `giteaFetch(path)` — 帶 token 的 Gitea REST API 請求
+- `listAknFiles()` — GET `/repos/{owner}/{repo}/contents/akn` 取得目錄列表
+- `fetchFileContent(slug)` — GET `/repos/{owner}/{repo}/raw/akn/{slug}.xml` 取得原始 XML
+- `loadDocument(slug)` — fetch + parseAknXml + 5 分鐘快取（CACHE_TTL）
+- 搜尋索引與 FilesystemLawRepository 相同（fuse.js）
+- `clearCache()` 支援設定變更後重建
+
+#### PocketBase 認證架構
+
+- **Collections 設計**：users (auth)、sessions (base)、audit_log (append-only)
+- `getUserFromSessionPb(token)` — 查詢 sessions collection，expand userId 取得完整 user
+- `loginWithPassword(email, password)` — PB auth endpoint → 建立 session record → 寫入 audit log
+- `logoutPb(token)` — 刪除 session record
+- `writeAuditLog(userId, action, target, detail)` — 不可變審計軌跡
+- Session 過期自動清除（7 天 TTL）
+
+#### 雙模式切換機制
+
+- `getConfig().gitea.enabled` 控制 Repository 層（Filesystem ↔ Gitea）
+- `getConfig().pocketbase.enabled` 控制 Auth 層（Mock ↔ PocketBase）
+- 管理員可在 `/admin` 設定頁即時切換，無需重啟
+- 登入頁根據 `usePocketBase` flag 自動切換 UI（角色卡片 ↔ 帳密表單）

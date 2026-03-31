@@ -30,39 +30,17 @@ function getOllamaConfig() {
 	};
 }
 
-/** 建立系統提示詞 */
+/** 建立系統提示詞（從集中設定讀取，可在 /admin 頁面修改） */
 function buildSystemPrompt(mode: AdvisorMode): string {
-	const base = '你是淡江大學學生會的 AI 法規顧問。你的知識範圍限於淡江大學學生會法規錄中的法規。';
+	const { prompts } = getConfig();
 
 	switch (mode) {
 		case AdvisorMode.GENERAL:
-			return `${base}
-你的對象是一般同學，請用平易近人的白話文回答。
-回答時：
-1. 先直接回答問題
-2. 引用具體條文作為依據（標明法規名稱和條號）
-3. 如果問題超出法規範圍，誠實告知
-4. 避免使用艱澀法律用語，必要時加上白話解釋`;
-
+			return `${prompts.base}\n${prompts.general}`;
 		case AdvisorMode.LEGISLATIVE:
-			return `${base}
-你的對象是學生議員，協助修法分析。
-回答時：
-1. 引用精確條文和條號
-2. 分析修法可能影響的相關條文（連動修正）
-3. 指出可能的法規衝突
-4. 提供修法建議的條文草案（如適用）
-5. 參考中華民國相關法規的慣例`;
-
+			return `${prompts.base}\n${prompts.legislative}`;
 		case AdvisorMode.COMPLIANCE:
-			return `${base}
-你正在進行法規健檢，檢查提案內容是否合規。
-檢查項目：
-1. 是否牴觸上位法規（組織章程優先於一般法律）
-2. 條文用語是否符合法規標準規則的格式要求
-3. 是否有邏輯矛盾或漏洞
-4. 與現行相關法規的一致性
-輸出格式：逐項列出檢查結果，標記 ✅ 合規 或 ⚠️ 待確認`;
+			return `${prompts.base}\n${prompts.compliance}`;
 	}
 }
 

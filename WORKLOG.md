@@ -507,3 +507,71 @@ Phase 1 的人工校對步驟暫時跳過。理由：
 - `getConfig().pocketbase.enabled` 控制 Auth 層（Mock ↔ PocketBase）
 - 管理員可在 `/admin` 設定頁即時切換，無需重啟
 - 登入頁根據 `usePocketBase` flag 自動切換 UI（角色卡片 ↔ 帳密表單）
+
+---
+
+## 2026-03-31
+
+### 展示模式
+
+**時間**：2026-03-31
+
+新增 `config.demo.enabled` 開關，允許 PocketBase 上線後仍保留 DEV 角色卡片，供外部長官展示用。
+
+- Config 新增 `demo: { enabled: boolean }`，預設 `true`
+- 登入頁 PB 模式下，帳密表單下方新增可展開的「展示模式」區塊
+- 展示按鈕用黃色標示，與正式登入區分
+- `/admin` 設定頁新增「🎭 展示模式」區塊可隨時開關
+
+---
+
+### 生產環境串接：Ollama + PocketBase
+
+**時間**：2026-03-31
+
+#### 完成項目
+
+| 任務 | 產出 | 狀態 |
+|------|------|------|
+| Ollama 串流回覆 | `llm.ts` — `callLlmStream()` SSE 串流 + 90s timeout | 完成 |
+| Ollama 錯誤處理 | 中文錯誤訊息、ECONNREFUSED/404/timeout 分別處理 | 完成 |
+| 環境變數設定 | `config.ts` — `loadEnvOverrides()` 支援 `LAC_*` 環境變數 | 完成 |
+| Advisor 串流 UI | SSE 逐字顯示回覆、動態 provider 標示（DEV/AI） | 完成 |
+| Advisor API 串流 | `/api/advisor` — `stream: true` 時回傳 SSE event stream | 完成 |
+| PB v0.23+ 相容 | `pocketbase.ts` — collection 改 `lac_` 前綴、移除 expand | 完成 |
+| PB 初始化腳本 | `deploy/pocketbase-setup.sh` — 建立 collections + 帳號 | 完成 |
+| @types/node | 安裝 Node.js 型別定義，修復 `process`/`crypto`/`path` 報錯 | 完成 |
+| 型別清零 | `svelte-check` 0 errors（修復 proposals/new 的 5 個既有錯誤） | 完成 |
+
+#### Bug fixes
+
+| 問題 | 原因 | 修復 |
+|------|------|------|
+| `crypto.randomUUID is not a function` | HTTP 環境下瀏覽器不提供此 API | 加 fallback `Math.random().toString(36)` |
+| Svelte 5 `context="module"` 棄用 | `formatMarkdown` 定義在 deprecated 語法中 | 移到主 `<script>` 區塊 |
+| PB 登入後顯示未登入 | PB v0.23+ API Rules 預設全鎖，server 端查 session 被拒 | 設定 API Rules 為空字串 |
+
+---
+
+### AI 顧問 System Prompt 管理
+
+**時間**：2026-03-31
+
+- Config 新增 `prompts` 區塊（base / general / legislative / compliance）
+- `llm.ts` 的 `buildSystemPrompt()` 改從 `getConfig().prompts` 讀取
+- `/admin` 設定頁新增「💬 AI 顧問提示詞」區塊，四個 textarea 可即時編輯
+- AI 顧問輸入框增加提示：「首次提問時，模型需要約 20 秒載入，請耐心等候」
+
+---
+
+### 生產環境部署
+
+**時間**：2026-03-31
+
+完整部署紀錄見 `DEPLOYMENT.md`。
+
+- Linux 主機部署完成，SvelteKit 綁定 Tailscale IP
+- systemd 服務設定完成（`lawascoode.service`），開機自啟
+- Cloudflare Tunnel 路由 `law.ouroboros.dpdns.org → 100.89.244.57:5173`
+- Ollama（gemma3:12b）串接成功，AI 顧問可正常使用
+- PocketBase 帳號系統串接成功，6 個初始帳號建立完成

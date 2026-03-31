@@ -30,6 +30,12 @@ export const actions: Actions = {
 					temperature: parseFloat(formData.get('llm_temperature') as string) || 0.3,
 					maxTokens: parseInt(formData.get('llm_maxTokens') as string) || 1024
 				},
+				prompts: {
+					base: (formData.get('prompt_base') as string) || '',
+					general: (formData.get('prompt_general') as string) || '',
+					legislative: (formData.get('prompt_legislative') as string) || '',
+					compliance: (formData.get('prompt_compliance') as string) || ''
+				},
 				search: {
 					provider: formData.get('search_provider') as 'fuse' | 'embedding',
 					threshold: parseFloat(formData.get('search_threshold') as string) || 0.5,

@@ -291,6 +291,10 @@
 		</div>
 
 		<div class="chat-input-area">
+			{#if data.llmProvider === 'ollama' && messages.length === 0}
+				<p class="input-hint">首次提問時，模型需要約 20 秒載入，請耐心等候</p>
+			{/if}
+			<div class="input-row">
 			<textarea
 				class="chat-input"
 				placeholder="輸入法規問題..."
@@ -306,6 +310,7 @@
 			>
 				發送
 			</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -602,10 +607,21 @@
 	/* Input */
 	.chat-input-area {
 		display: flex;
-		gap: 8px;
+		flex-direction: column;
+		gap: 6px;
 		padding: 16px 24px;
 		border-top: 1px solid var(--border);
 		flex-shrink: 0;
+	}
+	.input-hint {
+		font-size: 11px;
+		color: var(--warning);
+		text-align: center;
+		margin: 0;
+	}
+	.input-row {
+		display: flex;
+		gap: 8px;
 	}
 	.chat-input {
 		flex: 1;

@@ -14,6 +14,14 @@ export interface SystemConfig {
 		maxTokens: number;
 	};
 
+	/** AI 顧問系統提示詞 */
+	prompts: {
+		base: string;
+		general: string;
+		legislative: string;
+		compliance: string;
+	};
+
 	/** 法規搜尋設定 */
 	search: {
 		provider: 'fuse' | 'embedding';
@@ -56,6 +64,29 @@ const DEFAULT_CONFIG: SystemConfig = {
 		model: 'gemma3:12b',
 		temperature: 0.3,
 		maxTokens: 1024
+	},
+	prompts: {
+		base: '你是淡江大學學生會的 AI 法規顧問。你的知識範圍限於淡江大學學生會法規錄中的法規。',
+		general: `你的對象是一般同學，請用平易近人的白話文回答。
+回答時：
+1. 先直接回答問題
+2. 引用具體條文作為依據（標明法規名稱和條號）
+3. 如果問題超出法規範圍，誠實告知
+4. 避免使用艱澀法律用語，必要時加上白話解釋`,
+		legislative: `你的對象是學生議員，協助修法分析。
+回答時：
+1. 引用精確條文和條號
+2. 分析修法可能影響的相關條文（連動修正）
+3. 指出可能的法規衝突
+4. 提供修法建議的條文草案（如適用）
+5. 參考中華民國相關法規的慣例`,
+		compliance: `你正在進行法規健檢，檢查提案內容是否合規。
+檢查項目：
+1. 是否牴觸上位法規（組織章程優先於一般法律）
+2. 條文用語是否符合法規標準規則的格式要求
+3. 是否有邏輯矛盾或漏洞
+4. 與現行相關法規的一致性
+輸出格式：逐項列出檢查結果，標記 ✅ 合規 或 ⚠️ 待確認`
 	},
 	search: {
 		provider: 'fuse',
@@ -147,6 +178,7 @@ export function getConfig(): SystemConfig {
 /** 更新設定（部分更新） */
 export function updateConfig(partial: Partial<SystemConfig>): SystemConfig {
 	if (partial.llm) _config.llm = { ..._config.llm, ...partial.llm };
+	if (partial.prompts) _config.prompts = { ..._config.prompts, ...partial.prompts };
 	if (partial.search) _config.search = { ..._config.search, ...partial.search };
 	if (partial.gitea) _config.gitea = { ..._config.gitea, ...partial.gitea };
 	if (partial.pocketbase) _config.pocketbase = { ..._config.pocketbase, ...partial.pocketbase };

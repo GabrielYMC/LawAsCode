@@ -99,6 +99,36 @@
 		</div>
 	</section>
 
+	<!-- AI 顧問提示詞 -->
+	<section class="config-section">
+		<div class="section-header">
+			<h2>💬 AI 顧問提示詞</h2>
+			<p>自訂 AI 顧問三種模式的系統指令（System Prompt）</p>
+		</div>
+
+		<div class="field-group">
+			<label class="field">
+				<span class="field-label">基礎角色設定（所有模式共用）</span>
+				<textarea name="prompt_base" rows="2" class="prompt-textarea">{config.prompts.base}</textarea>
+			</label>
+
+			<label class="field">
+				<span class="field-label">💬 法規諮詢（一般同學）</span>
+				<textarea name="prompt_general" rows="5" class="prompt-textarea">{config.prompts.general}</textarea>
+			</label>
+
+			<label class="field">
+				<span class="field-label">📝 修法輔助（議員）</span>
+				<textarea name="prompt_legislative" rows="5" class="prompt-textarea">{config.prompts.legislative}</textarea>
+			</label>
+
+			<label class="field">
+				<span class="field-label">🔍 法規健檢（提案檢查）</span>
+				<textarea name="prompt_compliance" rows="6" class="prompt-textarea">{config.prompts.compliance}</textarea>
+			</label>
+		</div>
+	</section>
+
 	<!-- 搜尋設定 -->
 	<section class="config-section">
 		<div class="section-header">
@@ -316,8 +346,20 @@
 	.field select {
 		font-family: var(--font-sans);
 	}
+	.field textarea.prompt-textarea {
+		padding: 8px 12px;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-sm);
+		background: var(--bg);
+		color: var(--text);
+		font-size: 13px;
+		font-family: var(--font-sans);
+		line-height: 1.6;
+		resize: vertical;
+	}
 	.field input:focus,
-	.field select:focus {
+	.field select:focus,
+	.field textarea:focus {
 		outline: none;
 		border-color: var(--accent);
 	}

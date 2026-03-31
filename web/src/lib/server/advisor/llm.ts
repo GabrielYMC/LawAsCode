@@ -62,10 +62,13 @@ function buildContextPrompt(sources: LawSource[]): string {
 export async function callLlm(request: LlmRequest): Promise<LlmResponse> {
 	const config = getConfig();
 
+	console.log(`[LLM] callLlm provider=${config.llm.provider}, mode=${request.mode}, baseUrl=${config.llm.baseUrl}`);
+
 	if (config.llm.provider === 'ollama') {
 		return callOllama(request);
 	}
 
+	console.log('[LLM] ⚠ 走 Mock 路徑（非 Ollama）');
 	return callMock(request);
 }
 
@@ -231,8 +234,11 @@ async function callOllama(request: LlmRequest): Promise<LlmResponse> {
 export async function callLlmStream(request: LlmRequest): Promise<ReadableStream<string>> {
 	const config = getConfig();
 
+	console.log(`[LLM] callLlmStream provider=${config.llm.provider}, mode=${request.mode}, model=${config.llm.model}`);
+
 	if (config.llm.provider !== 'ollama') {
 		// Mock 模式：模擬串流
+		console.log('[LLM] ⚠ 串流走 Mock 路徑（非 Ollama）');
 		const mockResponse = await callMock(request);
 		return new ReadableStream({
 			async start(controller) {

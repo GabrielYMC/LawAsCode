@@ -170,6 +170,9 @@ function loadEnvOverrides(config: SystemConfig): SystemConfig {
 /** 執行期設定（記憶體中，重啟後重置為預設值 + 環境變數覆蓋） */
 let _config: SystemConfig = loadEnvOverrides(structuredClone(DEFAULT_CONFIG));
 
+// 啟動時印出關鍵設定，方便 debug
+console.log(`[Config] 初始化完成 — LLM: ${_config.llm.provider} (${_config.llm.model} @ ${_config.llm.baseUrl}), PB: ${_config.pocketbase.enabled ? _config.pocketbase.baseUrl : 'disabled'}, Demo: ${_config.demo.enabled}`);
+
 /** 取得目前設定 */
 export function getConfig(): SystemConfig {
 	return _config;
@@ -187,8 +190,8 @@ export function updateConfig(partial: Partial<SystemConfig>): SystemConfig {
 	return _config;
 }
 
-/** 重置為預設值 */
+/** 重置為預設值（會重新套用環境變數覆蓋） */
 export function resetConfig(): SystemConfig {
-	_config = structuredClone(DEFAULT_CONFIG);
+	_config = loadEnvOverrides(structuredClone(DEFAULT_CONFIG));
 	return _config;
 }
